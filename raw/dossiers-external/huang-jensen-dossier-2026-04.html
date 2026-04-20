@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JENSEN HUANG — IMP Intelligence Dossier</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Georgia&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0b; color: #f5f2eb; font-family: Georgia, serif; font-size: 15px; line-height: 1.75; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* HEADER */
+  .dossier-header { border-bottom: 2px solid #4a9e6b; padding: 48px 0 32px; margin-bottom: 48px; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 4px; color: #4a9e6b; border: 1px solid #4a9e6b; display: inline-block; padding: 3px 10px; margin-bottom: 20px; text-transform: uppercase; }
+  .dossier-title { font-family: 'IBM Plex Mono', monospace; font-size: clamp(28px,5vw,52px); font-weight: 700; letter-spacing: 6px; color: #f5f2eb; text-transform: uppercase; line-height: 1.1; margin-bottom: 6px; }
+  .dossier-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8a80; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(155px,1fr)); gap: 1px; border-top: 1px solid rgba(245,242,235,0.07); border-left: 1px solid rgba(245,242,235,0.07); }
+  .stat-cell { background: #111110; border: 1px solid rgba(245,242,235,0.07); border-top: none; border-left: none; padding: 14px 16px; }
+  .stat-val { font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 700; color: #4a9e6b; line-height: 1; margin-bottom: 5px; }
+  .stat-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #4a4a44; text-transform: uppercase; }
+
+  /* SECTION */
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 10px; border-bottom: 1px solid rgba(245,242,235,0.07); }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #4a9e6b; letter-spacing: 3px; }
+  .section-title { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 4px; color: #f5f2eb; text-transform: uppercase; }
+
+  /* PROSE */
+  p { margin-bottom: 16px; color: #d4d0c8; font-family: Georgia, serif; font-size: 14px; line-height: 1.85; }
+  strong { color: #f5f2eb; }
+
+  /* CALLOUT */
+  .callout { border-left: 3px solid #4a9e6b; padding: 14px 18px; background: #111110; margin: 20px 0; font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; line-height: 1.8; }
+  .callout.red    { border-left-color: #8B1F1F; }
+  .callout.gold   { border-left-color: #d4a847; }
+  .callout.blue   { border-left-color: #2a6db5; }
+  .callout.orange { border-left-color: #c47a2a; }
+  .callout.purple { border-left-color: #7c3aed; }
+
+  /* ENTITY CARD */
+  .entity-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(290px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .entity-card { background: #111110; border: 1px solid rgba(245,242,235,0.07); border-top: 3px solid #4a9e6b; padding: 18px 18px 14px; }
+  .entity-card.gold   { border-top-color: #d4a847; }
+  .entity-card.blue   { border-top-color: #2a6db5; }
+  .entity-card.red    { border-top-color: #8B1F1F; }
+  .entity-card.orange { border-top-color: #c47a2a; }
+  .entity-card.purple { border-top-color: #7c3aed; }
+  .entity-name { font-family: Georgia, serif; font-size: 15px; font-weight: bold; color: #f5f2eb; margin-bottom: 3px; }
+  .entity-type { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #8a8a80; text-transform: uppercase; margin-bottom: 12px; }
+  .kv { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .kv:last-child { border-bottom: none; }
+  .kk { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #4a4a44; text-transform: uppercase; }
+  .kv-val { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #d4d0c8; text-align: right; max-width: 62%; }
+
+  /* TABLE */
+  .matrix { width: 100%; border-collapse: collapse; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-bottom: 24px; }
+  .matrix th { padding: 9px 14px; background: #111110; color: #8a8a80; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; text-align: left; border-bottom: 1px solid rgba(245,242,235,0.13); }
+  .matrix td { padding: 10px 14px; border-bottom: 1px solid rgba(245,242,235,0.05); color: #d4d0c8; vertical-align: top; line-height: 1.65; }
+  .matrix tr:hover td { background: rgba(245,242,235,0.02); }
+
+  /* TIMELINE */
+  .timeline { list-style: none; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .tyr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a9e6b; font-weight: 700; padding-top: 2px; }
+  .ttxt { color: #d4d0c8; font-family: Georgia, serif; font-size: 13px; line-height: 1.75; }
+
+  /* BADGE */
+  .badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 1px; padding: 2px 6px; border: 1px solid; text-transform: uppercase; margin-right: 4px; margin-bottom: 2px; }
+  .badge-red    { color: #8B1F1F; border-color: #8B1F1F; }
+  .badge-gold   { color: #d4a847; border-color: #d4a847; }
+  .badge-blue   { color: #2a6db5; border-color: #2a6db5; }
+  .badge-green  { color: #4a9e6b; border-color: #4a9e6b; }
+  .badge-purple { color: #7c3aed; border-color: #7c3aed; }
+  .badge-orange { color: #c47a2a; border-color: #c47a2a; }
+  .badge-muted  { color: #8a8a80; border-color: #4a4a44; }
+
+  /* RISK BAR */
+  .risk-row { display: grid; grid-template-columns: 220px 1fr 50px; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .risk-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #d4d0c8; letter-spacing: 1px; }
+  .risk-track { height: 6px; background: #1a1a16; position: relative; }
+  .risk-fill { height: 100%; position: absolute; top: 0; left: 0; }
+  .risk-score { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; text-align: right; }
+
+  /* PROFILE BLOCK */
+  .profile-block { display: grid; grid-template-columns: 1fr 260px; gap: 24px; margin-bottom: 32px; }
+  @media(max-width:640px){ .profile-block { grid-template-columns: 1fr; } }
+  .profile-id { background: #111110; border: 1px solid rgba(245,242,235,0.07); padding: 20px; }
+  .profile-id-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(245,242,235,0.05); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+  .profile-id-row:last-child { border-bottom: none; }
+  .pid-k { color: #4a4a44; letter-spacing: 1px; text-transform: uppercase; font-size: 9px; }
+  .pid-v { color: #d4d0c8; text-align: right; }
+
+  /* COMPARISON BAR */
+  .comp-row { display: grid; grid-template-columns: 100px 1fr 70px; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .comp-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #d4d0c8; letter-spacing: 1px; }
+  .comp-track { height: 8px; background: #1a1a16; position: relative; }
+  .comp-fill { height: 100%; position: absolute; top: 0; left: 0; }
+  .comp-val { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8a8a80; text-align: right; }
+
+  /* FOOTER */
+  .dossier-footer { border-top: 1px solid rgba(245,242,235,0.07); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #4a4a44; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="dossier-header">
+    <div class="eyebrow">IMP — Intelligence Map Platform &nbsp;/&nbsp; Power Dossier — Individual</div>
+    <div class="dossier-title">Jensen Huang</div>
+    <div class="dossier-sub">Jen-Hsun Huang · NVIDIA Co-Founder &amp; CEO · Full Intelligence Profile · 2026-03-28</div>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-val">~$160B</div><div class="stat-lbl">Net Worth 2026</div></div>
+      <div class="stat-cell"><div class="stat-val">$3.3T</div><div class="stat-lbl">NVIDIA Market Cap</div></div>
+      <div class="stat-cell"><div class="stat-val">$130.5B</div><div class="stat-lbl">NVIDIA Revenue FY2025</div></div>
+      <div class="stat-cell"><div class="stat-val">92%</div><div class="stat-lbl">AI GPU Market Share</div></div>
+      <div class="stat-cell"><div class="stat-val">3.5%</div><div class="stat-lbl">Personal NVIDIA Stake</div></div>
+      <div class="stat-cell"><div class="stat-val">33 yrs</div><div class="stat-lbl">As CEO (1993–present)</div></div>
+    </div>
+  </div>
+
+  <!-- 01: WHO IS JENSEN HUANG -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">01</span><span class="section-title">Who Is Jensen Huang</span></div>
+    <div class="profile-block">
+      <div>
+        <p>
+          Jensen Huang is the co-founder, president, and CEO of NVIDIA — the company that accidentally became the most important infrastructure provider of the AI era, and in doing so made Huang one of the wealthiest and most strategically powerful individuals on Earth. He has been CEO since the company's founding in 1993: a 33-year tenure that makes him one of the longest-serving CEOs of any major technology company in history.
+        </p>
+        <p>
+          Born <strong>Jen-Hsun Huang</strong> in Tainan, Taiwan in 1963, he moved to Thailand at age 5 and to the United States at age 9. His parents, believing they were sending him to a prestigious boarding school, placed him in what turned out to be a Kentucky reform school for troubled youth. Huang has spoken about the experience with characteristic equanimity — he learned to be self-reliant, to adapt fast, and to not complain. He washed dishes and bussed tables at Denny's to pay his way. He earned a BS in Electrical Engineering from Oregon State University and an MS from Stanford. He worked at AMD and LSI Logic before co-founding NVIDIA at 30.
+        </p>
+        <p>
+          The leather jacket is not marketing. He has worn the same style of black leather jacket to every keynote for decades. It is the closest thing Silicon Valley has to a papal vestment — a signal of identity so consistent it has become a cultural symbol. At GTC 2026, he stood on stage in the SAP Center in San Jose in front of 25,000 people and declared: <em>"The agentic AI inflection point has arrived."</em>
+        </p>
+      </div>
+      <div class="profile-id">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:#4a9e6b;margin-bottom:14px;text-transform:uppercase;">IDENTITY FILE</div>
+        <div class="profile-id-row"><span class="pid-k">Full Name</span><span class="pid-v">Jen-Hsun Huang</span></div>
+        <div class="profile-id-row"><span class="pid-k">Born</span><span class="pid-v">Feb 17, 1963 — Tainan, Taiwan</span></div>
+        <div class="profile-id-row"><span class="pid-k">Age</span><span class="pid-v">63 (2026)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Citizenship</span><span class="pid-v">American</span></div>
+        <div class="profile-id-row"><span class="pid-k">Net Worth</span><span class="pid-v">~$160B (rank ~#8)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Education</span><span class="pid-v">Oregon State (BS EE), Stanford (MS)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Residence</span><span class="pid-v">Palo Alto, CA</span></div>
+        <div class="profile-id-row"><span class="pid-k">Spouse</span><span class="pid-v">Lori Mills Huang (m. 1984)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Children</span><span class="pid-v">2 — Spencer, Madison</span></div>
+        <div class="profile-id-row"><span class="pid-k">Co-founders</span><span class="pid-v">Chris Malachowsky, Curtis Priem</span></div>
+        <div class="profile-id-row"><span class="pid-k">NVIDIA founded</span><span class="pid-v">April 5, 1993 · Denny's, San Jose</span></div>
+        <div class="profile-id-row"><span class="pid-k">Power index</span><span class="pid-v" style="color:#4a9e6b;">TIER 1 — Global / Systemic</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02: NVIDIA — HOW IT WAS BUILT -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">02</span><span class="section-title">NVIDIA — How It Was Built</span></div>
+    <p>
+      NVIDIA was founded at a Denny's restaurant on Berryessa Road in San Jose on April 5, 1993. Huang, Chris Malachowsky, and Curtis Priem — all engineers in their early 30s — sketched out a company focused on 3D graphics chips for video games. The founding insight was architectural: the future of computing would require <strong>massively parallel processing</strong>, not faster sequential CPUs. They were right by 30 years.
+    </p>
+    <ul class="timeline">
+      <li><span class="tyr">1993</span><span class="ttxt">NVIDIA founded at Denny's. Three engineers, one thesis: parallel processing for graphics. First investor: Sequoia Capital ($20M seed).</span></li>
+      <li><span class="tyr">1995</span><span class="ttxt">First product, NV1, ships — a disaster commercially. Nearly bankrupt. Huang makes a critical call: bet everything on the next chip, NV3. Sega partnership collapses but the chip survives.</span></li>
+      <li><span class="tyr">1999</span><span class="ttxt">NVIDIA IPO ($12/share). Same year: launches the <strong>GeForce 256</strong> — the world's first GPU (Graphics Processing Unit). Huang coined the term "GPU." The category didn't exist before NVIDIA named it.</span></li>
+      <li><span class="tyr">2002</span><span class="ttxt">Buys 3dfx Interactive (main competitor) for $70M. Consolidates PC graphics market. By mid-2000s: dominant in gaming GPUs, destroying ATI and 3dfx.</span></li>
+      <li><span class="tyr">2006</span><span class="ttxt"><strong>CUDA launches</strong> — the most consequential product decision in NVIDIA's history. CUDA is a parallel computing platform that lets programmers use GPU power for general-purpose computing. Almost nobody notices. CUDA will later become the entire moat.</span></li>
+      <li><span class="tyr">2012</span><span class="ttxt">AlexNet — a deep neural network — wins the ImageNet competition by a massive margin using two NVIDIA GTX 580 GPUs running CUDA. The AI research community converts to NVIDIA overnight. Huang sees it immediately and pivots the company's strategy toward AI.</span></li>
+      <li><span class="tyr">2016</span><span class="ttxt">First DGX-1 AI supercomputer shipped. First customer: Elon Musk / OpenAI. Huang delivers it personally to OpenAI's San Francisco office. The symbolic handoff of the AI future.</span></li>
+      <li><span class="tyr">2020</span><span class="ttxt">COVID accelerates cloud and AI spending. NVIDIA acquires Mellanox (networking) for $6.9B. Attempted $40B acquisition of Arm Holdings — blocked by regulators (FTC, EU) in 2022.</span></li>
+      <li><span class="tyr">2022</span><span class="ttxt">ChatGPT launches (November). Within weeks, every hyperscaler (Microsoft, Google, Amazon, Meta) begins ordering H100 GPUs in massive quantities. NVIDIA backlog explodes. Revenue goes vertical.</span></li>
+      <li><span class="tyr">2023</span><span class="ttxt">NVIDIA market cap crosses $1T. Revenue triples year-over-year. H100 chips selling at $30,000+ each; delivery wait times 6–12 months. Huang becomes one of the 10 richest people on Earth.</span></li>
+      <li><span class="tyr">2024</span><span class="ttxt">NVIDIA briefly becomes the world's most valuable company ($3.3T peak), overtaking Apple and Microsoft. Blackwell (B100/B200) architecture ships — 4× faster than H100 on AI inference.</span></li>
+      <li><span class="tyr">2025</span><span class="ttxt">Revenue reaches $130.5B for FY2025 — up from $26B in FY2023. Data center revenue: $115B. Q4 FY2026: $68.1B in a single quarter. Rubin architecture (next gen) announced at GTC 2026.</span></li>
+    </ul>
+  </div>
+
+  <!-- 03: THE CUDA MOAT -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">03</span><span class="section-title">The CUDA Moat — Why NVIDIA Is Irreplaceable</span></div>
+    <p>
+      The hardware — the H100, B200 — is remarkable. But the real moat is <strong>CUDA</strong>. CUDA (Compute Unified Device Architecture) is a software platform that lets developers write programs that run on NVIDIA GPUs. Launched in 2006, almost entirely ignored at the time, it has now been in continuous development for 20 years and has accumulated an ecosystem that competitors cannot replicate in less than a decade, possibly ever.
+    </p>
+    <div class="callout">
+      Every major AI framework — PyTorch, TensorFlow, JAX — is optimized first and primarily for CUDA. Every AI researcher learns on CUDA. Every cloud provider (AWS, Azure, Google Cloud) builds CUDA-accelerated instances. There are millions of lines of production AI code written specifically for CUDA. Switching to AMD's ROCm or Intel's oneAPI means rewriting and re-optimizing all of it. The lock-in is not contractual — it is technical, educational, and cultural. It is the deepest software moat in modern technology.
+    </div>
+
+    <div class="entity-grid">
+      <div class="entity-card">
+        <div class="entity-name">CUDA Platform</div>
+        <div class="entity-type">The Core Software Moat — Since 2006</div>
+        <div class="kv"><span class="kk">Developers using CUDA</span><span class="kv-val">4M+ worldwide</span></div>
+        <div class="kv"><span class="kk">AI frameworks</span><span class="kv-val">PyTorch, TensorFlow, JAX — all CUDA-native</span></div>
+        <div class="kv"><span class="kk">Build time to match</span><span class="kv-val">Industry estimate: 10+ years</span></div>
+        <div class="kv"><span class="kk">Competitor status</span><span class="kv-val">AMD ROCm: improving; Intel: marginal</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">H100 / Hopper Architecture</div>
+        <div class="entity-type">Current Generation AI GPU (2022–2025)</div>
+        <div class="kv"><span class="kk">Price per unit</span><span class="kv-val">$25,000–$40,000</span></div>
+        <div class="kv"><span class="kk">Cloud providers</span><span class="kv-val">67 providers offering H100 instances</span></div>
+        <div class="kv"><span class="kk">Use case</span><span class="kv-val">LLM training + inference, HPC</span></div>
+        <div class="kv"><span class="kk">Status 2026</span><span class="kv-val">Transitioning to Blackwell (B200)</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">Blackwell / B200 Architecture</div>
+        <div class="entity-type">Current Flagship — Shipping 2025–2026</div>
+        <div class="kv"><span class="kk">vs H100</span><span class="kv-val">4× inference, 2× training performance</span></div>
+        <div class="kv"><span class="kk">GTC 2026 orders</span><span class="kv-val">Huang: "demand exceeds supply significantly"</span></div>
+        <div class="kv"><span class="kk">Primary buyers</span><span class="kv-val">Microsoft, Google, Amazon, Meta, Oracle</span></div>
+        <div class="kv"><span class="kk">Revenue driver</span><span class="kv-val">$62.3B data center Q4 FY2026 alone</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">Rubin Architecture</div>
+        <div class="entity-type">Next Generation — Announced GTC 2026</div>
+        <div class="kv"><span class="kk">vs Blackwell</span><span class="kv-val">Expected 3–5× performance improvement</span></div>
+        <div class="kv"><span class="kk">Release</span><span class="kv-val">2026–2027</span></div>
+        <div class="kv"><span class="kk">Architecture</span><span class="kv-val">Named after Vera Rubin (dark matter astronomer)</span></div>
+        <div class="kv"><span class="kk">New cadence</span><span class="kv-val">Huang: annual GPU generation releases going forward</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">NVLink / InfiniBand</div>
+        <div class="entity-type">Networking — Post-Mellanox Acquisition</div>
+        <div class="kv"><span class="kk">Purpose</span><span class="kv-val">Connect thousands of GPUs into one supercluster</span></div>
+        <div class="kv"><span class="kk">Why it matters</span><span class="kv-val">GPU-to-GPU bandwidth 10× PCIe — essential for scale</span></div>
+        <div class="kv"><span class="kk">Moat</span><span class="kv-val">Networking + compute as integrated stack</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">NVIDIA DGX Cloud / DGX SuperPOD</div>
+        <div class="entity-type">Full-Stack AI Factory</div>
+        <div class="kv"><span class="kk">Product</span><span class="kv-val">Turnkey AI supercomputer (cloud or on-prem)</span></div>
+        <div class="kv"><span class="kk">Customers</span><span class="kv-val">Nation-states, sovereign AI projects, hyperscalers</span></div>
+        <div class="kv"><span class="kk">Vision</span><span class="kv-val">Every country builds its own "AI factory" on NVIDIA</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04: REVENUE & FINANCES -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">04</span><span class="section-title">Financial Power — Revenue, Margins &amp; Market Position</span></div>
+    <p>
+      NVIDIA's financial trajectory from 2022 to 2026 is one of the most dramatic revenue escalations in the history of publicly traded companies — comparable only to Saudi Aramco at its oil peak and Apple during the iPhone supercycle.
+    </p>
+    <table class="matrix">
+      <thead><tr><th>Fiscal Year</th><th>Total Revenue</th><th>Data Center</th><th>Net Income</th><th>Market Cap</th></tr></thead>
+      <tbody>
+        <tr><td>FY2022</td><td>$26.9B</td><td>$10.6B</td><td>$4.3B</td><td>~$600B</td></tr>
+        <tr><td>FY2023</td><td>$26.9B</td><td>$15.0B</td><td>$4.4B</td><td>~$360B (trough)</td></tr>
+        <tr><td>FY2024</td><td><strong>$60.9B</strong></td><td>$47.5B</td><td>$29.8B</td><td>~$1.2T</td></tr>
+        <tr><td>FY2025</td><td><strong>$130.5B</strong></td><td>$115.2B</td><td>~$73B</td><td>~$3.3T</td></tr>
+        <tr><td>Q4 FY2026</td><td><strong>$68.1B (one quarter)</strong></td><td>$62.3B</td><td>~$40B</td><td>~$3.3T</td></tr>
+      </tbody>
+    </table>
+    <p>
+      NVIDIA's gross margin on data center GPUs is approximately <strong>74–78%</strong> — among the highest of any hardware company in history. For context: Apple's gross margin is ~46%, Intel's ~40%. This is the margin of a monopolist, not a competitor.
+    </p>
+    <div class="callout gold">
+      Jensen Huang owns approximately 3.5% of NVIDIA — worth ~$115B at peak 2025 valuations. He has never sold significant quantities of stock. His wealth is almost entirely paper — concentrated in the company he built and still runs. For comparison: Bill Gates owned 49% of Microsoft at IPO and has spent 40 years giving it away. Huang still owns nearly his original founding stake.
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#8a8a80; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;">AI GPU MARKET SHARE — 2026</p>
+    <div class="comp-row"><span class="comp-label">NVIDIA (CUDA ecosystem)</span><div class="comp-track"><div class="comp-fill" style="width:92%;background:#4a9e6b;"></div></div><span class="comp-val">~92%</span></div>
+    <div class="comp-row"><span class="comp-label">AMD (ROCm)</span><div class="comp-track"><div class="comp-fill" style="width:6%;background:#d4a847;"></div></div><span class="comp-val">~6%</span></div>
+    <div class="comp-row"><span class="comp-label">Intel Gaudi / Custom ASICs</span><div class="comp-track"><div class="comp-fill" style="width:2%;background:#8a8a80;"></div></div><span class="comp-val">~2%</span></div>
+  </div>
+
+  <!-- 05: POLITICS & GEOPOLITICS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">05</span><span class="section-title">Politics &amp; Geopolitics — The China Problem</span></div>
+    <p>
+      Jensen Huang is the most geopolitically exposed CEO in Silicon Valley. NVIDIA sits at the exact intersection of the US-China technology war: its chips are the primary input for AI development globally — and China wants them desperately. The US government wants to deny them. Huang must navigate both without destroying his company.
+    </p>
+    <div class="callout red">
+      China represented approximately <strong>17% of NVIDIA's revenue</strong> before export controls. The Biden administration's chip export restrictions (October 2022, tightened 2023) forced NVIDIA to create downgraded "China-compliant" chips (H800, A800) — which China then sought workarounds for. The Trump administration in December 2025 cleared NVIDIA to sell its second-most-powerful chip to China — then negotiated a deal in which <strong>NVIDIA and AMD agreed to share 15% of China chip sale revenues with the US government</strong>. An arrangement with no historical precedent.
+    </div>
+
+    <table class="matrix">
+      <thead><tr><th>Political Event</th><th>Date</th><th>Impact on NVIDIA</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Biden Export Control Rule 1</strong></td><td>Oct 2022</td><td>Blocked H100/A100 to China. NVIDIA created H800/A800 workarounds. Stock -7% day of.</td></tr>
+        <tr><td><strong>Biden Chip Act</strong></td><td>Aug 2022</td><td>$52B for domestic semiconductor manufacturing. Indirect benefit: US AI buildout accelerates NVIDIA demand.</td></tr>
+        <tr><td><strong>Huang meets Trump + Senate (closed-door)</strong></td><td>Dec 2025</td><td>Lobbied for China sales access. Trump cleared second-tier chip sales.</td></tr>
+        <tr><td><strong>US-China 15% revenue deal</strong></td><td>Early 2026</td><td>NVIDIA/AMD share 15% of China chip revenues with US government. Unprecedented. Huang called it workable.</td></tr>
+        <tr><td><strong>US Senate calls to halt GPU exports entirely</strong></td><td>2026</td><td>Looming "Chip Security Act" may tighten restrictions further. NVIDIA lobbying aggressively against it.</td></tr>
+        <tr><td><strong>NVIDIA sovereign AI strategy</strong></td><td>2025–2026</td><td>Huang pitches every country to build its own "sovereign AI factory" — national AI infrastructure on NVIDIA hardware. 20+ countries engaged.</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Huang's stated position: export controls are counterproductive because they push China to develop its own chips (Huawei Ascend 910B is advancing) without stopping Chinese AI development — just slowing it — while costing NVIDIA revenue that could fund the next generation of US chips. The US government is genuinely divided on this. Huang is caught, in his own words, "between the US and China's larger agendas."
+    </p>
+  </div>
+
+  <!-- 06: KEY PARTNERS & CLIENTS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">06</span><span class="section-title">Biggest Clients, Partners &amp; Alliances</span></div>
+    <div class="entity-grid">
+      <div class="entity-card blue">
+        <div class="entity-name">Microsoft / Azure</div>
+        <div class="entity-type">Largest Single Customer</div>
+        <div class="kv"><span class="kk">Relationship</span><span class="kv-val">Azure runs on NVIDIA H100/B200 at scale</span></div>
+        <div class="kv"><span class="kk">OpenAI link</span><span class="kv-val">ChatGPT training runs on NVIDIA clusters</span></div>
+        <div class="kv"><span class="kk">Capex pledge</span><span class="kv-val">MSFT: $80B AI infrastructure spend FY2026</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">Google / DeepMind</div>
+        <div class="entity-type">Strategic Partner + Competitor</div>
+        <div class="kv"><span class="kk">NVIDIA spend</span><span class="kv-val">Google buys billions in H100/B200 annually</span></div>
+        <div class="kv"><span class="kk">Tension</span><span class="kv-val">Google builds own TPUs to reduce NVIDIA dependency</span></div>
+        <div class="kv"><span class="kk">Reality</span><span class="kv-val">TPUs cover ~20% of workload; NVIDIA still dominates</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">Amazon / AWS</div>
+        <div class="entity-type">Major Hyperscaler Client</div>
+        <div class="kv"><span class="kk">NVIDIA spend</span><span class="kv-val">AWS offers H100/B200 instances globally</span></div>
+        <div class="kv"><span class="kk">Own chip</span><span class="kv-val">Trainium/Inferentia — growing but niche</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">Meta Platforms</div>
+        <div class="entity-type">Major Training Customer</div>
+        <div class="kv"><span class="kk">LLaMA</span><span class="kv-val">All Meta LLaMA models trained on NVIDIA clusters</span></div>
+        <div class="kv"><span class="kk">Order size</span><span class="kv-val">Meta ordered 350,000+ H100s (2023–24)</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">OpenAI</div>
+        <div class="entity-type">Symbolic + Commercial Origin</div>
+        <div class="kv"><span class="kk">First customer</span><span class="kv-val">Huang delivered first DGX-1 to OpenAI personally, 2016</span></div>
+        <div class="kv"><span class="kk">GPT-4 / o1</span><span class="kv-val">All trained on NVIDIA H100 clusters</span></div>
+        <div class="kv"><span class="kk">Relationship</span><span class="kv-val">Symbiotic — OpenAI's success = NVIDIA demand</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">Tesla / Elon Musk</div>
+        <div class="entity-type">Complex — Partner Turned Rival</div>
+        <div class="kv"><span class="kk">History</span><span class="kv-val">Musk co-founded OpenAI — first NVIDIA DGX customer</span></div>
+        <div class="kv"><span class="kk">Current</span><span class="kv-val">Tesla builds Dojo (custom chip) — NVIDIA competitor</span></div>
+        <div class="kv"><span class="kk">xAI</span><span class="kv-val">Musk's Grok LLM runs on 100,000+ NVIDIA H100s</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Sovereign AI Nations</div>
+        <div class="entity-type">New Strategic Vertical — 2025–2026</div>
+        <div class="kv"><span class="kk">Concept</span><span class="kv-val">"Every nation needs its own AI factory"</span></div>
+        <div class="kv"><span class="kk">Countries engaged</span><span class="kv-val">UAE, Saudi Arabia, Japan, India, France, Singapore</span></div>
+        <div class="kv"><span class="kk">Revenue</span><span class="kv-val">New $10B+ annual revenue stream emerging</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Automotive (Orin / Drive)</div>
+        <div class="entity-type">Autonomous Vehicle Platform</div>
+        <div class="kv"><span class="kk">Clients</span><span class="kv-val">Mercedes, Volvo, BYD, Li Auto, Waymo</span></div>
+        <div class="kv"><span class="kk">Product</span><span class="kv-val">NVIDIA DRIVE platform — end-to-end AV stack</span></div>
+        <div class="kv"><span class="kk">Revenue</span><span class="kv-val">~$1.7B FY2025 — growing fast</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07: COMPETITORS & RIVALS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">07</span><span class="section-title">Competitors &amp; Rivals — Who Challenges NVIDIA</span></div>
+    <table class="matrix">
+      <thead><tr><th>Rival</th><th>Product</th><th>Threat Level</th><th>Status 2026</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>AMD</strong></td>
+          <td>MI300X / MI350 / MI450 — ROCm software</td>
+          <td><span class="badge badge-orange">MODERATE</span></td>
+          <td>Best external challenger. ~6% market share. ROCm ecosystem improving. OpenAI partnership announced. Real but not existential threat yet.</td>
+        </tr>
+        <tr>
+          <td><strong>Google TPU</strong></td>
+          <td>TPU v5 / v6 — custom inference chips</td>
+          <td><span class="badge badge-gold">STRATEGIC</span></td>
+          <td>Google uses TPUs for ~20% of internal workloads. Not for sale externally. Reduces Google's NVIDIA dependency but doesn't replace it.</td>
+        </tr>
+        <tr>
+          <td><strong>Amazon Trainium</strong></td>
+          <td>Trainium 2 — training chip</td>
+          <td><span class="badge badge-muted">LOW</span></td>
+          <td>Used internally by AWS for select workloads. Not CUDA-compatible. Niche adoption. AWS still buys billions in NVIDIA hardware.</td>
+        </tr>
+        <tr>
+          <td><strong>Huawei Ascend 910B</strong></td>
+          <td>China domestic AI chip</td>
+          <td><span class="badge badge-orange">GEOPOLITICAL</span></td>
+          <td>Growing fast under export control pressure. Now China's primary domestic AI chip. ~30–40% of H100 performance. Long term: the only real alternative in China.</td>
+        </tr>
+        <tr>
+          <td><strong>Intel Gaudi 3</strong></td>
+          <td>AI accelerator</td>
+          <td><span class="badge badge-muted">LOW</span></td>
+          <td>More competitive pricing but tiny ecosystem. Intel's AI strategy remains fragmented. Not a serious near-term threat.</td>
+        </tr>
+        <tr>
+          <td><strong>Custom ASICs</strong> (Groq, Cerebras, Tenstorrent)</td>
+          <td>Specialized inference chips</td>
+          <td><span class="badge badge-gold">WATCH</span></td>
+          <td>Groq's LPU is genuinely faster at inference for specific models. Cerebras builds wafer-scale chips. None has CUDA's ecosystem. Long-term wildcards.</td>
+        </tr>
+        <tr>
+          <td><strong>Apple Silicon</strong></td>
+          <td>M4 / M4 Ultra — on-device AI</td>
+          <td><span class="badge badge-muted">ADJACENT</span></td>
+          <td>Dominates on-device inference. Different market (consumer/edge vs data center). Not a direct threat — but signals the limits of NVIDIA's edge reach.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      The competitive threat NVIDIA fears most is not AMD or Intel — it is the hyperscalers <strong>designing their own chips</strong>. If Microsoft, Google, Amazon, and Meta all successfully deploy custom AI silicon at scale, NVIDIA's revenue concentration in these four customers (which represent 40–50% of data center revenue) becomes a cliff. The CUDA ecosystem is the insurance policy against this — rewriting everything to run on custom silicon would cost billions and take years.
+    </div>
+  </div>
+
+  <!-- 08: PHYSICAL AI & ROBOTICS VISION -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">08</span><span class="section-title">Physical AI — Robotics, Autonomous Systems &amp; the Next Wave</span></div>
+    <p>
+      At GTC 2026, Huang declared the arrival of a new era: <strong>"Physical AI"</strong> — AI that operates in the real world, not just in software. His thesis: after language models (reasoning through text) and agentic AI (AI that takes actions in software), the next wave is AI that controls physical systems — robots, factories, autonomous vehicles, surgical systems, warehouses.
+    </p>
+    <div class="callout gold">
+      <strong>Huang at GTC 2026:</strong> "AI data center revenue will reach $1 trillion by 2028 — a market so large it fits every competitor. The question is not whether there will be demand for compute. The question is whether the physical world is programmable. We believe it is. We call this Physical AI."
+    </div>
+    <table class="matrix">
+      <thead><tr><th>Product / Platform</th><th>What It Does</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Isaac Sim / Isaac Lab</strong></td>
+          <td>Robotics simulation platform — train robots in virtual environments before deploying them physically. Built on Omniverse.</td>
+          <td><span class="badge badge-green">LIVE</span></td>
+        </tr>
+        <tr>
+          <td><strong>Omniverse</strong></td>
+          <td>3D simulation platform for physical AI. Digital twins of factories, warehouses, cities. Used by BMW, Amazon, Foxconn to simulate operations.</td>
+          <td><span class="badge badge-green">LIVE — Growing</span></td>
+        </tr>
+        <tr>
+          <td><strong>NVIDIA DRIVE</strong></td>
+          <td>End-to-end autonomous vehicle compute platform. Used by Mercedes, Volvo, BYD, and dozens of AV companies.</td>
+          <td><span class="badge badge-green">LIVE — $1.7B revenue</span></td>
+        </tr>
+        <tr>
+          <td><strong>Project GR00T</strong></td>
+          <td>Foundation model for humanoid robots — general-purpose robot intelligence trained on NVIDIA infrastructure.</td>
+          <td><span class="badge badge-gold">EARLY STAGE</span></td>
+        </tr>
+        <tr>
+          <td><strong>Physical AI Data Factory</strong></td>
+          <td>Blueprint for training robots using synthetic data. Announced GTC 2026: open ecosystem for robotics companies.</td>
+          <td><span class="badge badge-gold">ANNOUNCED 2026</span></td>
+        </tr>
+        <tr>
+          <td><strong>Agentic AI Stack</strong></td>
+          <td>Huang declared 2026 the year of "agentic AI" — AI agents that autonomously plan, code, and execute tasks. NVIDIA NIM microservices provide the inference infrastructure.</td>
+          <td><span class="badge badge-green">LIVE 2025–26</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Huang's vision: <strong>every factory will be a robot factory, every robot will run on AI, and every AI will run on NVIDIA.</strong> The addressable market he is describing — industrial automation, logistics, autonomous vehicles, surgical robotics — is estimated at $10T+ by 2035. NVIDIA is positioning as the compute layer for all of it.
+    </p>
+  </div>
+
+  <!-- 09: IDEOLOGY & PERSONALITY -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">09</span><span class="section-title">Ideology, Personality &amp; Leadership Style</span></div>
+    <p>
+      Jensen Huang is one of the most studied CEOs in modern business — not for controversy or scandal, but for management philosophy. He runs NVIDIA with a structure deliberately designed to maximize information flow and minimize bureaucratic friction.
+    </p>
+    <div class="entity-grid">
+      <div class="entity-card">
+        <div class="entity-name">No Middle Management</div>
+        <div class="entity-type">Organizational Philosophy</div>
+        <div class="kv"><span class="kk">Structure</span><span class="kv-val">~60 direct reports to Huang personally</span></div>
+        <div class="kv"><span class="kk">Rationale</span><span class="kv-val">"Middle managers filter information — I don't want that"</span></div>
+        <div class="kv"><span class="kk">Consequence</span><span class="kv-val">Exhausting for executives; extremely fast decision-making</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">"Embrace Pain" Culture</div>
+        <div class="entity-type">Core Operating Principle</div>
+        <div class="kv"><span class="kk">Quote</span><span class="kv-val">"Great companies embrace suffering and difficulty"</span></div>
+        <div class="kv"><span class="kk">Origin</span><span class="kv-val">Traced to his reform school childhood and Denny's years</span></div>
+        <div class="kv"><span class="kk">Application</span><span class="kv-val">NVIDIA pivots fast and hard; high employee burnout rate</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Annual Architecture Cadence</div>
+        <div class="entity-type">Product Philosophy</div>
+        <div class="kv"><span class="kk">Decision</span><span class="kv-val">Annual new GPU architecture — breaking 2-year cycle</span></div>
+        <div class="kv"><span class="kk">Impact</span><span class="kv-val">Competitors fall further behind each cycle</span></div>
+        <div class="kv"><span class="kk">Cost</span><span class="kv-val">Enormous R&D investment: ~$10B+/yr in R&D</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Taiwan Identity</div>
+        <div class="entity-type">Cultural / Geopolitical Dimension</div>
+        <div class="kv"><span class="kk">TSMC relationship</span><span class="kv-val">NVIDIA fabless — manufactures exclusively at TSMC</span></div>
+        <div class="kv"><span class="kk">Taiwan risk</span><span class="kv-val">Any Taiwan conflict halts NVIDIA's entire supply chain</span></div>
+        <div class="kv"><span class="kk">Public stance</span><span class="kv-val">Careful — avoids taking explicit positions on Taiwan politics</span></div>
+      </div>
+    </div>
+    <div class="callout">
+      Huang's ideology is <strong>technological determinism with urgency</strong>: he genuinely believes AI is the most important technology in human history, that the transition is happening faster than governments and societies are prepared for, and that the companies and nations that build the infrastructure now will define the next 50 years. He is not ideologically aligned with left or right — he is aligned with acceleration. He supports whoever in government will not slow him down.
+    </div>
+  </div>
+
+  <!-- 10: RISK PROFILE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">10</span><span class="section-title">Risk Profile — Threats &amp; Vulnerabilities (2026)</span></div>
+
+    <div class="risk-row">
+      <span class="risk-label">China Export Control Escalation</span>
+      <div class="risk-track"><div class="risk-fill" style="width:88%;background:#8B1F1F;"></div></div>
+      <span class="risk-score" style="color:#8B1F1F;">8.8/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Hyperscaler Custom Silicon</span>
+      <div class="risk-track"><div class="risk-fill" style="width:75%;background:#c47a2a;"></div></div>
+      <span class="risk-score" style="color:#c47a2a;">7.5/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Taiwan Strait Conflict (TSMC)</span>
+      <div class="risk-track"><div class="risk-fill" style="width:72%;background:#c47a2a;"></div></div>
+      <span class="risk-score" style="color:#c47a2a;">7.2/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">AI Bubble / Capex Pullback</span>
+      <div class="risk-track"><div class="risk-fill" style="width:65%;background:#d4a847;"></div></div>
+      <span class="risk-score" style="color:#d4a847;">6.5/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Antitrust / Market Dominance</span>
+      <div class="risk-track"><div class="risk-fill" style="width:60%;background:#d4a847;"></div></div>
+      <span class="risk-score" style="color:#d4a847;">6.0/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">AMD / Emerging Competitors</span>
+      <div class="risk-track"><div class="risk-fill" style="width:40%;background:#4a9e6b;"></div></div>
+      <span class="risk-score" style="color:#4a9e6b;">4.0/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Key-Man Risk (Huang himself)</span>
+      <div class="risk-track"><div class="risk-fill" style="width:70%;background:#c47a2a;"></div></div>
+      <span class="risk-score" style="color:#c47a2a;">7.0/10</span>
+    </div>
+
+    <p style="margin-top:20px;">
+      The <strong>Taiwan risk</strong> is the most existential scenario — not in probability but in consequence. NVIDIA designs all its chips but manufactures 100% of them at TSMC in Taiwan. A Chinese military action against Taiwan would immediately halt NVIDIA's production entirely. There is no backup fab. This is a known fragility; NVIDIA has lobbied for TSMC's Arizona expansion but advanced node production there remains years away at meaningful scale.
+    </p>
+    <p>
+      The <strong>AI capex pullback risk</strong> is real but often overstated. If Microsoft, Google, Amazon, and Meta simultaneously reduce AI infrastructure spending — triggered by an AI winter, a recession, or a breakthrough in efficiency — NVIDIA's revenue would drop sharply. The DeepSeek moment (January 2026, Chinese AI lab achieving GPT-4-level performance at a fraction of the compute cost) caused a $600B single-day market cap drop for NVIDIA — the largest in market history. It recovered. But it demonstrated the fragility of valuation assumptions built on perpetual compute demand growth.
+    </p>
+  </div>
+
+  <!-- 11: HIS VISION OF THE FUTURE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">11</span><span class="section-title">The Future — Jensen Huang's Own Vision</span></div>
+    <p>
+      Huang's world view, assembled from GTC 2026 keynote, Davos interviews, and public statements, has five interconnected theses:
+    </p>
+    <div class="callout blue">
+      <strong>1. The $1 Trillion AI Factory Economy:</strong> "AI data center revenue will reach $1 trillion by 2028." Huang frames AI clusters not as computers but as <em>factories that manufacture intelligence</em> — producing "tokens" (units of AI output) the way oil refineries produce barrels. Every enterprise, every government, every nation needs its own AI factory. NVIDIA sells the factory floor.
+    </div>
+    <div class="callout blue">
+      <strong>2. Inference is the New Gold Rush:</strong> The first wave (2022–2024) was about training large models. The next wave — already here — is inference: running models billions of times per day at scale. "The more you use AI, the more compute you need. Inference demand has no ceiling." Blackwell and Rubin are inference-optimized architectures.
+    </div>
+    <div class="callout blue">
+      <strong>3. Physical AI Transforms the Material World:</strong> "Software has eaten the world. Now AI will eat physics." Robots, factories, vehicles, warehouses — all will run on AI trained in simulation (Omniverse) and deployed on NVIDIA hardware. Huang believes the physical world will be reprogrammed the way the digital world was reprogrammed by software in the 1990s.
+    </div>
+    <div class="callout blue">
+      <strong>4. Every Country Needs Sovereign AI:</strong> "A country that doesn't have its own AI infrastructure will be colonized — digitally." Huang is selling the idea that national AI sovereignty requires owning your own compute stack. He is simultaneously selling that compute stack. It is the most effective enterprise sales pitch in technology history.
+    </div>
+    <div class="callout gold">
+      <strong>5. Humans + AI = Amplification, Not Replacement:</strong> Unlike Bill Gates ("humans won't be needed for most things"), Huang's message is subtly different: "AI is the most powerful tool humanity has ever built. Every person with access to AI becomes more capable." He frames NVIDIA not as building a replacement for human intelligence but as building an amplifier. Whether this distinction holds as physical AI + robotics matures is the defining question of the next decade.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="dossier-footer">
+    <span>IMP Intelligence Dossier — Jensen Huang — 2026-03-28 — JARVIS / Base44</span>
+    <span>Sources: NVIDIA GTC 2026 · Bloomberg · Reuters · Fortune · Forbes · Wikipedia · DigiDai · Tom's Hardware · Medium</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "document": "IPM_Codebase_Audit",
+    "generated": "2026-04-12",
+    "generator": "Claude Code",
+    "repo_root": "C:\\Users\\ruben\\source\\repos\\iPM-WIKI",
+    "purpose": "Machine-readable frontend audit for Claude Opus project chat consumption",
+    "note": "This repo is an Obsidian markdown wiki vault (raw/ + wiki/), NOT a frontend codebase. All frontend-specific tasks return empty results. The audit captures the actual repo contents accurately."
+  },
+  "routes": [],
+  "components": [],
+  "services_and_hooks": [],
+  "overlays": [],
+  "entity_page_mapping": [
+    {
+      "entity_type": "person",
+      "pages": [],
+      "overlays": [],
+      "panels": [],
+      "wiki_pages": 21,
+      "wiki_path": "wiki/actors/",
+      "has_fragmentation": false,
+      "note": "21 actor markdown pages exist in wiki/actors/ but no React components"
+    },
+    {
+      "entity_type": "company",
+      "pages": [],
+      "overlays": [],
+      "panels": [],
+      "wiki_pages": 31,
+      "wiki_path": "wiki/institutions/",
+      "has_fragmentation": false,
+      "note": "31 institution markdown pages exist in wiki/institutions/ but no React components"
+    },
+    {
+      "entity_type": "country",
+      "pages": [],
+      "overlays": [],
+      "panels": [],
+      "wiki_pages": 12,
+      "wiki_path": "wiki/countries/",
+      "has_fragmentation": false,
+      "note": "12 country markdown pages exist in wiki/countries/ but no React components"
+    },
+    {
+      "entity_type": "commodity",
+      "pages": [],
+      "overlays": [],
+      "panels": [],
+      "wiki_pages": 1,
+      "wiki_path": "wiki/commodities/",
+      "has_fragmentation": false,
+      "note": "1 commodity markdown page exists in wiki/commodities/ but no React components"
+    }
+  ],
+  "dead_code": {
+    "orphaned_files": [
+      {
+        "file": "raw/internal-notes/thread-master-bitcoin-integration.js",
+        "lines": 157,
+        "reason": "standalone JS file in raw/ evidence folder — not imported by anything"
+      }
+    ],
+    "total_orphaned_files": 1,
+    "total_orphaned_lines": 157,
+    "note": "Only 1 non-markdown code file exists in the repo. SQL files are seed data, not importable code."
+  },
+  "dashboard_variants": {
+    "dashboard_variants": [],
+    "landing_variants": [],
+    "app_shell_variants": [],
+    "note": "No dashboard, landing, or versioned variant files exist. 'Dashboard' appears in 7 markdown files as content references only."
+  },
+  "sherman": {
+    "sherman_root": "NONE",
+    "is_separate_app": false,
+    "shares_router": false,
+    "shares_layout": false,
+    "layout_component": "NONE",
+    "pages": [],
+    "shared_services": [],
+    "own_services": [],
+    "route_prefix": "NONE",
+    "note": "No Sherman/Trading code exists. 'Trading' appears in markdown content only."
+  },
+  "domain_types": [],
+  "non_markdown_source_files": [
+    { "file": "raw/ideology/ai-supply-chain-edges.sql", "lines": 294, "type": "sql" },
+    { "file": "raw/ideology/powermaprelation-semiconductor-seed.sql", "lines": 248, "type": "sql" },
+    { "file": "raw/ideology/commodity-links-seed.sql", "lines": 243, "type": "sql" },
+    { "file": "raw/ideology/institutions-relationedge-seed.sql", "lines": 164, "type": "sql" },
+    { "file": "raw/ideology/ideology-seed-sql-2026-04-09.sql", "lines": 159, "type": "sql" },
+    { "file": "raw/ideology/ai-supply-chain-complete-seed.sql", "lines": 149, "type": "sql" },
+    { "file": "raw/internal-notes/thread-master-bitcoin-integration.js", "lines": 157, "type": "js" },
+    { "file": ".obsidian/workspace.json", "lines": 260, "type": "json" },
+    { "file": ".obsidian/core-plugins.json", "lines": 32, "type": "json" },
+    { "file": ".obsidian/app.json", "lines": 0, "type": "json" },
+    { "file": ".obsidian/appearance.json", "lines": 0, "type": "json" },
+    { "file": ".gitignore", "lines": 5, "type": "gitignore" }
+  ],
+  "wiki_content_breakdown": {
+    "actors": 21,
+    "institutions": 31,
+    "countries": 12,
+    "themes": 13,
+    "sources": 13,
+    "scenarios": 5,
+    "dossiers": 5,
+    "comparisons": 4,
+    "indicators": 5,
+    "market_impact": 3,
+    "timelines": 4,
+    "narratives": 1,
+    "oracle": 1,
+    "commodities": 1,
+    "lint_reports": 1,
+    "control_files": 3
+  },
+  "largest_files_top_10": [
+    { "file": "CLAUDE.md", "lines": 722 },
+    { "file": "wiki/log.md", "lines": 394 },
+    { "file": "wiki/dossiers/IMP-Prompt-Pack-Operativo-v2.md", "lines": 386 },
+    { "file": "wiki/dossiers/IMP-Raw-Collection-Prompts.md", "lines": 305 },
+    { "file": "raw/ideology/ai-supply-chain-edges.sql", "lines": 294 },
+    { "file": "wiki/dossiers/Perplexity-State-Report-v13.md", "lines": 282 },
+    { "file": "raw/internal-notes/IMP-mission-weekly-ops-2026-04-09.md", "lines": 270 },
+    { "file": "wiki/index.md", "lines": 262 },
+    { "file": ".obsidian/workspace.json", "lines": 260 },
+    { "file": "raw/ideology/powermaprelation-semiconductor-seed.sql", "lines": 248 }
+  ],
+  "summary": {
+    "total_tsx_files": 0,
+    "total_ts_files": 0,
+    "total_js_files": 1,
+    "total_sql_files": 6,
+    "total_md_files": 134,
+    "total_json_files": 4,
+    "total_lines_of_code_non_md": 1711,
+    "total_lines_of_markdown": 10922,
+    "total_routes": 0,
+    "total_pages": 0,
+    "total_overlays": 0,
+    "total_services": 0,
+    "total_hooks": 0,
+    "total_orphaned_files": 1,
+    "total_orphaned_lines": 157,
+    "total_dashboard_variants": 0,
+    "total_landing_variants": 0,
+    "entity_types_with_fragmentation": [],
+    "largest_files_top_10": [
+      { "file": "CLAUDE.md", "lines": 722 },
+      { "file": "wiki/log.md", "lines": 394 },
+      { "file": "wiki/dossiers/IMP-Prompt-Pack-Operativo-v2.md", "lines": 386 },
+      { "file": "wiki/dossiers/IMP-Raw-Collection-Prompts.md", "lines": 305 },
+      { "file": "raw/ideology/ai-supply-chain-edges.sql", "lines": 294 },
+      { "file": "wiki/dossiers/Perplexity-State-Report-v13.md", "lines": 282 },
+      { "file": "raw/internal-notes/IMP-mission-weekly-ops-2026-04-09.md", "lines": 270 },
+      { "file": "wiki/index.md", "lines": 262 },
+      { "file": ".obsidian/workspace.json", "lines": 260 },
+      { "file": "raw/ideology/powermaprelation-semiconductor-seed.sql", "lines": 248 }
+    ],
+    "repo_type": "obsidian-wiki-vault",
+    "has_frontend_code": false,
+    "has_backend_code": false,
+    "primary_content": "Geopolitical intelligence wiki with 134 markdown pages, 6 SQL seed files, 1 JS evidence file"
+  }
+}

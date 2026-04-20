@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Obsidian workspace state (personal, per-machine)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Secrets (defense in depth — none currently in tree)
+.env
+.env.*
+*.pem
+*.key
+credentials*.json

@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-04-19T01:47:20.400574+00:00",
+  "dry_run": true,
+  "wiki_dir": "./wiki/companies",
+  "reports": [
+    {
+      "entity_id": 1,
+      "file": "001_nvidia.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 2,
+      "file": "002_apple.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 4,
+      "file": "004_microsoft.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 5,
+      "file": "005_amazon.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 41,
+      "file": "041_tsmc.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 68,
+      "file": "068_lockheed_martin.md",
+      "score_drift": [
+        {
+          "dim": "edge_strength:Northrop Grumman:Competes",
+          "wiki": "High",
+          "db": "Medium"
+        },
+        {
+          "dim": "edge_strength:Northrop Grumman:Partners",
+          "wiki": "Medium",
+          "db": "High"
+        }
+      ],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "DRIFT"
+    },
+    {
+      "entity_id": 90,
+      "file": "090_blackrock.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 96,
+      "file": "096_palantir.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    },
+    {
+      "entity_id": 201,
+      "file": "201_spacex.md",
+      "score_drift": [],
+      "missing_edges": [],
+      "missing_news": [],
+      "synced": [],
+      "errors": [],
+      "status": "OK"
+    }
+  ],
+  "summary": {
+    "pages": 9,
+    "score_drifts": 2,
+    "missing_edges": 0,
+    "missing_news": 0,
+    "synced": 0
+  }
+}

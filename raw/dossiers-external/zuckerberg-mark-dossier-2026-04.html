@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARK ZUCKERBERG — IMP Intelligence Dossier</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Georgia&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0b; color: #f5f2eb; font-family: Georgia, serif; font-size: 15px; line-height: 1.75; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* HEADER */
+  .dossier-header { border-bottom: 2px solid #2a6db5; padding: 48px 0 32px; margin-bottom: 48px; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 4px; color: #2a6db5; border: 1px solid #2a6db5; display: inline-block; padding: 3px 10px; margin-bottom: 20px; text-transform: uppercase; }
+  .dossier-title { font-family: 'IBM Plex Mono', monospace; font-size: clamp(24px,5vw,50px); font-weight: 700; letter-spacing: 6px; color: #f5f2eb; text-transform: uppercase; line-height: 1.1; margin-bottom: 6px; }
+  .dossier-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8a80; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(155px,1fr)); gap: 1px; border-top: 1px solid rgba(245,242,235,0.07); border-left: 1px solid rgba(245,242,235,0.07); }
+  .stat-cell { background: #111110; border: 1px solid rgba(245,242,235,0.07); border-top: none; border-left: none; padding: 14px 16px; }
+  .stat-val { font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 700; color: #2a6db5; line-height: 1; margin-bottom: 5px; }
+  .stat-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #4a4a44; text-transform: uppercase; }
+
+  /* SECTION */
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 10px; border-bottom: 1px solid rgba(245,242,235,0.07); }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2a6db5; letter-spacing: 3px; }
+  .section-title { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 4px; color: #f5f2eb; text-transform: uppercase; }
+
+  /* PROSE */
+  p { margin-bottom: 16px; color: #d4d0c8; font-family: Georgia, serif; font-size: 14px; line-height: 1.85; }
+  strong { color: #f5f2eb; }
+
+  /* CALLOUT */
+  .callout { border-left: 3px solid #2a6db5; padding: 14px 18px; background: #111110; margin: 20px 0; font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; line-height: 1.8; }
+  .callout.red    { border-left-color: #8B1F1F; }
+  .callout.gold   { border-left-color: #d4a847; }
+  .callout.green  { border-left-color: #4a9e6b; }
+  .callout.orange { border-left-color: #c47a2a; }
+  .callout.purple { border-left-color: #7c3aed; }
+
+  /* ENTITY CARDS */
+  .entity-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(290px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .entity-card { background: #111110; border: 1px solid rgba(245,242,235,0.07); border-top: 3px solid #2a6db5; padding: 18px 18px 14px; }
+  .entity-card.gold   { border-top-color: #d4a847; }
+  .entity-card.green  { border-top-color: #4a9e6b; }
+  .entity-card.red    { border-top-color: #8B1F1F; }
+  .entity-card.orange { border-top-color: #c47a2a; }
+  .entity-card.purple { border-top-color: #7c3aed; }
+  .entity-name { font-family: Georgia, serif; font-size: 15px; font-weight: bold; color: #f5f2eb; margin-bottom: 3px; }
+  .entity-type { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #8a8a80; text-transform: uppercase; margin-bottom: 12px; }
+  .kv { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .kv:last-child { border-bottom: none; }
+  .kk { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #4a4a44; text-transform: uppercase; }
+  .kv-val { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #d4d0c8; text-align: right; max-width: 62%; }
+
+  /* TABLE */
+  .matrix { width: 100%; border-collapse: collapse; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-bottom: 24px; }
+  .matrix th { padding: 9px 14px; background: #111110; color: #8a8a80; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; text-align: left; border-bottom: 1px solid rgba(245,242,235,0.13); }
+  .matrix td { padding: 10px 14px; border-bottom: 1px solid rgba(245,242,235,0.05); color: #d4d0c8; vertical-align: top; line-height: 1.65; }
+  .matrix tr:hover td { background: rgba(245,242,235,0.02); }
+
+  /* TIMELINE */
+  .timeline { list-style: none; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .tyr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2a6db5; font-weight: 700; padding-top: 2px; }
+  .ttxt { color: #d4d0c8; font-family: Georgia, serif; font-size: 13px; line-height: 1.75; }
+
+  /* BADGE */
+  .badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 1px; padding: 2px 6px; border: 1px solid; text-transform: uppercase; margin-right: 4px; margin-bottom: 2px; }
+  .badge-red    { color: #8B1F1F; border-color: #8B1F1F; }
+  .badge-gold   { color: #d4a847; border-color: #d4a847; }
+  .badge-blue   { color: #2a6db5; border-color: #2a6db5; }
+  .badge-green  { color: #4a9e6b; border-color: #4a9e6b; }
+  .badge-purple { color: #7c3aed; border-color: #7c3aed; }
+  .badge-orange { color: #c47a2a; border-color: #c47a2a; }
+  .badge-muted  { color: #8a8a80; border-color: #4a4a44; }
+
+  /* MYTH CARD */
+  .myth-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .myth-card { background: #111110; border: 1px solid rgba(245,242,235,0.07); overflow: hidden; }
+  .myth-claim { background: rgba(139,31,31,0.08); border-left: 3px solid #8B1F1F; padding: 12px 16px; }
+  .myth-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #8B1F1F; margin-bottom: 4px; }
+  .myth-text { font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; }
+  .myth-fact { border-left: 3px solid #4a9e6b; padding: 12px 16px; }
+  .fact-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #4a9e6b; margin-bottom: 4px; }
+  .fact-text { font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; line-height: 1.75; }
+
+  /* RISK BARS */
+  .risk-row { display: grid; grid-template-columns: 210px 1fr 50px; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .risk-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #d4d0c8; letter-spacing: 1px; }
+  .risk-track { height: 6px; background: #1a1a16; position: relative; }
+  .risk-fill { height: 100%; position: absolute; top: 0; left: 0; }
+  .risk-score { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; text-align: right; }
+
+  /* PROFILE BLOCK */
+  .profile-block { display: grid; grid-template-columns: 1fr 260px; gap: 24px; margin-bottom: 32px; }
+  @media(max-width:640px){ .profile-block { grid-template-columns: 1fr; } }
+  .profile-id { background: #111110; border: 1px solid rgba(245,242,235,0.07); padding: 20px; }
+  .profile-id-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(245,242,235,0.05); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+  .profile-id-row:last-child { border-bottom: none; }
+  .pid-k { color: #4a4a44; letter-spacing: 1px; text-transform: uppercase; font-size: 9px; }
+  .pid-v { color: #d4d0c8; text-align: right; }
+
+  /* FOOTER */
+  .dossier-footer { border-top: 1px solid rgba(245,242,235,0.07); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #4a4a44; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="dossier-header">
+    <div class="eyebrow">IMP — Intelligence Map Platform &nbsp;/&nbsp; Power Dossier — Individual</div>
+    <div class="dossier-title">Mark Zuckerberg</div>
+    <div class="dossier-sub">Mark Elliot Zuckerberg · Meta CEO &amp; Co-Founder · Full Intelligence Profile · 2026-03-28</div>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-val">~$222B</div><div class="stat-lbl">Net Worth 2026 (#5 Global)</div></div>
+      <div class="stat-cell"><div class="stat-val">$1.5T</div><div class="stat-lbl">Meta Market Cap</div></div>
+      <div class="stat-cell"><div class="stat-val">3.3B</div><div class="stat-lbl">Daily Active Users (Meta)</div></div>
+      <div class="stat-cell"><div class="stat-val">$84B</div><div class="stat-lbl">Reality Labs Total Losses</div></div>
+      <div class="stat-cell"><div class="stat-val">$7.2B</div><div class="stat-lbl">CZI Grants Since 2015</div></div>
+      <div class="stat-cell"><div class="stat-val">13%</div><div class="stat-lbl">Personal Meta Stake</div></div>
+    </div>
+  </div>
+
+  <!-- 01: WHO IS ZUCKERBERG -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">01</span><span class="section-title">Who Is Mark Zuckerberg</span></div>
+    <div class="profile-block">
+      <div>
+        <p>Mark Elliot Zuckerberg was born May 14, 1984 in White Plains, New York. His father is a dentist; his mother a psychiatrist. He grew up in Dobbs Ferry, a comfortable suburb — the second of four children, Jewish, academically exceptional. He learned to program at 12 on an Atari BASIC course his father taught him. By 16 he had built <strong>ZuckNet</strong> — a messaging app for his father's dental office and home — that Microsoft and AOL both reportedly offered to acquire. He turned them down.</p>
+        <p>He enrolled at Harvard in 2002. By the time he launched <em>thefacebook.com</em> on February 4, 2004 — from his dorm room — he was already known on campus as a prodigious programmer and somewhat antisocial genius. He dropped out after his sophomore year and moved to Palo Alto. He was 19. Twenty-two years later, the company he built from a dorm room is worth <strong>$1.5 trillion</strong>, has <strong>3.3 billion daily active users</strong>, and he personally is worth <strong>~$222 billion</strong> — the 5th richest person on Earth.</p>
+        <p>Zuckerberg is one of the most analyzed, parodied, and misunderstood figures in modern history. He is simultaneously: a genuine technical visionary who identified the social graph as the organizing layer of the internet before anyone else; a ruthless monopolist who crushed or acquired every competitor; a philanthropist pledging 99% of his wealth to science and humanity; and — uniquely in the billionaire class — a figure whose <strong>social stiffness has itself become cultural mythology</strong>, spawning a thousand memes, a major film, and genuine public debate about whether he is fully human.</p>
+      </div>
+      <div class="profile-id">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:#2a6db5;margin-bottom:14px;text-transform:uppercase;">IDENTITY FILE</div>
+        <div class="profile-id-row"><span class="pid-k">Full Name</span><span class="pid-v">Mark Elliot Zuckerberg</span></div>
+        <div class="profile-id-row"><span class="pid-k">Born</span><span class="pid-v">May 14, 1984 — White Plains, NY</span></div>
+        <div class="profile-id-row"><span class="pid-k">Age</span><span class="pid-v">41 (2026)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Net Worth</span><span class="pid-v">~$222B (Forbes rank #5)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Education</span><span class="pid-v">Harvard — dropped out 2004</span></div>
+        <div class="profile-id-row"><span class="pid-k">Spouse</span><span class="pid-v">Priscilla Chan (m. 2012)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Children</span><span class="pid-v">3 — Maxima, August, Aurelia</span></div>
+        <div class="profile-id-row"><span class="pid-k">Residence</span><span class="pid-v">Palo Alto + Kauaʻi, Hawaii</span></div>
+        <div class="profile-id-row"><span class="pid-k">Religion</span><span class="pid-v">Jewish (lapsed) / "learning about Buddhism"</span></div>
+        <div class="profile-id-row"><span class="pid-k">Company</span><span class="pid-v">Meta Platforms (Facebook, Instagram, WhatsApp)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Philanthropy</span><span class="pid-v">Chan Zuckerberg Initiative (CZI)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Power index</span><span class="pid-v" style="color:#2a6db5;">TIER 1 — Global / Systemic</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02: FOUNDING STORY -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">02</span><span class="section-title">How Facebook &amp; Meta Were Built</span></div>
+    <ul class="timeline">
+      <li><span class="tyr">2003</span><span class="ttxt"><strong>Facemash</strong> — Zuckerberg hacks Harvard's house photo directories and builds a "hot or not" comparison site. 450 visitors in 4 hours, 22,000 photo views. Harvard shuts it down. He is brought before the administration for security and privacy violations. Charges are dropped. The core impulse — rank and compare people — never goes away.</span></li>
+      <li><span class="tyr">2004</span><span class="ttxt"><strong>thefacebook.com launches</strong> — February 4. Built in a dorm room over two weeks. 1,000 Harvard users in 24 hours. Expands to Yale, Columbia, Stanford within weeks. Co-founders: Eduardo Saverin (CFO, later sued and diluted out), Dustin Moskovitz, Chris Hughes, Andrew McCollum. Zuckerberg is the only one who never leaves.</span></li>
+      <li><span class="tyr">2004</span><span class="ttxt"><strong>The Winklevoss twins</strong> file a lawsuit claiming Zuckerberg stole their ConnectU idea. Settled in 2008 for $65M in cash and Facebook stock. The Social Network (2010) dramatizes this. Zuckerberg called the film "fiction." The twins later become Bitcoin billionaires.</span></li>
+      <li><span class="tyr">2005</span><span class="ttxt">Drops "The" — becomes facebook.com. Accel Partners invests $12.7M at a $100M valuation. Zuckerberg turns down a $1B acquisition offer from Yahoo. A pattern begins.</span></li>
+      <li><span class="tyr">2007</span><span class="ttxt">Microsoft invests $240M for 1.6% stake — valuing Facebook at $15B. Platform opens to all internet users. 50M active users.</span></li>
+      <li><span class="tyr">2008</span><span class="ttxt">Sheryl Sandberg joins as COO — the most important hire in Facebook's history. She brings advertiser relationships, Washington connections, and adult operational management. Zuckerberg focuses on product; Sandberg runs the business for the next 14 years.</span></li>
+      <li><span class="tyr">2012</span><span class="ttxt">Facebook IPO — $38/share, $104B valuation. Largest tech IPO in history at the time. Stock crashes to $17 within months. Zuckerberg marries Priscilla Chan the day after the IPO. Mobile transition nearly kills the company — desktop ad revenue crashing; mobile non-existent. Zuckerberg pivots the entire engineering org to mobile-first. It works.</span></li>
+      <li><span class="tyr">2012</span><span class="ttxt">Acquires <strong>Instagram</strong> for $1B — widely mocked as overpriced. Instagram is now worth ~$400B+ as a standalone asset. The most profitable acquisition in technology history, dollar-for-dollar.</span></li>
+      <li><span class="tyr">2014</span><span class="ttxt">Acquires <strong>WhatsApp</strong> for $19B — another widely mocked deal. Now 2B+ users. Acquires <strong>Oculus VR</strong> for $2B — seeds the metaverse obsession that will cost $84B and counting.</span></li>
+      <li><span class="tyr">2016</span><span class="ttxt">US election. Cambridge Analytica. Russian interference via Facebook ads. Zuckerberg initially dismisses the idea that Facebook influenced the election as "crazy." Within a year he is testifying before Congress.</span></li>
+      <li><span class="tyr">2018</span><span class="ttxt">Congressional testimony. Two days, 10 hours, 44 senators. "Senator, we run ads." Zuckerberg's flat affect, formal answers, and apparent confusion at basic questions fuel the robot/lizard meme industrial complex to historic highs. $120B wiped from Facebook's market cap in a single day that July on user growth concerns.</span></li>
+      <li><span class="tyr">2021</span><span class="ttxt">Facebook rebrands as <strong>Meta</strong>. Announces pivot to the metaverse. Reality Labs created. The bet: $10B+/year to build the next computing platform. The market response: Meta stock falls 77% over the next 14 months.</span></li>
+      <li><span class="tyr">2023</span><span class="ttxt"><strong>Year of Efficiency</strong> — Zuckerberg fires 21,000 employees (25% of workforce) in waves. Strips out management layers. Refocuses on core advertising + AI. Stock recovers 194% in one year — the greatest single-year recovery of any mega-cap stock in history.</span></li>
+      <li><span class="tyr">2024–26</span><span class="ttxt">Meta AI launches as standalone app. Llama 4 released open-source. Reality Labs pivot: VR/metaverse de-emphasized, AR glasses (Orion) and AI infrastructure foregrounded. Meta wins FTC antitrust case (Nov 2025). FTC appeals (Jan 2026).</span></li>
+    </ul>
+  </div>
+
+  <!-- 03: META EMPIRE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">03</span><span class="section-title">The Meta Empire — Products &amp; Scale</span></div>
+    <p>Meta Platforms is not a social media company. It is the <strong>attention infrastructure of the modern internet</strong> — the layer through which 3.3 billion humans daily consume content, communicate, discover products, and form opinions. No private entity in history has had comparable reach into daily human behavior.</p>
+    <div class="entity-grid">
+      <div class="entity-card">
+        <div class="entity-name">Facebook</div>
+        <div class="entity-type">Core Platform — Founded 2004</div>
+        <div class="kv"><span class="kk">Daily Active Users</span><span class="kv-val">~2.1B</span></div>
+        <div class="kv"><span class="kk">Monthly Active</span><span class="kv-val">~3.1B</span></div>
+        <div class="kv"><span class="kk">Revenue role</span><span class="kv-val">Largest ad revenue source — older demographics</span></div>
+        <div class="kv"><span class="kk">Status</span><span class="kv-val">Declining among Gen Z; dominant 30–55</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">Instagram</div>
+        <div class="entity-type">Acquired 2012 for $1B → Worth ~$400B+</div>
+        <div class="kv"><span class="kk">Monthly Active</span><span class="kv-val">~2B</span></div>
+        <div class="kv"><span class="kk">Revenue</span><span class="kv-val">~$60B/yr in ad revenue</span></div>
+        <div class="kv"><span class="kk">Reels</span><span class="kv-val">TikTok competitor — now Meta's fastest-growing ad unit</span></div>
+        <div class="kv"><span class="kk">Acquisition ROI</span><span class="kv-val">Most profitable tech acquisition in history</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">WhatsApp</div>
+        <div class="entity-type">Acquired 2014 for $19B</div>
+        <div class="kv"><span class="kk">Monthly Active</span><span class="kv-val">~2.8B</span></div>
+        <div class="kv"><span class="kk">Monetization</span><span class="kv-val">WhatsApp Business API — growing fast</span></div>
+        <div class="kv"><span class="kk">Dominance</span><span class="kv-val">Primary messaging app in 100+ countries</span></div>
+        <div class="kv"><span class="kk">FTC case</span><span class="kv-val">Core of antitrust monopoly claim (won Nov 2025)</span></div>
+      </div>
+      <div class="entity-card red">
+        <div class="entity-name">Reality Labs / Metaverse</div>
+        <div class="entity-type">The $84B Bet — Ongoing</div>
+        <div class="kv"><span class="kk">Cumulative losses</span><span class="kv-val">$83.6B since 2020</span></div>
+        <div class="kv"><span class="kk">2025 losses alone</span><span class="kv-val">$19.2B operating loss</span></div>
+        <div class="kv"><span class="kk">Revenue 2025</span><span class="kv-val">$2.2B (vs $19.2B loss)</span></div>
+        <div class="kv"><span class="kk">Pivot</span><span class="kv-val">VR de-emphasized → AR glasses (Orion) + AI</span></div>
+      </div>
+      <div class="entity-card purple">
+        <div class="entity-name">Meta AI / Llama</div>
+        <div class="entity-type">AI Platform — Open Source Strategy</div>
+        <div class="kv"><span class="kk">Llama 4</span><span class="kv-val">Released 2026 — open source, frontier-level</span></div>
+        <div class="kv"><span class="kk">Meta AI app</span><span class="kv-val">Standalone AI assistant — 500M+ users</span></div>
+        <div class="kv"><span class="kk">Strategy</span><span class="kv-val">Open source = commoditize the AI layer → protect ad moat</span></div>
+        <div class="kv"><span class="kk">GPU fleet</span><span class="kv-val">350,000+ NVIDIA H100s (largest private cluster)</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Threads</div>
+        <div class="entity-type">Twitter/X Competitor — Launched 2023</div>
+        <div class="kv"><span class="kk">Users</span><span class="kv-val">~320M monthly active (2026)</span></div>
+        <div class="kv"><span class="kk">Growth</span><span class="kv-val">Fastest app to 100M users in history (5 days)</span></div>
+        <div class="kv"><span class="kk">Status</span><span class="kv-val">Growing steadily; monetization still limited</span></div>
+      </div>
+    </div>
+    <table class="matrix">
+      <thead><tr><th>Year</th><th>Meta Revenue</th><th>Net Income</th><th>Reality Labs Loss</th></tr></thead>
+      <tbody>
+        <tr><td>2021</td><td>$117.9B</td><td>$39.4B</td><td>−$10.2B</td></tr>
+        <tr><td>2022</td><td>$116.6B</td><td>$23.2B</td><td>−$13.7B</td></tr>
+        <tr><td>2023</td><td>$134.9B</td><td>$39.1B</td><td>−$16.1B</td></tr>
+        <tr><td>2024</td><td>$164.5B</td><td>$62.4B</td><td>−$17.7B</td></tr>
+        <tr><td>2025</td><td>~$190B+</td><td>~$70B+</td><td>−$19.2B</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 04: AI STRATEGY -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">04</span><span class="section-title">AI Strategy — The Open Source Bet</span></div>
+    <p>Zuckerberg's AI strategy is structurally different from every other major tech CEO — and it is either brilliant or reckless, depending on your point of view. While Microsoft (OpenAI), Google (Gemini), and Anthropic build closed, proprietary frontier models, <strong>Meta releases its best AI models as open source</strong>. Llama 2, Llama 3, and Llama 4 are all freely available.</p>
+    <div class="callout purple">
+      <strong>The logic:</strong> Meta's business is advertising. AI is a means, not an end. If Meta can commoditize the AI model layer — make frontier-quality AI free and ubiquitous — then no competitor can charge a premium for AI capabilities, and Meta's true moat (3.3B users + their behavioral data) remains intact. Open-sourcing Llama simultaneously weakens OpenAI and Google's pricing power, builds developer goodwill, and costs Meta very little since it's not trying to sell AI subscriptions.
+    </div>
+    <p>At the same time, Zuckerberg has announced Meta's <strong>most ambitious AI infrastructure build in history</strong> — committing to build a data center so large it would cover a significant portion of Manhattan, powered by dedicated energy infrastructure. He has declared that Meta's goal is <strong>AGI — Artificial General Intelligence</strong> — and that it will be open source when achieved.</p>
+    <div class="callout">
+      <strong>Zuckerberg's stated AGI vision:</strong> "Eventually, AI will be able to do everything a human researcher can do. And when that happens, the pace of scientific progress will accelerate dramatically. We want to be the company that makes that happen — and we want it to be open, so everyone benefits, not just the people who can afford to pay for it."
+    </div>
+    <table class="matrix">
+      <thead><tr><th>AI Product</th><th>What It Does</th><th>Status 2026</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Llama 4</strong></td><td>Open-source frontier LLM — multimodal (text + image + video). Competitive with GPT-4o and Gemini 1.5. Free to use, modify, and deploy.</td><td><span class="badge badge-green">LIVE — Open Source</span></td></tr>
+        <tr><td><strong>Meta AI Assistant</strong></td><td>Standalone AI app + integrated into WhatsApp, Instagram, Messenger, Facebook. 500M+ users. Powered by Llama 4.</td><td><span class="badge badge-green">LIVE — 500M Users</span></td></tr>
+        <tr><td><strong>AI Personas / Social AI</strong></td><td>AI "friends" and social companions embedded in Meta platforms. Zuckerberg's most controversial vision: AI as relationship substitute for lonely users.</td><td><span class="badge badge-gold">EARLY STAGE</span></td></tr>
+        <tr><td><strong>Meta Superintelligence Labs</strong></td><td>Dedicated research division for AGI. Announced 2026. Poaching researchers from OpenAI, DeepMind, Google Brain.</td><td><span class="badge badge-gold">ANNOUNCED 2026</span></td></tr>
+        <tr><td><strong>AI-Generated Ads</strong></td><td>Advertisers describe what they want; Meta's AI generates the ad creative, targeting, and optimization. Full automation of the $164B ad business.</td><td><span class="badge badge-green">LIVE — Major Revenue</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 05: THE POLITICAL PIVOT -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">05</span><span class="section-title">The Political Pivot — From Liberal Tech to MAGA-Adjacent</span></div>
+    <p>In January 2025, in the weeks surrounding Donald Trump's inauguration, Mark Zuckerberg executed one of the most dramatic public political repositioning moves in Silicon Valley history. The changes were sweeping, rapid, and unmistakably coordinated with the new political order.</p>
+    <table class="matrix">
+      <thead><tr><th>Policy Change</th><th>What Changed</th><th>Direction</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Fact-checking terminated</strong></td><td>Meta ended its third-party fact-checking program — replaced with "Community Notes" (Twitter/X model). Facebook/Instagram will no longer label false content as false.</td><td><span class="badge badge-red">RIGHT PIVOT</span></td></tr>
+        <tr><td><strong>DEI programs ended</strong></td><td>Meta shuttered all internal DEI programs, ended "representation goals," ended supplier diversity requirements. Chan Zuckerberg Initiative also ended DEI programs.</td><td><span class="badge badge-red">RIGHT PIVOT</span></td></tr>
+        <tr><td><strong>Hate speech policies relaxed</strong></td><td>Removed restrictions on political speech targeting LGBTQ+ persons, immigrants. Allowed claims like "gay people are mentally ill" — previously banned.</td><td><span class="badge badge-red">RIGHT PIVOT</span></td></tr>
+        <tr><td><strong>Content moderation reduced</strong></td><td>"More speech, fewer mistakes" — Zuckerberg's framing. Algorithmic suppression of political content reversed. Conservative content distribution increased.</td><td><span class="badge badge-red">RIGHT PIVOT</span></td></tr>
+        <tr><td><strong>Trump inauguration attendance</strong></td><td>Zuckerberg attended Trump's inauguration. Donated $1M to inauguration fund. Joined Trump's advisory circle alongside Musk and Bezos.</td><td><span class="badge badge-red">EXPLICIT ALIGNMENT</span></td></tr>
+        <tr><td><strong>Board composition changed</strong></td><td>Added Dana White (UFC CEO, Trump ally) and Charlie Hurt (conservative commentator) to Meta's board. Removed liberal representation.</td><td><span class="badge badge-red">RIGHT PIVOT</span></td></tr>
+        <tr><td><strong>FTC case benefit</strong></td><td>Meta's antitrust trial was already underway when Trump took office. The Trump FTC — following a judge's ruling in Meta's favor (Nov 2025) — then appealed. The political alignment did not deliver an immediate regulatory reprieve.</td><td><span class="badge badge-muted">MIXED OUTCOME</span></td></tr>
+      </tbody>
+    </table>
+    <div class="callout orange">
+      Zuckerberg's public explanation: "The Biden administration was too heavy-handed on censorship. This is a return to free expression principles." The structural explanation: Meta faces a multi-front regulatory assault — FTC antitrust, EU fines totaling billions, potential forced divestiture of Instagram/WhatsApp. Aligning with Trump is survival strategy, not ideology. Whether it works depends entirely on whether Trump's DOJ/FTC continues to press the antitrust case.
+    </div>
+  </div>
+
+  <!-- 06: PHILANTHROPY -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">06</span><span class="section-title">Philanthropy — Chan Zuckerberg Initiative</span></div>
+    <p>In 2015, the day after their daughter Maxima was born, Zuckerberg and Priscilla Chan published an open letter pledging to give away <strong>99% of their Facebook shares</strong> — then worth ~$45 billion — to the <strong>Chan Zuckerberg Initiative (CZI)</strong> over their lifetimes. Since then, CZI has awarded approximately <strong>$7.22 billion in grants</strong> and invested ~$300M in aligned ventures.</p>
+    <div class="entity-grid">
+      <div class="entity-card green">
+        <div class="entity-name">CZI Biohub</div>
+        <div class="entity-type">Primary Science Focus — Founded 2016</div>
+        <div class="kv"><span class="kk">Commitment</span><span class="kv-val">$4B to basic science research since 2016</span></div>
+        <div class="kv"><span class="kk">Goal</span><span class="kv-val">"Cure, prevent, or manage all disease by 2100"</span></div>
+        <div class="kv"><span class="kk">AI pivot 2025</span><span class="kv-val">$10B+ committed to AI-powered biomedical research</span></div>
+        <div class="kv"><span class="kk">Network</span><span class="kv-val">3 Biohubs (SF, Chicago, NY) + global partners</span></div>
+      </div>
+      <div class="entity-card green">
+        <div class="entity-name">OpenCell / Cell Biology</div>
+        <div class="entity-type">Core Research Area</div>
+        <div class="kv"><span class="kk">Flagship project</span><span class="kv-val">Map every protein in every human cell</span></div>
+        <div class="kv"><span class="kk">Tool</span><span class="kv-val">CZI-funded open-source cell imaging software</span></div>
+        <div class="kv"><span class="kk">Collaboration</span><span class="kv-val">500+ research institutions globally</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Education Initiatives</div>
+        <div class="entity-type">US Domestic Focus</div>
+        <div class="kv"><span class="kk">Model</span><span class="kv-val">Personalized learning tech for K-12</span></div>
+        <div class="kv"><span class="kk">Summit Learning</span><span class="kv-val">CZI-funded platform in 400+ schools</span></div>
+        <div class="kv"><span class="kk">Criticism</span><span class="kv-val">Students/teachers pushed back on screen-based learning</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Housing / Criminal Justice</div>
+        <div class="entity-type">Bay Area Community Programs</div>
+        <div class="kv"><span class="kk">SF focus</span><span class="kv-val">$500M pledged to Bay Area housing crisis</span></div>
+        <div class="kv"><span class="kk">Criminal reform</span><span class="kv-val">Bail reform, re-entry support — now de-emphasized</span></div>
+        <div class="kv"><span class="kk">2025 shift</span><span class="kv-val">DEI-related programs ended; science focus intensified</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07: PERSONAL LIFE & TRANSFORMATION -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">07</span><span class="section-title">Personal Life — The Man Behind the Meme</span></div>
+    <p>Zuckerberg married <strong>Priscilla Chan</strong> on May 19, 2012 — the day after Facebook's IPO. They have been together since Harvard, where they met at a frat party. Chan is a pediatrician and one of the most quietly powerful philanthropists in the world, running CZI independently of Zuckerberg's business. They have three daughters: Maxima (2015), August (2017), and Aurelia (2023).</p>
+    <p>The personal transformation that shocked observers: in 2023, Zuckerberg — previously known for wearing the same grey t-shirt every day to eliminate decision fatigue — became visibly physical. He trained in <strong>Brazilian jiu-jitsu</strong>, competed in tournaments (winning gold), built a <strong>backyard MMA octagon</strong> at their Palo Alto home (reportedly against Priscilla's wishes), and nearly fought Elon Musk in a cage match — a social media beef that consumed weeks of global attention before fizzling. He has been photographed shirtless surfing in Hawaii, lifting weights, and competing against professional martial artists.</p>
+    <div class="callout gold">
+      The physical transformation is not trivial. It coincided precisely with the "Year of Efficiency" restructuring, the stock recovery, the political pivot, and the AI refocus. Observers who know him suggest the MMA training is part of a deliberate identity reinvention — from awkward robot CEO to physical, decisive leader. His public persona has visibly shifted. Whether it's authentic or engineered, it has been effective.
+    </div>
+    <p>Zuckerberg owns a <strong>~$170M compound on Indian Creek Island in Miami</strong> (the "Billionaire Bunker" island), a ~1,500-acre Hawaii compound on Kauaʻi (which drew controversy when he attempted to force out native Hawaiian landholders), and the Palo Alto family home. He drives a Volkswagen GTI and reportedly still tries to meet engineers in the cafeteria without entourage.</p>
+  </div>
+
+  <!-- 08: MYTHS VS FACTS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">08</span><span class="section-title">Myths vs Facts — The Complete Conspiracy Map</span></div>
+    <div class="myth-grid">
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH — THE MOST FAMOUS</div><div class="myth-text">"Mark Zuckerberg is a lizard person / reptilian alien / android robot."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT + REAL ORIGIN</div><div class="fact-text">Biologically human. The myth originates from three real things: (1) his genuinely flat affect and unusual social cadence in formal settings, (2) a 2017 Congress testimony where his blinking, stiffness, and robotic answers went viral, (3) a 2017 Facebook Q&A where he said "I was human" when asked what he did over summer — an awkward phrasing that became a meme template. He has personally confirmed he is not a lizard: "I am not a lizard." The fact that this confirmation was necessary says more about internet culture than about Zuckerberg.</div></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div><div class="myth-text">"Facebook/Meta is spying on your conversations through your phone microphone."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT</div><div class="fact-text">No confirmed evidence of microphone surveillance. The phenomenon people experience — seeing an ad for something they just verbally discussed — is explained by the extraordinary precision of behavioral prediction from browsing history, location data, social graph, and purchase data. Meta doesn't need to listen to your conversations; it can predict what you're thinking from everything else it already knows. That's arguably more unsettling.</div></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH / SEMI-TRUE</div><div class="myth-text">"Zuckerberg stole Facebook from the Winklevoss twins."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT</div><div class="fact-text">The Winklevoss twins (Cameron and Tyler) hired Zuckerberg to build a dating site called ConnectU in 2003. He took their idea as inspiration and built something entirely different, faster, and better. The legal distinction: there is no IP in an idea — only in implementation. They settled for $65M in 2008. The twins called it theft. The court system did not. The Social Network dramatized this. Zuckerberg's own take: he had been building social platforms independently. The truth is probably both — he was inspired by their concept AND made it radically his own.</div></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div><div class="myth-text">"Meta/Facebook reads your private messages."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT (NUANCED)</div><div class="fact-text">WhatsApp messages are end-to-end encrypted — Meta cannot read them. Facebook Messenger historically was NOT end-to-end encrypted by default, though this changed in 2023. Instagram DMs are also now encrypted. What Meta CAN and DOES do: use metadata (who you message, when, how often, your shared contacts) for ad targeting. It doesn't need content — the graph of relationships is enough.</div></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH / REAL CONCERN</div><div class="myth-text">"Zuckerberg controls what 3 billion people think and manipulates elections."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT</div><div class="fact-text">He doesn't "control" what people think — but the systems he built demonstrably influence information environments at a scale no entity has ever achieved. Facebook's own internal research (leaked by Frances Haugen, 2021) showed the company knew its algorithm amplified outrage, division, and misinformation because those drove engagement. The 2016 US election, Brexit, the Myanmar genocide (Facebook spread hate speech used to coordinate killings) — these are documented cases of Meta platform dynamics affecting real-world political outcomes. This is not conspiracy; it is documented, peer-reviewed, and admitted by Meta's own researchers.</div></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div><div class="myth-text">"Zuckerberg is building a doomsday bunker in Hawaii."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT — PARTIALLY TRUE</div><div class="fact-text">He is building a massive compound on Kauaʻi — 1,400+ acres, ~$270M in construction, reportedly including extensive underground structures. Whether it is a "doomsday bunker" or simply an extremely wealthy person building an extreme private estate is a matter of framing. What is confirmed: underground facilities, blast-resistant construction, food and energy independence features. In 2023, construction contracts leaked describing the scope. Zuckerberg has not publicly commented on the bunker characterization.</div></div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div><div class="myth-text">"The metaverse was always a scam — Zuckerberg knew it would fail and used it to launder money."</div></div>
+        <div class="myth-fact"><div class="fact-label">FACT</div><div class="fact-text">No evidence of fraud. The metaverse bet was a genuine strategic miscalculation — the technology (VR headsets, latency, haptics, social presence) was not ready, and consumer interest was far lower than Zuckerberg projected. $84B in losses is real. The timing was also terrible: the bet was announced just as Meta's stock was peaking and just before rising interest rates destroyed growth stock multiples. It was an expensive wrong call, not a scam.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 09: ANTITRUST & GOVERNMENT -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">09</span><span class="section-title">Antitrust, Government &amp; Legal Battles</span></div>
+    <p>Meta is simultaneously the defendant in the most significant antitrust case in Big Tech since the Microsoft DOJ case of the 1990s — and has largely survived it, for now.</p>
+    <table class="matrix">
+      <thead><tr><th>Case / Regulator</th><th>Claim</th><th>Status 2026</th></tr></thead>
+      <tbody>
+        <tr><td><strong>FTC v. Meta (US)</strong></td><td>Meta illegally maintained a social media monopoly through acquisitions of Instagram (2012) and WhatsApp (2014). FTC sought forced divestiture.</td><td><span class="badge badge-green">META WON</span> — Judge Boasberg ruled FTC failed to prove monopoly (Nov 2025). FTC appealed Jan 2026. Battle continues.</td></tr>
+        <tr><td><strong>EU Digital Markets Act</strong></td><td>Meta must allow interoperability, stop combining user data across platforms without explicit consent, not self-preference own products.</td><td><span class="badge badge-orange">ONGOING</span> — €200M+ in fines. Meta partially complying. EU-Meta relationship permanently adversarial.</td></tr>
+        <tr><td><strong>EU GDPR Fines</strong></td><td>Multiple GDPR violations — transferring EU user data to US servers, inadequate consent mechanisms.</td><td><span class="badge badge-red">€1.2B fine</span> — largest GDPR fine in history (2023). Partially suspended pending appeal.</td></tr>
+        <tr><td><strong>Myanmar Genocide (civil case)</strong></td><td>Rohingya survivors sued Meta claiming Facebook's algorithm amplified hate speech used to coordinate ethnic cleansing (2016–17).</td><td><span class="badge badge-orange">ONGOING</span> — $150B+ lawsuit. Meta claims Section 230 immunity. Courts still deliberating.</td></tr>
+        <tr><td><strong>Frances Haugen / Congress</strong></td><td>Former Meta employee leaked internal research showing Meta knew its platforms caused harm to teenagers. Congressional hearings 2021, 2023.</td><td><span class="badge badge-muted">NO LEGISLATION</span> — Congress held hearings; no major regulation passed. Meta lobbying effective.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 10: RISK PROFILE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">10</span><span class="section-title">Risk Profile — 2026</span></div>
+    <div class="risk-row"><span class="risk-label">FTC Antitrust (forced divestiture)</span><div class="risk-track"><div class="risk-fill" style="width:70%;background:#c47a2a;"></div></div><span class="risk-score" style="color:#c47a2a;">7.0/10</span></div>
+    <div class="risk-row"><span class="risk-label">EU Regulatory Pressure</span><div class="risk-track"><div class="risk-fill" style="width:75%;background:#c47a2a;"></div></div><span class="risk-score" style="color:#c47a2a;">7.5/10</span></div>
+    <div class="risk-row"><span class="risk-label">AI Commoditization (own strategy)</span><div class="risk-track"><div class="risk-fill" style="width:50%;background:#d4a847;"></div></div><span class="risk-score" style="color:#d4a847;">5.0/10</span></div>
+    <div class="risk-row"><span class="risk-label">Reality Labs Losses / Investor Patience</span><div class="risk-track"><div class="risk-fill" style="width:60%;background:#d4a847;"></div></div><span class="risk-score" style="color:#d4a847;">6.0/10</span></div>
+    <div class="risk-row"><span class="risk-label">Gen Z Platform Abandonment</span><div class="risk-track"><div class="risk-fill" style="width:65%;background:#d4a847;"></div></div><span class="risk-score" style="color:#d4a847;">6.5/10</span></div>
+    <div class="risk-row"><span class="risk-label">Political Pivot Backlash</span><div class="risk-track"><div class="risk-fill" style="width:55%;background:#d4a847;"></div></div><span class="risk-score" style="color:#d4a847;">5.5/10</span></div>
+    <div class="risk-row"><span class="risk-label">AI Ethics / Content Harm</span><div class="risk-track"><div class="risk-fill" style="width:70%;background:#c47a2a;"></div></div><span class="risk-score" style="color:#c47a2a;">7.0/10</span></div>
+  </div>
+
+  <!-- 11: VISION OF THE FUTURE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">11</span><span class="section-title">The Future — Zuckerberg's Own Vision</span></div>
+    <p>Zuckerberg has articulated his worldview more consistently and more ambitiously in 2025–2026 than at any point since the metaverse announcement. Five core theses:</p>
+    <div class="callout purple">
+      <strong>1. Open AGI for everyone:</strong> "The history of technology shows that open systems beat closed ones. We will build AGI and we will make it open. The risk of AGI being concentrated in a few closed labs is greater than the risk of open AGI." He is betting that open-source AI becomes the standard layer — and that Meta's advertising empire, built on 3.3 billion users, remains the most valuable application layer on top of it.
+    </div>
+    <div class="callout purple">
+      <strong>2. AI as a social relationship:</strong> Zuckerberg's most radical and controversial idea: AI companions will become a primary form of human relationship for lonely people. "The average American has fewer than 3 friends. Most people have a need for connection that isn't being met. AI can help with that." He is building AI personas — not to replace human relationships but to fill the gap where human relationships don't exist. This is simultaneously compassionate and deeply unsettling to critics.
+    </div>
+    <div class="callout purple">
+      <strong>3. AR glasses replace the smartphone:</strong> The metaverse bet was premature, but Zuckerberg is not abandoning spatial computing. He has shifted the timeline and the form factor — from VR headsets to lightweight AR glasses (Project Orion). His belief: within 10 years, AR glasses will be the primary computing device, replacing smartphones the way smartphones replaced laptops.
+    </div>
+    <div class="callout purple">
+      <strong>4. Science as the ultimate philanthropy:</strong> Through CZI, he and Priscilla are betting $10B+ that AI-powered biomedical research will compress the timeline to curing most human diseases. "If we map every cell, understand every protein, and give AI researchers the tools to find patterns across all of it — we will cure cancer, Alzheimer's, and dozens of other diseases faster than anyone thinks possible."
+    </div>
+    <div class="callout gold">
+      <strong>5. The candid self-awareness:</strong> In a 2026 podcast with Dwarkesh Patel, Zuckerberg said something rare for a CEO of his stature: "I've made a lot of mistakes. The metaverse timeline was wrong. The censorship era went too far. I'm not always right. What I try to do is make decisions fast, learn fast, and not be afraid to change direction." The physical transformation, the political pivot, the AI refocus — read together, they suggest a man who genuinely believes he is in the most important chapter of his company's existence, and is personally transforming to match it.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="dossier-footer">
+    <span>IMP Intelligence Dossier — Mark Zuckerberg — 2026-03-28 — JARVIS / Base44</span>
+    <span>Sources: Forbes · Bloomberg · Reuters · NYT · FTC · Guardian · Meta Earnings · Wikipedia · CZI · Medium · FT · Washington Post</span>
+  </div>
+
+</div>
+</body>
+</html>

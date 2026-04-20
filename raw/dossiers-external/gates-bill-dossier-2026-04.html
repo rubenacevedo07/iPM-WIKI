@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BILL GATES — IMP Intelligence Dossier</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Georgia&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0b; color: #f5f2eb; font-family: Georgia, serif; font-size: 15px; line-height: 1.75; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* HEADER */
+  .dossier-header { border-bottom: 2px solid #8B1F1F; padding: 48px 0 32px; margin-bottom: 48px; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 4px; color: #8B1F1F; border: 1px solid #8B1F1F; display: inline-block; padding: 3px 10px; margin-bottom: 20px; text-transform: uppercase; }
+  .dossier-title { font-family: 'IBM Plex Mono', monospace; font-size: clamp(28px,5vw,52px); font-weight: 700; letter-spacing: 6px; color: #f5f2eb; text-transform: uppercase; line-height: 1.1; margin-bottom: 6px; }
+  .dossier-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a8a80; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(155px,1fr)); gap: 1px; border-top: 1px solid rgba(245,242,235,0.07); border-left: 1px solid rgba(245,242,235,0.07); }
+  .stat-cell { background: #111110; border: 1px solid rgba(245,242,235,0.07); border-top: none; border-left: none; padding: 14px 16px; }
+  .stat-val { font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 700; color: #d4a847; line-height: 1; margin-bottom: 5px; }
+  .stat-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #4a4a44; text-transform: uppercase; }
+
+  /* SECTION */
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 10px; border-bottom: 1px solid rgba(245,242,235,0.07); }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8B1F1F; letter-spacing: 3px; }
+  .section-title { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 4px; color: #f5f2eb; text-transform: uppercase; }
+
+  /* PROSE */
+  p { margin-bottom: 16px; color: #d4d0c8; font-family: Georgia, serif; font-size: 14px; line-height: 1.85; }
+  strong { color: #f5f2eb; }
+
+  /* CALLOUT */
+  .callout { border-left: 3px solid #8B1F1F; padding: 14px 18px; background: #111110; margin: 20px 0; font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; line-height: 1.8; }
+  .callout.gold   { border-left-color: #d4a847; }
+  .callout.blue   { border-left-color: #2a6db5; }
+  .callout.green  { border-left-color: #4a9e6b; }
+  .callout.orange { border-left-color: #c47a2a; }
+  .callout.purple { border-left-color: #7c3aed; }
+
+  /* ENTITY CARD */
+  .entity-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(290px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .entity-card { background: #111110; border: 1px solid rgba(245,242,235,0.07); border-top: 3px solid #8B1F1F; padding: 18px 18px 14px; }
+  .entity-card.gold   { border-top-color: #d4a847; }
+  .entity-card.blue   { border-top-color: #2a6db5; }
+  .entity-card.green  { border-top-color: #4a9e6b; }
+  .entity-card.orange { border-top-color: #c47a2a; }
+  .entity-card.purple { border-top-color: #7c3aed; }
+  .entity-name { font-family: Georgia, serif; font-size: 15px; font-weight: bold; color: #f5f2eb; margin-bottom: 3px; }
+  .entity-type { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #8a8a80; text-transform: uppercase; margin-bottom: 12px; }
+  .kv { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .kv:last-child { border-bottom: none; }
+  .kk { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #4a4a44; text-transform: uppercase; }
+  .kv-val { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #d4d0c8; text-align: right; max-width: 60%; }
+
+  /* TABLE */
+  .matrix { width: 100%; border-collapse: collapse; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin-bottom: 24px; }
+  .matrix th { padding: 9px 14px; background: #111110; color: #8a8a80; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; text-align: left; border-bottom: 1px solid rgba(245,242,235,0.13); }
+  .matrix td { padding: 10px 14px; border-bottom: 1px solid rgba(245,242,235,0.05); color: #d4d0c8; vertical-align: top; line-height: 1.6; }
+  .matrix tr:hover td { background: rgba(245,242,235,0.02); }
+
+  /* TIMELINE */
+  .timeline { list-style: none; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .tyr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #d4a847; font-weight: 700; padding-top: 2px; }
+  .ttxt { color: #d4d0c8; font-family: Georgia, serif; font-size: 13px; line-height: 1.75; }
+
+  /* BADGE */
+  .badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 1px; padding: 2px 6px; border: 1px solid; text-transform: uppercase; margin-right: 4px; margin-bottom: 2px; }
+  .badge-red    { color: #8B1F1F; border-color: #8B1F1F; }
+  .badge-gold   { color: #d4a847; border-color: #d4a847; }
+  .badge-blue   { color: #2a6db5; border-color: #2a6db5; }
+  .badge-green  { color: #4a9e6b; border-color: #4a9e6b; }
+  .badge-purple { color: #7c3aed; border-color: #7c3aed; }
+  .badge-orange { color: #c47a2a; border-color: #c47a2a; }
+  .badge-muted  { color: #8a8a80; border-color: #4a4a44; }
+
+  /* MYTH/FACT */
+  .myth-grid { display: flex; flex-direction: column; gap: 12px; }
+  .myth-card { background: #111110; border: 1px solid rgba(245,242,235,0.07); padding: 0; overflow: hidden; }
+  .myth-claim { background: rgba(139,31,31,0.08); border-left: 3px solid #8B1F1F; padding: 12px 16px; font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; }
+  .myth-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #8B1F1F; margin-bottom: 4px; }
+  .myth-fact { border-left: 3px solid #4a9e6b; padding: 12px 16px; font-family: Georgia, serif; font-size: 13px; color: #d4d0c8; }
+  .fact-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: #4a9e6b; margin-bottom: 4px; }
+
+  /* RISK BAR */
+  .risk-row { display: grid; grid-template-columns: 190px 1fr 50px; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(245,242,235,0.05); }
+  .risk-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #d4d0c8; letter-spacing: 1px; }
+  .risk-track { height: 6px; background: #1a1a16; position: relative; }
+  .risk-fill { height: 100%; position: absolute; top: 0; left: 0; }
+  .risk-score { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; text-align: right; }
+
+  /* FOOTER */
+  .dossier-footer { border-top: 1px solid rgba(245,242,235,0.07); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #4a4a44; letter-spacing: 1px; }
+
+  /* PORTRAIT HEADER */
+  .profile-block { display: grid; grid-template-columns: 1fr 260px; gap: 24px; margin-bottom: 32px; }
+  @media(max-width:600px){ .profile-block { grid-template-columns: 1fr; } }
+  .profile-id { background: #111110; border: 1px solid rgba(245,242,235,0.07); padding: 20px; }
+  .profile-id-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(245,242,235,0.05); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+  .profile-id-row:last-child { border-bottom: none; }
+  .pid-k { color: #4a4a44; letter-spacing: 1px; text-transform: uppercase; font-size: 9px; }
+  .pid-v { color: #d4d0c8; text-align: right; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="dossier-header">
+    <div class="eyebrow">IMP — Intelligence Map Platform &nbsp;/&nbsp; Power Dossier — Individual</div>
+    <div class="dossier-title">Bill Gates</div>
+    <div class="dossier-sub">William Henry Gates III · Full Intelligence Profile · 2026-03-28</div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-val">$104B</div><div class="stat-lbl">Net Worth 2026</div></div>
+      <div class="stat-cell"><div class="stat-val">$200B</div><div class="stat-lbl">Foundation Pledge (20yr)</div></div>
+      <div class="stat-cell"><div class="stat-val">275K</div><div class="stat-lbl">Acres US Farmland</div></div>
+      <div class="stat-cell"><div class="stat-val">$5.5B</div><div class="stat-lbl">Donated to WHO (2000–2024)</div></div>
+      <div class="stat-cell"><div class="stat-val">$35B</div><div class="stat-lbl">Foundation Equity Portfolio</div></div>
+      <div class="stat-cell"><div class="stat-val">50+</div><div class="stat-lbl">Countries with Active Programs</div></div>
+    </div>
+  </div>
+
+  <!-- 01: WHO IS BILL GATES -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">01</span><span class="section-title">Who Is Bill Gates</span></div>
+
+    <div class="profile-block">
+      <div>
+        <p>
+          William Henry Gates III was born October 28, 1955 in Seattle, Washington, into an upper-middle-class family — his father was a prominent lawyer, his mother sat on corporate boards. He enrolled at Harvard in 1973, dropped out in 1975, and co-founded Microsoft with childhood friend Paul Allen. By age 31 he was a billionaire. By 1995 he was the richest person on Earth — a title he held on and off for two decades.
+        </p>
+        <p>
+          Gates is simultaneously four things that rarely coexist: a <strong>software architect</strong> who built the operating system layer of the modern PC era; a <strong>ruthless monopolist</strong> who was sued by the US Department of Justice in 1998 for anticompetitive practices; the world's most powerful <strong>philanthropist</strong>, whose foundation has spent $100 billion on global health and development; and, as of 2026, a <strong>deeply controversial figure</strong> whose ties to Jeffrey Epstein, influence over the WHO, land acquisitions, and vaccine advocacy have made him the single most conspiracized private citizen in the world.
+        </p>
+        <p>
+          He divorced Melinda French Gates in 2021 after 27 years of marriage — paying an $8 billion settlement. He called it "the mistake I most regret." The divorce is now widely attributed to Melinda's discomfort with his relationship with Epstein. As of 2026, Melinda French Gates has stated publicly that Bill "has to answer" for what the Epstein files reveal.
+        </p>
+      </div>
+      <div class="profile-id">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:#8B1F1F;margin-bottom:14px;text-transform:uppercase;">IDENTITY FILE</div>
+        <div class="profile-id-row"><span class="pid-k">Full Name</span><span class="pid-v">William Henry Gates III</span></div>
+        <div class="profile-id-row"><span class="pid-k">Born</span><span class="pid-v">Oct 28, 1955 — Seattle, WA</span></div>
+        <div class="profile-id-row"><span class="pid-k">Age</span><span class="pid-v">70 (2026)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Net Worth</span><span class="pid-v">~$104B (rank #19)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Education</span><span class="pid-v">Harvard — dropped out 1975</span></div>
+        <div class="profile-id-row"><span class="pid-k">Residence</span><span class="pid-v">Medina, WA ($130M home)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Children</span><span class="pid-v">3 — Jennifer, Rory, Phoebe</span></div>
+        <div class="profile-id-row"><span class="pid-k">Ex-wife</span><span class="pid-v">Melinda French Gates (div. 2021)</span></div>
+        <div class="profile-id-row"><span class="pid-k">Companies</span><span class="pid-v">Microsoft (co-founder), Cascade Inv., BGI</span></div>
+        <div class="profile-id-row"><span class="pid-k">Foundation</span><span class="pid-v">Bill &amp; Melinda Gates Foundation</span></div>
+        <div class="profile-id-row"><span class="pid-k">Power index</span><span class="pid-v" style="color:#d4a847;">TIER 1 — Global</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02: MICROSOFT -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">02</span><span class="section-title">Microsoft — How He Built It</span></div>
+
+    <p>
+      Gates and Paul Allen founded Microsoft in Albuquerque, New Mexico in 1975 — initially writing BASIC interpreters for early microcomputers. The company's founding insight was not hardware but <strong>software as the permanent layer</strong>: whoever owned the operating system would own the platform. IBM validated this in 1980 by licensing Microsoft's MS-DOS for its PC — handing Gates control of the industry without him having to manufacture a single chip.
+    </p>
+    <p>
+      The real power move: Gates <strong>didn't invent MS-DOS</strong> — he bought it from Seattle Computer Products for $50,000 and licensed it to IBM while retaining the right to sell it to others. This single decision, made at 24, generated hundreds of billions of dollars and established the template for platform monopoly that Silicon Valley still follows.
+    </p>
+
+    <ul class="timeline">
+      <li><span class="tyr">1975</span><span class="ttxt">Microsoft founded. Gates + Allen in Albuquerque. First product: Altair BASIC interpreter.</span></li>
+      <li><span class="tyr">1980</span><span class="ttxt">IBM deal. Gates licenses MS-DOS, keeps the rights. IBM PC ships 1981. Microsoft owns the OS layer of every IBM clone — permanently.</span></li>
+      <li><span class="tyr">1986</span><span class="ttxt">Microsoft IPO at $21/share. Gates becomes a billionaire at 31. Over 12,000 Microsoft millionaires created by stock options.</span></li>
+      <li><span class="tyr">1990</span><span class="ttxt">Windows 3.0 launches. First commercially successful version. Office (Word + Excel) bundle becomes the corporate standard. The moat deepens.</span></li>
+      <li><span class="tyr">1995</span><span class="ttxt">Gates writes "The Internet Tidal Wave" memo — pivots entire company to the web. Internet Explorer ships free, destroying Netscape — the act that triggers the DoJ antitrust case.</span></li>
+      <li><span class="tyr">1998</span><span class="ttxt">US DoJ sues Microsoft for anticompetitive practices. Gates's deposition becomes infamous — evasive, combative, often answering "I don't recall" to basic questions. Judge finds Microsoft guilty in 2000. Company ordered to break up (later reversed on appeal).</span></li>
+      <li><span class="tyr">2000</span><span class="ttxt">Gates steps down as CEO, hands reins to Steve Ballmer. Remains Chairman and Chief Software Architect. Begins shifting focus to the Foundation.</span></li>
+      <li><span class="tyr">2008</span><span class="ttxt">Gates leaves day-to-day Microsoft role entirely. Ballmer era: missed mobile (iPhone), missed search (Google), missed cloud. Microsoft stagnates.</span></li>
+      <li><span class="tyr">2014</span><span class="ttxt">Satya Nadella becomes CEO. Pivots Microsoft to cloud (Azure), acquires LinkedIn ($26B, 2016), GitHub ($7.5B, 2018), Activision Blizzard ($69B, 2023). Doubles down on OpenAI (49% stake). MSFT market cap: $300B → $3T.</span></li>
+      <li><span class="tyr">2020</span><span class="ttxt">Gates steps down from Microsoft board to focus on COVID response and Foundation work.</span></li>
+    </ul>
+
+    <div class="callout gold">
+      Gates still owns ~1.3% of Microsoft as of 2026, worth ~$40B. Despite stepping away 20+ years ago, his net worth is still fundamentally tied to the company he built. Azure — Microsoft's cloud platform — is now the #2 cloud globally (behind AWS), with ~$110B in annual revenue and growing. The AI pivot through OpenAI means Microsoft is now the infrastructure layer of the AI era — exactly as it was the infrastructure layer of the PC era.
+    </div>
+  </div>
+
+  <!-- 03: FORTUNE & INVESTMENTS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">03</span><span class="section-title">Fortune — Cascade Investment & Portfolio</span></div>
+    <p>
+      Gates manages his personal wealth through <strong>Cascade Investment LLC</strong>, a private investment firm based in Kirkland, Washington. Cascade is deliberately low-profile — no press releases, no public shareholder letters. It is one of the most important private investment vehicles in the world and virtually nobody knows it exists.
+    </p>
+    <p>
+      The <strong>Bill &amp; Melinda Gates Foundation Trust</strong> is the endowment arm — a $35B+ equity portfolio that funds the Foundation's operations. Its holdings are deliberately concentrated in non-tech, non-glamorous sectors: waste management, railroads, agriculture, industrials. This is not accident — Gates specifically chose industries he believes are recession-proof, infrastructure-critical, and undervalued by Wall Street's tech obsession.
+    </p>
+
+    <div class="entity-grid">
+      <div class="entity-card gold">
+        <div class="entity-name">Berkshire Hathaway (BRK.B)</div>
+        <div class="entity-type">Foundation Trust — Largest Holding (29.9%)</div>
+        <div class="kv"><span class="kk">Value</span><span class="kv-val">~$10.9B</span></div>
+        <div class="kv"><span class="kk">Relationship</span><span class="kv-val">Gates + Buffett — 30yr friendship</span></div>
+        <div class="kv"><span class="kk">Why</span><span class="kv-val">Buffett pledged ~$50B to Gates Foundation over time</span></div>
+      </div>
+      <div class="entity-card gold">
+        <div class="entity-name">Waste Management (WM)</div>
+        <div class="entity-type">Foundation Trust — 2nd Largest (17.5%)</div>
+        <div class="kv"><span class="kk">Value</span><span class="kv-val">~$6.4B</span></div>
+        <div class="kv"><span class="kk">Stake</span><span class="kv-val">>20% — effectively co-owns it</span></div>
+        <div class="kv"><span class="kk">Logic</span><span class="kv-val">Garbage is recession-proof infrastructure</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Canadian National Railway (CNI)</div>
+        <div class="entity-type">Foundation Trust — 3rd Largest (13.4%)</div>
+        <div class="kv"><span class="kk">Value</span><span class="kv-val">~$4.9B</span></div>
+        <div class="kv"><span class="kk">Logic</span><span class="kv-val">North American rail = permanent infrastructure moat</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Caterpillar (CAT)</div>
+        <div class="entity-type">Foundation Trust — 4th (~8%)</div>
+        <div class="kv"><span class="kk">Value</span><span class="kv-val">~$2.9B</span></div>
+        <div class="kv"><span class="kk">Logic</span><span class="kv-val">Infrastructure supercycle + emerging markets</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">275,000 Acres US Farmland</div>
+        <div class="entity-type">Cascade Investment — Largest Private US Farmland Owner</div>
+        <div class="kv"><span class="kk">States</span><span class="kv-val">18 states, incl. Louisiana, California, WA</span></div>
+        <div class="kv"><span class="kk">Estimated value</span><span class="kv-val">>$1B</span></div>
+        <div class="kv"><span class="kk">Management</span><span class="kv-val">Leased to commercial farmers</span></div>
+        <div class="kv"><span class="kk">Connection</span><span class="kv-val">Adjacent to Foundation food security programs</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">Four Seasons Hotels</div>
+        <div class="entity-type">Cascade Investment — Hospitality</div>
+        <div class="kv"><span class="kk">Stake</span><span class="kv-val">~47% (majority stake)</span></div>
+        <div class="kv"><span class="kk">Partners</span><span class="kv-val">Saudi Prince Al-Waleed bin Talal (23%)</span></div>
+        <div class="kv"><span class="kk">Note</span><span class="kv-val">Gulf SWF connection via Al-Waleed</span></div>
+      </div>
+    </div>
+
+    <div class="callout orange">
+      <strong>The Cascade logic:</strong> Gates systematically invests in things the world cannot stop using — garbage disposal, railroad freight, farmland, hotels. Unlike Silicon Valley billionaires who hold tech stocks, Gates has deliberately diversified into critical infrastructure. His farmland alone makes him the #1 private farmland owner in America, ahead of the second-place holder by over 100,000 acres.
+    </div>
+  </div>
+
+  <!-- 04: MEDICINE & VACCINES -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">04</span><span class="section-title">Medicine — Vaccines, WHO &amp; Global Health</span></div>
+    <p>
+      Gates's pivot to global health began in 1999, inspired by a New York Times article about rotavirus killing 500,000 children a year — entirely preventably. He and Melinda committed the Foundation to health equity. What started as a personal cause became the world's most powerful private health institution.
+    </p>
+    <p>
+      The <strong>Bill &amp; Melinda Gates Foundation (BMGF)</strong> is the second-largest funder of the WHO after the United States government, contributing <strong>$5.5 billion in 640 grants between 2000 and 2024</strong>. More than 50% of those grants were directed at vaccine-related projects. This gives BMGF extraordinary — and critics say inappropriate — influence over WHO's health priorities.
+    </p>
+
+    <div class="entity-grid">
+      <div class="entity-card green">
+        <div class="entity-name">GAVI — Vaccine Alliance</div>
+        <div class="entity-type">Co-founded by Gates Foundation, 2000</div>
+        <div class="kv"><span class="kk">Purpose</span><span class="kv-val">Fund vaccines for developing nations</span></div>
+        <div class="kv"><span class="kk">Reach</span><span class="kv-val">900M+ children vaccinated since 2000</span></div>
+        <div class="kv"><span class="kk">BMGF funding</span><span class="kv-val">>$4B committed</span></div>
+      </div>
+      <div class="entity-card green">
+        <div class="entity-name">CEPI — Coalition for Epidemic Preparedness</div>
+        <div class="entity-type">Co-founded Gates Foundation, 2017</div>
+        <div class="kv"><span class="kk">Purpose</span><span class="kv-val">Accelerate vaccine development for epidemics</span></div>
+        <div class="kv"><span class="kk">COVID role</span><span class="kv-val">Funded Moderna, AstraZeneca early development</span></div>
+        <div class="kv"><span class="kk">Foresight</span><span class="kv-val">Gates predicted pandemic-level threat in 2015 TED Talk</span></div>
+      </div>
+      <div class="entity-card green">
+        <div class="entity-name">WHO — World Health Organization</div>
+        <div class="entity-type">Primary Funder (non-state)</div>
+        <div class="kv"><span class="kk">BMGF grants</span><span class="kv-val">$5.5B across 640 grants (2000–2024)</span></div>
+        <div class="kv"><span class="kk">% vaccine-directed</span><span class="kv-val">>50% of total grants</span></div>
+        <div class="kv"><span class="kk">Influence</span><span class="kv-val">WHO priority-setting shaped by grant conditions</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Global Fund (HIV/AIDS/TB/Malaria)</div>
+        <div class="entity-type">Major Donor</div>
+        <div class="kv"><span class="kk">BMGF committed</span><span class="kv-val">>$3B since founding</span></div>
+        <div class="kv"><span class="kk">Impact</span><span class="kv-val">50M+ lives saved since 2002 (WHO estimate)</span></div>
+      </div>
+    </div>
+
+    <p>
+      Gates's 2015 TED Talk — "The Next Outbreak? We're Not Ready" — is now legendary. He warned specifically of a respiratory pathogen capable of killing millions, called for pandemic surveillance infrastructure, and predicted the world would be caught off-guard. COVID-19 arrived five years later, almost exactly as he described. This prediction — publicly verifiable, entirely correct — became the primary fuel for conspiracy theories about his "foreknowledge."
+    </p>
+    <div class="callout green">
+      <strong>The real health critique</strong> is not conspiracy — it is structural. When a private foundation provides 6.4% of WHO's total budget over 24 years, directed almost entirely at vaccination programs the foundation also invests in, the question of conflicts of interest is legitimate. The BMGF simultaneously funds health programs AND holds equity in pharmaceutical companies through its investment trust. The line between philanthropy and market-making is not always clear.
+    </div>
+  </div>
+
+  <!-- 05: FOOD & AGRICULTURE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">05</span><span class="section-title">Food — Farmland, Agriculture &amp; Synthetic Meat</span></div>
+    <p>
+      Bill Gates is the <strong>largest private farmland owner in the United States</strong> with approximately 275,000 acres across 18 states. His biggest holdings are in Louisiana (~70,000 acres), Arkansas, Arizona, Nebraska, California, and Washington. The land is managed by Cascade Investment and primarily leased to commercial farming operations.
+    </p>
+    <p>
+      Through the Gates Foundation, he has simultaneously spent billions on African agriculture — funding hybrid seed programs, fertilizer access, and precision farming technology across Sub-Saharan Africa. Critics, including food sovereignty advocates at Navdanya International, argue that the Foundation's "Green Revolution 2.0" approach pushes industrial, input-dependent agriculture on smallholder farmers in a way that benefits agribusiness companies (many of which Cascade holds equity in) more than farmers.
+    </p>
+    <div class="callout orange">
+      Gates has publicly advocated for wealthy nations to shift to <strong>100% synthetic beef</strong>, arguing that lab-grown meat and plant-based alternatives are necessary to reduce agricultural emissions. He has backed Impossible Foods and Beyond Meat financially, and his Foundation has funded synthetic biology research at the intersection of food and pharma. The structural question critics raise: the largest private farmland owner in America advocates replacing conventional beef — which competes with his investments in alternative proteins.
+    </div>
+    <p>
+      Gates's food thesis, stated plainly: <strong>the current food system is incompatible with climate targets</strong>. He believes precision fermentation and cellular agriculture will be cost-competitive with conventional protein by 2030–2035, and that governments should use carbon pricing and regulatory frameworks to accelerate the transition. His investment portfolio is positioned accordingly.
+    </p>
+  </div>
+
+  <!-- 06: COVID -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">06</span><span class="section-title">COVID-19 — Role, Prediction &amp; Response</span></div>
+    <p>
+      Gates's role in COVID-19 is multi-layered and needs to be separated from conspiracy:
+    </p>
+    <table class="matrix">
+      <thead><tr><th>Layer</th><th>What Actually Happened</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>The 2015 TED Talk Prediction</strong></td>
+          <td>Gates accurately predicted a respiratory pandemic would kill millions if the world remained unprepared. He proposed a global surveillance + rapid response infrastructure. The talk has 45M+ views.</td>
+          <td><span class="badge badge-green">VERIFIED CORRECT</span></td>
+        </tr>
+        <tr>
+          <td><strong>COVID Vaccine Funding</strong></td>
+          <td>BMGF and CEPI (which Gates co-founded) provided early funding to Moderna, AstraZeneca, and BioNTech before clinical trials. Total BMGF COVID-related commitments exceeded $2B.</td>
+          <td><span class="badge badge-green">VERIFIED</span></td>
+        </tr>
+        <tr>
+          <td><strong>Blocking Generic Vaccine Access</strong></td>
+          <td>Gates publicly opposed waiving COVID vaccine patents at the WTO in 2021, arguing the bottleneck was manufacturing capacity not IP. Critics said this protected pharma profits at the cost of global access. He later softened his position.</td>
+          <td><span class="badge badge-orange">DISPUTED — REAL CRITIQUE</span></td>
+        </tr>
+        <tr>
+          <td><strong>Microchip/5G/Population Control Theories</strong></td>
+          <td>No credible evidence. Originated from a 2010 Gates quote about vaccines reducing population growth (via child survival reducing birth rates — a demographic fact). Turned into depopulation conspiracy. The mRNA vaccines contain no microchips or tracking devices.</td>
+          <td><span class="badge badge-red">FALSE — DEBUNKED</span></td>
+        </tr>
+        <tr>
+          <td><strong>"Gates Funded COVID Creation"</strong></td>
+          <td>Gates Foundation funded EcoHealth Alliance (coronavirus research), as did NIH. No evidence Gates or BMGF funded gain-of-function research that created SARS-CoV-2.</td>
+          <td><span class="badge badge-red">NO EVIDENCE — UNPROVEN</span></td>
+        </tr>
+        <tr>
+          <td><strong>WHO Influence Over COVID Policy</strong></td>
+          <td>As the WHO's largest non-state funder, BMGF's influence over WHO policy is structurally real. Whether this shaped COVID response in ways that benefited Gates investments is a legitimate research question — not yet resolved.</td>
+          <td><span class="badge badge-orange">LEGITIMATE QUESTION</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 07: EPSTEIN -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">07</span><span class="section-title">Epstein Files — What Is Actually Known (2026)</span></div>
+    <p>
+      In February 2026, the US Department of Justice released <strong>three million documents</strong> related to Jeffrey Epstein. Among the revelations concerning Gates, documented in CNN, CNBC, Fortune, and ABC News reporting:
+    </p>
+    <div class="callout red">
+      Bill Gates <strong>apologized</strong> to Gates Foundation staff in February 2026 after the Epstein documents revealed the depth of his relationship with the convicted sex offender. He admitted to having two extramarital affairs. Melinda French Gates stated publicly he "has to answer" for the Epstein files. Fortune reported that Epstein had served as a <strong>seven-figure negotiator</strong> for Microsoft executive Steven Sinofsky — showing Epstein was embedded in Microsoft's inner circle, not just Gates's personal network.
+    </div>
+    <table class="matrix">
+      <thead><tr><th>Item</th><th>Status (March 2026)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Gates met Epstein multiple times after conviction</strong></td><td><span class="badge badge-red">CONFIRMED</span> — Gates admitted this, called it a "mistake"</td></tr>
+        <tr><td><strong>Epstein negotiated Gates Foundation donations</strong></td><td><span class="badge badge-orange">REPORTED</span> — Epstein helped solicit large donations for the Foundation via his network</td></tr>
+        <tr><td><strong>Epstein embedded in Microsoft inner circle via Sinofsky</strong></td><td><span class="badge badge-red">CONFIRMED</span> — Fortune (March 2026): Epstein was a seven-figure negotiator for MSFT #2 exec</td></tr>
+        <tr><td><strong>Gates affairs during marriage</strong></td><td><span class="badge badge-red">CONFIRMED</span> — Gates admitted two affairs; Epstein files may have documented leverage</td></tr>
+        <tr><td><strong>Gates on Epstein's private island or parties</strong></td><td><span class="badge badge-muted">NOT CONFIRMED</span> — No evidence in released documents as of March 2026</td></tr>
+        <tr><td><strong>Criminal exposure for Gates</strong></td><td><span class="badge badge-muted">NOT INDICATED</span> — Gates denies wrongdoing; no charges or DoJ investigation of Gates reported</td></tr>
+        <tr><td><strong>Melinda's divorce triggered by Epstein</strong></td><td><span class="badge badge-red">STRONGLY IMPLIED</span> — Melinda Forbes interview: Epstein relationship "was a factor"</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The Epstein connection has materially damaged Gates's public reputation in 2026. His previous strategy of complete denial ("I regret having had dinners with him") has been overtaken by the documentary record. The full scope of what Epstein knew about Gates — and whether it constituted leverage — remains unclear pending further document releases.
+    </p>
+  </div>
+
+  <!-- 08: CHARITY & FOUNDATION -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">08</span><span class="section-title">Philanthropy — The Gates Foundation</span></div>
+    <p>
+      The <strong>Bill &amp; Melinda Gates Foundation (BMGF)</strong> is the world's largest private charitable foundation by assets. Founded in 2000, it has spent <strong>$100 billion in its first 25 years</strong> — more than the GDP of most countries. In 2025, Gates announced a $200B pledge: virtually all his remaining wealth to be given away within 20 years.
+    </p>
+    <div class="entity-grid">
+      <div class="entity-card green">
+        <div class="entity-name">Global Health Division</div>
+        <div class="entity-type">Largest program area</div>
+        <div class="kv"><span class="kk">Focus</span><span class="kv-val">Polio, malaria, HIV, TB, maternal health</span></div>
+        <div class="kv"><span class="kk">Polio</span><span class="kv-val">Cases down 99%+ since 1988 (BMGF + WHO)</span></div>
+        <div class="kv"><span class="kk">Annual spend</span><span class="kv-val">~$4B/yr of $8.6B total (2024)</span></div>
+      </div>
+      <div class="entity-card green">
+        <div class="entity-name">Global Development</div>
+        <div class="entity-type">Agriculture, nutrition, financial inclusion</div>
+        <div class="kv"><span class="kk">Focus</span><span class="kv-val">Africa / South Asia smallholder farming</span></div>
+        <div class="kv"><span class="kk">Criticism</span><span class="kv-val">Pushing industrial ag, undermining food sovereignty</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">US Program</div>
+        <div class="entity-type">Domestic education, poverty</div>
+        <div class="kv"><span class="kk">Focus</span><span class="kv-val">K-12 education reform, community colleges</span></div>
+        <div class="kv"><span class="kk">Legacy</span><span class="kv-val">Common Core — Gates funded, controversial</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Warren Buffett Partnership</div>
+        <div class="entity-type">Strategic donor relationship</div>
+        <div class="kv"><span class="kk">Buffett pledge</span><span class="kv-val">~$50B+ to BMGF over time</span></div>
+        <div class="kv"><span class="kk">Combined</span><span class="kv-val">Gates + Buffett = ~$150B pledged to BMGF</span></div>
+        <div class="kv"><span class="kk">Giving Pledge</span><span class="kv-val">Both co-founded; 240+ billionaire signatories</span></div>
+      </div>
+    </div>
+    <div class="callout">
+      The structural critique of the Foundation is not that it does no good — the polio numbers alone are extraordinary — but that <strong>a private foundation controlled by one person now shapes global health policy</strong>, funds WHO priorities, influences regulatory frameworks for vaccines and food, and simultaneously holds equity positions that benefit from those frameworks. This is a governance problem that has no analogue in prior history.
+    </div>
+  </div>
+
+  <!-- 09: AI & TECHNOLOGY VISION -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">09</span><span class="section-title">Artificial Intelligence — Gates's Vision</span></div>
+    <p>
+      Gates has been more public about AI than any topic since COVID. His position, stated clearly at Davos 2026 and in his annual "Year Ahead" letter, is one of <strong>radical optimism with specific warnings</strong>.
+    </p>
+    <div class="callout blue">
+      <strong>Gates in March 2025 (CNBC):</strong> "Over the next decade, advances in artificial intelligence will mean that humans will no longer be needed for most things." He predicted AI will solve the "intelligence bottleneck" in medical research, education, and climate, but warned not all companies riding the AI wave will succeed.
+    </div>
+    <p>
+      His <strong>Year Ahead 2026</strong> letter frames AI in three domains he believes it will revolutionize first:
+    </p>
+    <table class="matrix">
+      <thead><tr><th>Domain</th><th>Gates's Prediction</th><th>Timeline</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Healthcare / Medicine</strong></td>
+          <td>AI diagnostic accuracy will exceed 95% for most conditions. AI will compress drug discovery from 10+ years to 2–3 years. Every person on earth will eventually have access to an AI "personal doctor" — eliminating the physician shortage that kills millions in the developing world.</td>
+          <td>2026–2030</td>
+        </tr>
+        <tr>
+          <td><strong>Education</strong></td>
+          <td>Personalized AI tutors will outperform human teachers in measurable learning outcomes, especially for underprivileged children. Gates Foundation is piloting this in Sub-Saharan Africa and South Asia.</td>
+          <td>2026–2032</td>
+        </tr>
+        <tr>
+          <td><strong>Climate / Energy</strong></td>
+          <td>AI will accelerate clean energy innovation — fusion, next-gen nuclear (Gates has funded TerraPower), grid optimization. He is optimistic but warns the innovation pipeline needs sustained investment despite political headwinds.</td>
+          <td>2028–2040</td>
+        </tr>
+        <tr>
+          <td><strong>Warning: Jobs</strong></td>
+          <td>AI will eliminate the need for human labor "for most things." Gates does not see this as catastrophic but argues society must redesign work, income distribution, and purpose — before the transition happens, not after.</td>
+          <td>2030–2045</td>
+        </tr>
+        <tr>
+          <td><strong>Warning: Bioterrorism</strong></td>
+          <td>AI dramatically lowers the barrier for bad actors to design and deploy biological weapons. Gates rates this as the most dangerous near-term AI risk — ahead of job displacement or AGI alignment.</td>
+          <td>Immediate</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      On <strong>Microsoft + Azure + OpenAI</strong> specifically: Gates does not run Microsoft anymore but he is emotionally invested in Satya Nadella's AI bet. The $13B+ OpenAI investment — giving Microsoft 49% of OpenAI's profits — is the most important strategic move in tech since the IBM DOS deal. Gates has called it "the most significant technological development of my lifetime."
+    </p>
+  </div>
+
+  <!-- 10: POLITICS & GOVERNMENT -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">10</span><span class="section-title">Politics &amp; Government — The Quiet Power</span></div>
+    <p>
+      Gates is one of the most politically influential private citizens on Earth — and one of the most careful to deny it. He does not donate to US political campaigns and has never endorsed a presidential candidate. His political power operates through an entirely different channel: <strong>institutions, grant conditions, and regulatory frameworks</strong>.
+    </p>
+    <table class="matrix">
+      <thead><tr><th>Vector</th><th>How Gates Influences Policy</th></tr></thead>
+      <tbody>
+        <tr><td><strong>WHO</strong></td><td>2nd largest funder. Grant conditions shape WHO priority-setting on vaccines, nutrition, tobacco, and more. 50%+ of BMGF grants to WHO were vaccine-directed.</td></tr>
+        <tr><td><strong>Trump Administration (2025–26)</strong></td><td>Gates personally lobbied Trump officials to maintain USAID and global health funding after Trump's foreign aid cuts. Reuters exclusive: Gates warned the White House he cannot fill the shortfalls alone.</td></tr>
+        <tr><td><strong>Common Core</strong></td><td>Gates Foundation spent ~$200M funding the development and advocacy for Common Core educational standards — reshaping US K-12 curriculum for a decade, without a single vote cast by citizens.</td></tr>
+        <tr><td><strong>Agricultural Policy</strong></td><td>BMGF shapes agricultural development policy across 50+ countries through direct grants to governments, research institutions, and NGOs. In Africa this means influencing seed regulation, fertilizer subsidies, and GMO frameworks.</td></tr>
+        <tr><td><strong>Climate Policy</strong></td><td>Gates founded Breakthrough Energy (venture fund + coalition), which lobbies governments for specific energy R&D priorities — advanced nuclear, green hydrogen, direct air capture. He invests in the same technologies he lobbies governments to fund.</td></tr>
+        <tr><td><strong>Pandemic Treaties</strong></td><td>BMGF is the primary non-state funder of the WHO's pandemic preparedness treaty negotiations — advocating for binding international health security frameworks.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      Gates's political philosophy: he is a <strong>technocratic globalist</strong>. He believes the world's problems are engineering problems, solvable with sufficient capital and expertise, and that democratic politics is often too slow, too parochial, and too prone to short-term thinking to solve them. This is not a partisan ideology — it cuts across left and right. But it is an ideology, and it places him in direct tension with both MAGA populism (which sees him as a globalist puppet-master) and left-wing food/health sovereignty movements (which see him as a new form of colonialism).
+    </div>
+  </div>
+
+  <!-- 11: BANKS & CORPORATIONS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">11</span><span class="section-title">Banks, Corporations &amp; Key Partners</span></div>
+    <div class="entity-grid">
+      <div class="entity-card blue">
+        <div class="entity-name">Berkshire Hathaway / Warren Buffett</div>
+        <div class="entity-type">Longest Strategic Partnership</div>
+        <div class="kv"><span class="kk">Duration</span><span class="kv-val">30+ year friendship</span></div>
+        <div class="kv"><span class="kk">Buffett to BMGF</span><span class="kv-val">~$50B pledged over time</span></div>
+        <div class="kv"><span class="kk">Giving Pledge</span><span class="kv-val">Co-founded 2010 — 240+ billionaires signed</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Cascade × Four Seasons</div>
+        <div class="entity-type">Hotel / Real Estate Partner</div>
+        <div class="kv"><span class="kk">Gates stake</span><span class="kv-val">~47%</span></div>
+        <div class="kv"><span class="kk">Partner</span><span class="kv-val">Prince Al-Waleed bin Talal (Saudi Arabia, 23%)</span></div>
+        <div class="kv"><span class="kk">Connection</span><span class="kv-val">Gulf capital + Gates = recurring theme</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Breakthrough Energy Ventures</div>
+        <div class="entity-type">Climate Tech Fund — Founded 2016</div>
+        <div class="kv"><span class="kk">Co-investors</span><span class="kv-val">Bezos, Zuckerberg, Khosla, SoftBank</span></div>
+        <div class="kv"><span class="kk">Portfolio</span><span class="kv-val">Fusion, green steel, DAC, alt-protein</span></div>
+        <div class="kv"><span class="kk">Political arm</span><span class="kv-val">Lobbies governments for clean energy R&D</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">TerraPower</div>
+        <div class="entity-type">Advanced Nuclear — Gates Founded 2006</div>
+        <div class="kv"><span class="kk">Technology</span><span class="kv-val">Natrium sodium-cooled fast reactor</span></div>
+        <div class="kv"><span class="kk">Status</span><span class="kv-val">Kemmerer, Wyoming plant under construction</span></div>
+        <div class="kv"><span class="kk">USDOE grant</span><span class="kv-val">$2B DOE + Gates $1B+ personal commitment</span></div>
+      </div>
+      <div class="entity-card blue">
+        <div class="entity-name">Microsoft / Satya Nadella</div>
+        <div class="entity-type">Core Asset — Still ~1.3% Shareholder</div>
+        <div class="kv"><span class="kk">Stake value</span><span class="kv-val">~$40B</span></div>
+        <div class="kv"><span class="kk">Azure revenue</span><span class="kv-val">~$110B/yr (growing 30%+/yr)</span></div>
+        <div class="kv"><span class="kk">OpenAI</span><span class="kv-val">$13B+ invested, 49% of profits</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-name">Deere &amp; Co. / Farm Machinery</div>
+        <div class="entity-type">Cascade Investment + Foundation Alignment</div>
+        <div class="kv"><span class="kk">Logic</span><span class="kv-val">Precision farming tech = Foundation agri + equity upside</span></div>
+        <div class="kv"><span class="kk">Synergy</span><span class="kv-val">Foundation funds African farming → Deere sells equipment</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12: MYTHS vs FACTS -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">12</span><span class="section-title">Myths vs Facts — The Conspiracy Map</span></div>
+    <p>
+      Bill Gates is the most conspiracized living private citizen — more than any politician. An academic study published in Nature found Gates-related theories were the #1 COVID conspiracy theme on YouTube in 2020–2021. Here is a structured fact-check of the major claims:
+    </p>
+    <div class="myth-grid">
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div>"Gates put microchips in COVID vaccines to track people."</div>
+        <div class="myth-fact"><div class="fact-label">FACT</div>Entirely false. mRNA vaccines contain no tracking technology. The theory originated from Gates's 2019 support for digital health certificates (paper vaccination records, not implants) and was amplified via Facebook/YouTube. No credible evidence. Debunked by Mayo Clinic, WHO, EU External Action Service, Reuters.</div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div>"Gates wants to depopulate the Earth using vaccines."</div>
+        <div class="myth-fact"><div class="fact-label">FACT</div>Misquote of a 2010 TED Talk where Gates said vaccines reduce child mortality → which reduces birth rates → which reduces population growth. He was describing a well-documented demographic transition. He was arguing FOR vaccination as a way to stabilize population, not reduce it through death. Reuters fact-checked this repeatedly.</div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH</div>"Gates created COVID-19 in a lab to sell vaccines."</div>
+        <div class="myth-fact"><div class="fact-label">FACT</div>No credible evidence. BMGF funded EcoHealth Alliance coronavirus research (as did NIH, USAID, and the Pentagon). No evidence any BMGF-funded research created SARS-CoV-2. The lab leak hypothesis (still debated) does not implicate Gates.</div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH / SEMI-TRUE</div>"Gates controls the WHO and uses it to impose his agenda."</div>
+        <div class="myth-fact"><div class="fact-label">FACT</div>He doesn't "control" WHO. But BMGF is the 2nd largest funder (after the US government) and has directed over $5.5B to vaccine-related programs. Academic peer-reviewed research (BMJ, PMC) finds WHO priorities are shaped by BMGF grant conditions. This is structural influence, not conspiracy — but it is real and documented.</div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">MYTH / REAL ISSUE</div>"Gates is buying up farmland to control the food supply."</div>
+        <div class="myth-fact"><div class="fact-label">FACT</div>He is factually the largest private farmland owner in the US (275,000 acres). He has NOT publicly stated any intent to control food supply. However: he simultaneously advocates for synthetic food systems, funds agricultural policy in 50+ countries, and holds equity in food tech companies. The concern is structural conflict of interest, not a secret plan — but it is a legitimate policy debate.</div>
+      </div>
+
+      <div class="myth-card">
+        <div class="myth-claim"><div class="myth-label">CONFIRMED</div>Gates had a significant relationship with Epstein after his 2008 conviction.</div>
+        <div class="myth-fact"><div class="fact-label">FACT</div>Confirmed and admitted by Gates. He has apologized, called it a "terrible mistake." The 2026 DoJ document release shows Epstein was embedded in Microsoft's executive circle and helped facilitate Foundation-related fundraising. The full scope of the relationship remains under ongoing scrutiny.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 13: RISKS & VULNERABILITIES -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">13</span><span class="section-title">Risk Profile — Threats &amp; Vulnerabilities (2026)</span></div>
+
+    <div class="risk-row">
+      <span class="risk-label">Epstein Document Exposure</span>
+      <div class="risk-track"><div class="risk-fill" style="width:85%; background:#8B1F1F;"></div></div>
+      <span class="risk-score" style="color:#8B1F1F;">8.5/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Foundation Legitimacy Crisis</span>
+      <div class="risk-track"><div class="risk-fill" style="width:72%; background:#c47a2a;"></div></div>
+      <span class="risk-score" style="color:#c47a2a;">7.2/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Political Targeting (DOGE/Trump)</span>
+      <div class="risk-track"><div class="risk-fill" style="width:65%; background:#d4a847;"></div></div>
+      <span class="risk-score" style="color:#d4a847;">6.5/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">AI Disruption of Microsoft Moat</span>
+      <div class="risk-track"><div class="risk-fill" style="width:35%; background:#4a9e6b;"></div></div>
+      <span class="risk-score" style="color:#4a9e6b;">3.5/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Wealth Pledge Execution Risk</span>
+      <div class="risk-track"><div class="risk-fill" style="width:40%; background:#d4a847;"></div></div>
+      <span class="risk-score" style="color:#d4a847;">4.0/10</span>
+    </div>
+    <div class="risk-row">
+      <span class="risk-label">Geopolitical / USAID Collapse</span>
+      <div class="risk-track"><div class="risk-fill" style="width:70%; background:#c47a2a;"></div></div>
+      <span class="risk-score" style="color:#c47a2a;">7.0/10</span>
+    </div>
+
+    <p style="margin-top:20px;">
+      The <strong>Epstein exposure</strong> is the single largest near-term risk to Gates's legacy and the Foundation's credibility. Three million documents are still being processed. If additional evidence emerges of Gates having more direct knowledge of Epstein's crimes, the impact on BMGF's donor relationships, government partnerships, and moral authority would be severe. The Foundation's entire value proposition rests on Gates's personal reputation as a selfless philanthropist.
+    </p>
+    <p>
+      The <strong>USAID collapse</strong> under Trump's 2025 foreign aid cuts is a structural threat to Gates's global health mission. Gates himself told the White House he cannot fill the gap alone. If US global health funding stays at ~30% of 2024 levels, millions of lives that BMGF and USAID jointly protected become vulnerable — particularly HIV treatment in Africa and childhood vaccination programs.
+    </p>
+  </div>
+
+  <!-- 14: HIS OWN VISION OF THE FUTURE -->
+  <div class="section">
+    <div class="section-header"><span class="section-num">14</span><span class="section-title">The Future — In His Own Vision</span></div>
+    <p>
+      Gates's "Year Ahead 2026" letter — titled <em>"Optimism with Footnotes"</em> — is the most comprehensive public statement of his worldview as of this writing. The core argument: the world is going backwards on several metrics (child mortality, malnutrition, foreign aid) but the innovation pipeline has never been stronger. His five pillars:
+    </p>
+    <div class="callout blue">
+      <strong>1. AI as the equalizer:</strong> Gates believes AI will be the first technology that genuinely reaches the poorest people first — not last. An AI doctor on a cheap smartphone in rural Nigeria is not less capable than the AI doctor used in a New York hospital. This is the opposite of the PC era, where the digital divide deepened inequality.
+    </div>
+    <div class="callout blue">
+      <strong>2. Energy abundance through innovation:</strong> Gates is funding nuclear (TerraPower), green hydrogen, and grid storage. He believes climate change is solvable but not through sacrifice — only through making clean energy cheaper than fossil fuels. He is optimistic that the physics works; he is pessimistic about political will.
+    </div>
+    <div class="callout blue">
+      <strong>3. The $200B final chapter:</strong> Gates has pledged to give virtually all his remaining wealth to the Foundation before it closes — within 20 years of his death. He calls the Foundation a "sunset institution." It will spend down and close, not become a permanent endowment. He wants the money used now, not managed forever by future trustees.
+    </div>
+    <div class="callout blue">
+      <strong>4. Disease eradication as the legacy:</strong> Polio is at the finish line (99%+ reduction). Malaria deaths are down 40% since 2000. He wants malaria eliminated by 2040. These are not aspirational — they are engineering targets with defined milestone plans and funding.
+    </div>
+    <div class="callout orange">
+      <strong>5. The footnote — what keeps him up at night:</strong> Bioterrorism enabled by AI. The collapse of USAID. Resurgent measles in the US. The rejection of vaccines in wealthy countries triggering outbreaks in poor ones. And — though he doesn't say it publicly — the Epstein cloud over everything he's built.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="dossier-footer">
+    <span>IMP Intelligence Dossier — Bill Gates — 2026-03-28 — JARVIS / Base44</span>
+    <span>Sources: Gates Foundation · Reuters · CNN · CNBC · Fortune · BBC · BMJ · PMC/NIH · NY Times · Forbes · Land Report 2025</span>
+  </div>
+
+</div>
+</body>
+</html>

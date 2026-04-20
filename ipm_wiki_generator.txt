@@ -1,0 +1,16 @@
+# 1. Ejecutar seed (guarda el CompanyId de Section G)
+# → SpaceX CompanyId = <X>
+
+# 2. Regenerar wiki con todos los seeded (reemplazá <X>)
+python3 ipm_wiki_generator.py \
+  --host localhost --port 5432 \
+  --db IPMDB --user postgres --password Munich184! \
+  --company-ids 1 2 4 5 41 68 90 96 <X> \
+  --output-dir ./wiki/companies
+
+# 3. Validar
+python3 ipm_wiki_to_graph.py \
+  --wiki-dir ./wiki/companies \
+  --host localhost --port 5432 \
+  --db IPMDB --user postgres --password Munich184! \
+  --dry-run

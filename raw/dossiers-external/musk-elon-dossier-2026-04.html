@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELON MUSK — INTELLIGENCE REPORT 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#030712;--bg2:#0a0f1e;--bg3:#0f172a;--accent:#00d4ff;--accent2:#7c3aed;--accent3:#f59e0b;--accent4:#10b981;--danger:#ef4444;--text:#e2e8f0;--muted:#64748b;--border:rgba(0,212,255,0.15);--glow:0 0 30px rgba(0,212,255,0.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;line-height:1.6;overflow-x:hidden}
+.header{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,0.08) 0%,transparent 70%),radial-gradient(ellipse at 80% 80%,rgba(124,58,237,0.06) 0%,transparent 60%),var(--bg)}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);background-size:60px 60px}
+.scan-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 4s linear infinite}
+@keyframes scan{from{top:0}to{top:100%}}
+.header-content{position:relative;z-index:2;padding:40px}
+.classification{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:6px;color:var(--danger);background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);padding:6px 20px;display:inline-block;margin-bottom:40px}
+.subject-name{font-size:clamp(52px,8vw,100px);font-weight:700;letter-spacing:-2px;background:linear-gradient(135deg,#fff 0%,var(--accent) 50%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:12px}
+.subject-title{font-size:18px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:40px}
+.header-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.h-stat{text-align:center}
+.h-stat .val{display:block;font-size:32px;font-weight:700;color:var(--accent);font-family:'Space Mono',monospace}
+.h-stat .label{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.date-stamp{position:absolute;bottom:30px;right:40px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:2px}
+.container{max-width:1400px;margin:0 auto;padding:0 40px}
+section{padding:80px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:48px}
+.section-num{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:3px;background:rgba(0,212,255,0.08);border:1px solid var(--border);padding:4px 12px;flex-shrink:0}
+.section-title{font-size:28px;font-weight:700;color:#fff}
+.divider{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:28px;transition:border-color .3s,box-shadow .3s}
+.card:hover{border-color:rgba(0,212,255,0.4);box-shadow:var(--glow)}
+.card-title{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-family:'Space Mono',monospace}
+.wealth-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.wealth-total{grid-column:1/-1;background:linear-gradient(135deg,rgba(0,212,255,0.05),rgba(124,58,237,0.05));border:1px solid var(--border);border-radius:2px;padding:32px;text-align:center}
+.wealth-number{font-size:72px;font-weight:700;font-family:'Space Mono',monospace;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.asset-bar-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.asset-bar-label .name{color:#fff;font-weight:500}
+.asset-bar-label .val{color:var(--accent);font-family:'Space Mono',monospace}
+.asset-bar-track{height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:16px}
+.asset-bar-fill{height:100%;border-radius:3px}
+.companies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.company-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:24px;position:relative;overflow:hidden;transition:all .3s}
+.company-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.company-card.c1::before{background:linear-gradient(90deg,#e82127,transparent)}
+.company-card.c2::before{background:linear-gradient(90deg,#005288,transparent)}
+.company-card.c3::before{background:linear-gradient(90deg,var(--accent2),transparent)}
+.company-card.c4::before{background:linear-gradient(90deg,var(--accent3),transparent)}
+.company-card.c6::before{background:linear-gradient(90deg,#1da1f2,transparent)}
+.company-card:hover{border-color:rgba(0,212,255,0.35);transform:translateY(-2px);box-shadow:var(--glow)}
+.company-name{font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.company-ticker{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:12px}
+.company-valuation{font-size:26px;font-weight:700;font-family:'Space Mono',monospace;margin-bottom:4px}
+.company-rank{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.company-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:var(--accent)}
+.factories-table{width:100%;border-collapse:collapse}
+.factories-table th{text-align:left;padding:12px 16px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border);font-family:'Space Mono',monospace}
+.factories-table td{padding:14px 16px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top}
+.factories-table tr:hover td{background:rgba(0,212,255,0.03)}
+.flag{font-size:20px;margin-right:8px}
+.facility-name{font-weight:600;color:#fff}
+.facility-detail{font-size:12px;color:var(--muted);margin-top:2px}
+.company-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:2px;font-family:'Space Mono',monospace;letter-spacing:1px}
+.badge-tesla{background:rgba(232,33,39,0.15);color:#e82127;border:1px solid rgba(232,33,39,0.3)}
+.badge-spacex{background:rgba(0,82,136,0.15);color:#4a9eff;border:1px solid rgba(0,82,136,0.3)}
+.badge-boring{background:rgba(245,158,11,0.15);color:var(--accent3);border:1px solid rgba(245,158,11,0.3)}
+.badge-neuralink{background:rgba(124,58,237,0.15);color:#a78bfa;border:1px solid rgba(124,58,237,0.3)}
+.badge-x{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.2)}
+.badge-xai{background:rgba(124,58,237,0.15);color:#a78bfa;border:1px solid rgba(124,58,237,0.3)}
+.commodities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.commodity-card{background:var(--bg2);border:1px solid var(--border);padding:20px;border-radius:2px;text-align:center;transition:all .3s}
+.commodity-card:hover{border-color:rgba(0,212,255,0.4);box-shadow:var(--glow)}
+.commodity-icon{font-size:32px;margin-bottom:10px;display:block}
+.commodity-name{font-weight:600;font-size:15px;color:#fff;margin-bottom:4px}
+.commodity-use{font-size:11px;color:var(--muted);margin-bottom:8px}
+.commodity-user{font-size:10px;letter-spacing:1px;color:var(--accent);font-family:'Space Mono',monospace}
+.alliances-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.alliance-card{background:var(--bg2);border:1px solid var(--border);padding:24px;border-radius:2px;border-left:3px solid;transition:all .3s}
+.alliance-card:hover{box-shadow:var(--glow)}
+.alliance-card.strategic{border-left-color:var(--accent)}
+.alliance-card.political{border-left-color:var(--accent3)}
+.alliance-card.economic{border-left-color:var(--accent4)}
+.alliance-card.tech{border-left-color:var(--accent2)}
+.alliance-type{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Space Mono',monospace}
+.alliance-card.strategic .alliance-type{color:var(--accent)}
+.alliance-card.political .alliance-type{color:var(--accent3)}
+.alliance-card.economic .alliance-type{color:var(--accent4)}
+.alliance-card.tech .alliance-type{color:#a78bfa}
+.alliance-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.alliance-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.ideology-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ideology-pillar{background:var(--bg2);border:1px solid var(--border);padding:28px}
+.ideology-icon{font-size:32px;margin-bottom:12px;display:block}
+.ideology-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.ideology-body{font-size:13px;color:var(--muted);line-height:1.7}
+.quote-block{background:linear-gradient(135deg,rgba(0,212,255,0.04),rgba(124,58,237,0.04));border-left:3px solid var(--accent);padding:20px 24px;margin:32px 0;font-size:15px;color:var(--text);font-style:italic;line-height:1.7}
+.quote-author{font-size:12px;color:var(--muted);margin-top:8px;font-style:normal;letter-spacing:2px}
+.risk-bars{display:flex;flex-direction:column;gap:16px}
+.risk-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.risk-name{color:#fff;font-weight:500}
+.risk-score{font-family:'Space Mono',monospace}
+.risk-track{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
+.risk-fill{height:100%;border-radius:4px}
+.domains-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.domain-card{background:var(--bg2);border:1px solid var(--border);padding:24px;border-radius:2px;transition:all .3s}
+.domain-card:hover{border-color:rgba(0,212,255,0.4);box-shadow:var(--glow)}
+.domain-icon{font-size:28px;margin-bottom:10px}
+.domain-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+.domain-body{font-size:12px;color:var(--muted);line-height:1.7}
+.power-map{position:relative;background:var(--bg2);border:1px solid var(--border);padding:40px;height:680px;overflow:hidden}
+.power-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.2),rgba(124,58,237,0.1));border:2px solid var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:10;box-shadow:0 0 60px rgba(0,212,255,0.2),inset 0 0 40px rgba(0,212,255,0.05)}
+.power-center-name{font-size:16px;font-weight:700;color:#fff}
+.power-center-sub{font-size:10px;color:var(--accent);letter-spacing:2px;margin-top:4px}
+.power-center-net{font-size:14px;font-family:'Space Mono',monospace;color:var(--accent3);margin-top:6px}
+.power-node{position:absolute;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:5;transform:translate(-50%,-50%)}
+.node-dot{width:14px;height:14px;border-radius:50%;border:2px solid;background:var(--bg2);margin-bottom:6px;box-shadow:0 0 12px currentColor}
+.node-label{font-size:11px;font-weight:600;color:#fff;white-space:nowrap;background:rgba(3,7,18,0.85);padding:3px 8px;border-radius:2px}
+.node-sub{font-size:10px;color:var(--muted);white-space:nowrap;margin-top:2px}
+.power-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.pm-legend{position:absolute;bottom:24px;left:24px;display:flex;flex-direction:column;gap:8px;background:rgba(3,7,18,0.8);padding:16px;border:1px solid var(--border)}
+.pm-legend-title{font-size:10px;letter-spacing:2px;color:var(--accent);font-family:'Space Mono',monospace;margin-bottom:4px}
+.pm-legend-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted)}
+.pm-legend-line{width:24px;height:2px;border-radius:1px}
+.report-footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px;text-align:center}
+.footer-class{font-family:'Space Mono',monospace;font-size:12px;color:var(--danger);letter-spacing:4px;margin-bottom:12px}
+.footer-sub{font-size:12px;color:var(--muted)}
+@media(max-width:768px){.container{padding:0 20px}.wealth-grid{grid-template-columns:1fr}.ideology-grid{grid-template-columns:1fr}.wealth-number{font-size:48px}.section-title{font-size:22px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="grid-bg"></div>
+  <div class="scan-line"></div>
+  <div class="header-content">
+    <div class="classification">&#9632; INTELLIGENCE REPORT — GEOPOLITICAL PROFILE &#9632;</div>
+    <div class="subject-name">ELON MUSK</div>
+    <div class="subject-title">Tesla &middot; SpaceX &middot; xAI &middot; X &middot; Neuralink &middot; The Boring Company</div>
+    <div class="header-stats">
+      <div class="h-stat"><span class="val">$852B</span><span class="label">Net Worth Mar 2026</span></div>
+      <div class="h-stat"><span class="val">#1</span><span class="label">Forbes Billionaires</span></div>
+      <div class="h-stat"><span class="val">6</span><span class="label">Major Companies</span></div>
+      <div class="h-stat"><span class="val">40+</span><span class="label">Countries Presence</span></div>
+      <div class="h-stat"><span class="val">~$3T</span><span class="label">Combined Enterprise Value</span></div>
+    </div>
+  </div>
+  <div class="date-stamp">JARVIS // REPORT DATE: MARCH 2026</div>
+</div>
+
+<!-- 01 WEALTH -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">Wealth Composition</div>
+    <div class="divider"></div>
+  </div>
+  <div class="wealth-grid">
+    <div class="wealth-total">
+      <div class="wealth-number">$852B</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px;letter-spacing:2px">ESTIMATED NET WORTH — MARCH 2026 (FORBES)</div>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto">Musk crossed $800B in February 2026 following SpaceX's acquisition of xAI in a deal valuing the combined entity at $1.25 trillion. His fortune is almost entirely illiquid — tied to private and public equity with no meaningful cash holdings.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Asset Breakdown</div>
+      <div class="asset-bar-label"><span class="name">SpaceX + xAI (43% stake)</span><span class="val">~$537B &middot; 63%</span></div>
+      <div class="asset-bar-track"><div class="asset-bar-fill" style="width:63%;background:linear-gradient(90deg,#005288,#00a8ff)"></div></div>
+      <div class="asset-bar-label"><span class="name">Tesla (~13% stake)</span><span class="val">~$195B &middot; 23%</span></div>
+      <div class="asset-bar-track"><div class="asset-bar-fill" style="width:23%;background:linear-gradient(90deg,#e82127,#ff6b6b)"></div></div>
+      <div class="asset-bar-label"><span class="name">X / Twitter (~80% stake)</span><span class="val">~$33B &middot; 4%</span></div>
+      <div class="asset-bar-track"><div class="asset-bar-fill" style="width:4%;background:#888"></div></div>
+      <div class="asset-bar-label"><span class="name">Neuralink (~90% est.)</span><span class="val">~$8B &middot; 1%</span></div>
+      <div class="asset-bar-track"><div class="asset-bar-fill" style="width:1%;background:var(--accent2)"></div></div>
+      <div class="asset-bar-label"><span class="name">The Boring Company (~90% est.)</span><span class="val">~$6B &middot; 0.7%</span></div>
+      <div class="asset-bar-track"><div class="asset-bar-fill" style="width:0.7%;background:var(--accent3)"></div></div>
+      <div class="asset-bar-label"><span class="name">Other / Loans / Misc.</span><span class="val">~$73B &middot; 8.6%</span></div>
+      <div class="asset-bar-track"><div class="asset-bar-fill" style="width:8.6%;background:var(--accent4)"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Wealth Profile</div>
+      <table style="width:100%;font-size:13px;border-collapse:collapse">
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06)"><td style="padding:10px 0;color:var(--muted)">Classification</td><td style="padding:10px 0;color:#fff;text-align:right">Tech-Industrial Oligarch</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06)"><td style="padding:10px 0;color:var(--muted)">Wealth Type</td><td style="padding:10px 0;color:#fff;text-align:right">~95% Illiquid Equity</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06)"><td style="padding:10px 0;color:var(--muted)">Peak Net Worth</td><td style="padding:10px 0;color:var(--accent);text-align:right;font-family:'Space Mono',monospace">$852B (Feb 2026)</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06)"><td style="padding:10px 0;color:var(--muted)">Government Contracts</td><td style="padding:10px 0;color:#fff;text-align:right">$22B+ (SpaceX alone)</td></tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06)"><td style="padding:10px 0;color:var(--muted)">Political Spending (2024)</td><td style="padding:10px 0;color:var(--accent3);text-align:right">$250M+ (Trump campaign)</td></tr>
+        <tr><td style="padding:10px 0;color:var(--muted)">Path to $1 Trillion</td><td style="padding:10px 0;color:var(--accent4);text-align:right">SpaceX needs ~$1.6T val.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 02 COMPANIES -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">Companies &amp; Valuations</div>
+    <div class="divider"></div>
+  </div>
+  <div class="companies-grid">
+    <div class="company-card c2">
+      <div class="company-name">SpaceX + xAI</div>
+      <div class="company-ticker">PRIVATE — MERGED FEB 2026</div>
+      <div class="company-valuation" style="color:#4a9eff">$1.25T</div>
+      <div class="company-rank">&#127945; MOST VALUABLE MUSK ASSET — ~63% OF NET WORTH</div>
+      <div class="company-desc">World's leading launch provider + AI company. Starlink generates 50–80% of SpaceX's $16B annual revenue. Operates Falcon 9, Falcon Heavy, and Starship. xAI (Grok AI) merged at $250B valuation. NASA = only 5% of 2026 revenue. $8B net profit in 2025.</div>
+      <div class="tag-row"><span class="tag">Aerospace</span><span class="tag">Starlink</span><span class="tag">AI</span><span class="tag">$16B Revenue</span><span class="tag">Defense</span></div>
+    </div>
+    <div class="company-card c1">
+      <div class="company-name">Tesla</div>
+      <div class="company-ticker">NASDAQ: TSLA</div>
+      <div class="company-valuation" style="color:#e82127">$1.51T</div>
+      <div class="company-rank">&#127944; LARGEST PUBLIC COMPANY IN PORTFOLIO</div>
+      <div class="company-desc">World's most valuable automaker by market cap. Produces Model 3, Model Y, Cybertruck, Semi. Gigafactories in USA, China, Germany. Expanding energy storage (Megapack) and humanoid robots (Optimus). Tesla FSD and Dojo supercomputer are key AI bets. Musk owns ~13%.</div>
+      <div class="tag-row"><span class="tag">EV</span><span class="tag">Energy Storage</span><span class="tag">FSD / AI</span><span class="tag">Optimus Robot</span><span class="tag">Solar</span></div>
+    </div>
+    <div class="company-card c6">
+      <div class="company-name">X (formerly Twitter)</div>
+      <div class="company-ticker">PRIVATE — ACQUIRED OCT 2022</div>
+      <div class="company-valuation" style="color:#1da1f2">$33B</div>
+      <div class="company-rank">&#127757; GLOBAL INFORMATION WARFARE PLATFORM</div>
+      <div class="company-desc">Acquired for $44B, now valued at ~$33B. Musk's most powerful political instrument — 200M+ personal followers. Reinstated banned accounts, positioned as "free speech" platform. Building X Everything App with payments, banking, Grok AI integration. Lost 50%+ of ad revenue post-acquisition.</div>
+      <div class="tag-row"><span class="tag">Social Media</span><span class="tag">Narrative Control</span><span class="tag">Grok AI</span><span class="tag">Payments</span></div>
+    </div>
+    <div class="company-card c3">
+      <div class="company-name">xAI (merged into SpaceX)</div>
+      <div class="company-ticker">PRIVATE — FOUNDED 2023, MERGED 2026</div>
+      <div class="company-valuation" style="color:#a78bfa">$250B</div>
+      <div class="company-rank">&#129302; FLAGSHIP AI VENTURE</div>
+      <div class="company-desc">Direct OpenAI rival. Grok AI integrated into X platform. Colossus supercomputer in Memphis — 100,000+ NVIDIA H100 GPUs, world's largest known GPU cluster. Merged with SpaceX Feb 2026. Tesla invested $2B in xAI.</div>
+      <div class="tag-row"><span class="tag">AI / LLM</span><span class="tag">Grok</span><span class="tag">Colossus</span><span class="tag">SpaceX Merged</span></div>
+    </div>
+    <div class="company-card c3">
+      <div class="company-name">Neuralink</div>
+      <div class="company-ticker">PRIVATE — FOUNDED 2016</div>
+      <div class="company-valuation" style="color:#a78bfa">$9B</div>
+      <div class="company-rank">&#129504; BRAIN-COMPUTER INTERFACE PIONEER</div>
+      <div class="company-desc">First human patient implanted Jan 2024 (N1 chip). Paralyzed patients controlling computers with thought. FDA Breakthrough Device designation. Long-term vision: human-AI symbiosis and cognitive enhancement. Regulatory hurdles remain the primary growth constraint.</div>
+      <div class="tag-row"><span class="tag">BCI</span><span class="tag">Neuroscience</span><span class="tag">Implants</span><span class="tag">FDA Approved</span></div>
+    </div>
+    <div class="company-card c4">
+      <div class="company-name">The Boring Company</div>
+      <div class="company-ticker">PRIVATE — FOUNDED 2016</div>
+      <div class="company-valuation" style="color:#f59e0b">$7B</div>
+      <div class="company-rank">&#128647; UNDERGROUND TRANSPORT INFRASTRUCTURE</div>
+      <div class="company-desc">Builds underground EV tunnels. Las Vegas Loop operational (40+ stations). Won contracts in Fort Lauderdale, San Antonio, Austin. Hyperloop concept mothballed. Long-term: city-scale underground transport networks.</div>
+      <div class="tag-row"><span class="tag">Tunneling</span><span class="tag">Urban Transport</span><span class="tag">Las Vegas Loop</span></div>
+    </div>
+  </div>
+  <div style="margin-top:32px;padding:24px;background:var(--bg2);border:1px solid var(--border)">
+    <div class="card-title">Value Ranking — Which Company is Worth Most?</div>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:12px">
+      <div style="text-align:center;flex:1;min-width:120px"><div style="font-size:12px;color:var(--muted)">By Enterprise Value</div><div style="font-size:18px;font-weight:700;color:#e82127">Tesla</div><div style="font-family:'Space Mono',monospace;color:var(--accent)">$1.51T</div></div>
+      <div style="font-size:24px;color:var(--muted)">&#8250;</div>
+      <div style="text-align:center;flex:1;min-width:120px"><div style="font-size:12px;color:var(--muted)">By Private Valuation</div><div style="font-size:18px;font-weight:700;color:#4a9eff">SpaceX+xAI</div><div style="font-family:'Space Mono',monospace;color:var(--accent)">$1.25T</div></div>
+      <div style="font-size:24px;color:var(--muted)">&#8250;</div>
+      <div style="text-align:center;flex:1;min-width:120px"><div style="font-size:12px;color:var(--muted)">By Musk's Stake</div><div style="font-size:18px;font-weight:700;color:#4a9eff">SpaceX+xAI</div><div style="font-family:'Space Mono',monospace;color:var(--accent)">~$537B</div></div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:16px">* Tesla is larger by market cap but SpaceX+xAI is Musk's largest personal asset (43% stake vs Tesla's 13% stake)</p>
+  </div>
+</div>
+</section>
+
+<!-- 03 FACTORIES -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">Global Facilities &amp; Production Sites</div>
+    <div class="divider"></div>
+  </div>
+  <table class="factories-table">
+    <thead><tr><th>Country</th><th>Facility</th><th>Co.</th><th>Function</th><th>Scale</th></tr></thead>
+    <tbody>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Gigafactory Texas (Austin)</div><div class="facility-detail">Austin, Texas</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Cybertruck, Model Y, 4680 cells, Optimus robots</td><td>500K+ vehicles/yr; ongoing 2026 expansion</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Fremont Factory</div><div class="facility-detail">Fremont, California</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Model S, X, 3, Y production</td><td>650K vehicles/yr capacity</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Gigafactory Nevada</div><div class="facility-detail">Sparks, Nevada</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Battery cells, Megapack energy storage</td><td>World's largest battery factory by sq footage</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Gigafactory New York</div><div class="facility-detail">Buffalo, New York</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Solar panels, Supercharger hardware</td><td>Tesla Energy products hub</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Starbase / SpaceX HQ</div><div class="facility-detail">Boca Chica, Texas</div></td><td><span class="company-badge badge-spacex">SPACEX</span></td><td>Starship build, launch, test; new company HQ</td><td>World's most powerful rocket launched here</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Kennedy Space Center LC-39A</div><div class="facility-detail">Cape Canaveral, Florida</div></td><td><span class="company-badge badge-spacex">SPACEX</span></td><td>Falcon 9 &amp; Falcon Heavy crew + cargo launches</td><td>60+ launches/yr; busiest orbital pad in history</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Vandenberg SFB SLC-4E</div><div class="facility-detail">California</div></td><td><span class="company-badge badge-spacex">SPACEX</span></td><td>Falcon 9 polar orbit / Starlink launches</td><td>Primary West Coast launch site</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Hawthorne Rocket Factory</div><div class="facility-detail">Hawthorne, California</div></td><td><span class="company-badge badge-spacex">SPACEX</span></td><td>Falcon 9 manufacture, Dragon capsule, mission control</td><td>Original SpaceX HQ; R&amp;D hub</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Colossus AI Supercomputer</div><div class="facility-detail">Memphis, Tennessee</div></td><td><span class="company-badge badge-xai">xAI</span></td><td>AI training — 100,000+ NVIDIA H100 GPUs</td><td>World's largest known GPU cluster</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">X / Twitter HQ</div><div class="facility-detail">San Francisco, California</div></td><td><span class="company-badge badge-x">X</span></td><td>Social platform ops, Grok AI product</td><td>~2,000 employees post-acquisition</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Neuralink Lab</div><div class="facility-detail">Fremont, California</div></td><td><span class="company-badge badge-neuralink">NEURALINK</span></td><td>BCI chip R&amp;D, surgical robot, clinical trials</td><td>First human implant Jan 2024</td></tr>
+      <tr><td><span class="flag">&#127482;&#127480;</span></td><td><div class="facility-name">Las Vegas Loop</div><div class="facility-detail">Las Vegas, Nevada</div></td><td><span class="company-badge badge-boring">BORING</span></td><td>Underground Tesla vehicle tunnel (operational)</td><td>40+ stations, LVCC; expanding to Strip</td></tr>
+      <tr><td><span class="flag">&#127464;&#127466;</span></td><td><div class="facility-name">Gigafactory Berlin-Brandenburg</div><div class="facility-detail">Grunheide, Germany</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Model Y for Europe; battery cell production</td><td>500K+/yr target; 2026 production ramp</td></tr>
+      <tr><td><span class="flag">&#127464;&#127475;</span></td><td><div class="facility-name">Gigafactory Shanghai</div><div class="facility-detail">Shanghai, China</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Model 3, Model Y — China + export to Asia/Europe</td><td>~1.1M vehicles/yr; Tesla's highest-output factory</td></tr>
+      <tr><td><span class="flag">&#127470;&#127475;</span></td><td><div class="facility-name">Tesla India (Market Entry)</div><div class="facility-detail">Mumbai + Delhi</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>Showrooms; Gigafactory site selection ongoing</td><td>Musk met PM Modi; factory planned 2026+</td></tr>
+      <tr><td><span class="flag">&#127475;&#127473;</span></td><td><div class="facility-name">Tesla European HQ</div><div class="facility-detail">Amsterdam, Netherlands</div></td><td><span class="company-badge badge-tesla">TESLA</span></td><td>European legal entity, tax, compliance, distribution</td><td>European HQ hub</td></tr>
+      <tr><td><span class="flag">&#127480;&#127462;</span></td><td><div class="facility-name">xAI / HUMAIN Data Center</div><div class="facility-detail">Saudi Arabia</div></td><td><span class="company-badge badge-xai">xAI</span></td><td>500MW AI data center — joint venture with HUMAIN</td><td>Announced Nov 2025 US-Saudi Investment Forum</td></tr>
+      <tr><td><span class="flag">&#127462;&#127482;</span></td><td><div class="facility-name">Starlink Asia-Pacific Hub</div><div class="facility-detail">Australia + Regional</div></td><td><span class="company-badge badge-spacex">SPACEX</span></td><td>Starlink service hub for Oceania, Southeast Asia</td><td>6,000+ satellites; 4M+ global users</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<!-- 04 COMMODITIES -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title">Critical Commodities Consumed</div>
+    <div class="divider"></div>
+  </div>
+  <div class="commodities-grid">
+    <div class="commodity-card"><span class="commodity-icon">&#9889;</span><div class="commodity-name">Lithium</div><div class="commodity-use">Battery cathode — LFP &amp; NMC cells</div><div class="commodity-user">TESLA / SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128309;</span><div class="commodity-name">Cobalt</div><div class="commodity-use">High-energy NMC batteries (reducing)</div><div class="commodity-user">TESLA</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128296;</span><div class="commodity-name">Nickel</div><div class="commodity-use">NMC cathode; high-energy density cells</div><div class="commodity-user">TESLA</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#129001;</span><div class="commodity-name">Copper</div><div class="commodity-use">EV motors, wiring, Superchargers</div><div class="commodity-user">TESLA / BORING</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#9881;</span><div class="commodity-name">Steel</div><div class="commodity-use">Vehicle body; Starship hull (stainless)</div><div class="commodity-user">TESLA / SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#9992;</span><div class="commodity-name">Aluminum</div><div class="commodity-use">Falcon 9 structure, Tesla body panels</div><div class="commodity-user">TESLA / SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128167;</span><div class="commodity-name">RP-1 Kerosene</div><div class="commodity-use">Falcon 9 first-stage propellant</div><div class="commodity-user">SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#10052;</span><div class="commodity-name">Liquid Oxygen</div><div class="commodity-use">Falcon 9 &amp; Starship oxidizer</div><div class="commodity-user">SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128293;</span><div class="commodity-name">Methane (CH&#8324;)</div><div class="commodity-use">Starship Raptor engine propellant</div><div class="commodity-user">SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128142;</span><div class="commodity-name">Silicon / Chips</div><div class="commodity-use">FSD chips (TSMC), NVIDIA H100 GPUs</div><div class="commodity-user">TESLA / xAI</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#129695;</span><div class="commodity-name">Graphite</div><div class="commodity-use">Battery anode (70% from China)</div><div class="commodity-user">TESLA</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#127758;</span><div class="commodity-name">Rare Earth Elements</div><div class="commodity-use">EV motors (neodymium), electronics</div><div class="commodity-user">TESLA</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128295;</span><div class="commodity-name">Titanium</div><div class="commodity-use">Falcon 9 turbopumps, Merlin engines</div><div class="commodity-user">SPACEX</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#128267;</span><div class="commodity-name">Manganese</div><div class="commodity-use">LMFP next-gen battery chemistry</div><div class="commodity-user">TESLA</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#9889;</span><div class="commodity-name">Electricity</div><div class="commodity-use">Gigafactories, Colossus cluster, Starlink</div><div class="commodity-user">ALL COMPANIES</div></div>
+    <div class="commodity-card"><span class="commodity-icon">&#127754;</span><div class="commodity-name">Water</div><div class="commodity-use">Starship deluge system, Giga cooling</div><div class="commodity-user">SPACEX / TESLA</div></div>
+  </div>
+  <div style="margin-top:24px;padding:20px;background:var(--bg2);border:1px solid rgba(239,68,68,0.2);border-left:3px solid var(--danger)">
+    <div style="font-size:11px;letter-spacing:2px;color:var(--danger);margin-bottom:8px;font-family:'Space Mono',monospace">&#9888; SUPPLY CHAIN VULNERABILITIES</div>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7"><strong style="color:#fff">Graphite &amp; Lithium Processing:</strong> China controls 70%+ of global graphite processing and significant lithium refining — Tesla's direct exposure. <strong style="color:#fff">Cobalt:</strong> 70% from DRC, processed in China. <strong style="color:#fff">NVIDIA GPUs:</strong> H100/H200 manufactured solely by TSMC in Taiwan — a geopolitical choke point for xAI's Colossus. <strong style="color:#fff">Rare Earths:</strong> China 85% of global processing — critical for Tesla motors. US-China trade tensions are Musk's #1 supply chain risk.</p>
+  </div>
+</div>
+</section>
+
+<!-- 05 ALLIANCES -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title">Strategic Alliances &amp; Key Relationships</div>
+    <div class="divider"></div>
+  </div>
+  <div class="alliances-grid">
+    <div class="alliance-card political"><div class="alliance-type">Political</div><div class="alliance-name">Donald Trump / US Government</div><div class="alliance-desc">Spent $250M+ on Trump's 2024 campaign. Led DOGE as Special Government Employee — access to all federal systems. Fired 200,000+ federal employees. Left DOGE early 2026 but relationship remains his central political lever. SpaceX receives $22B+ in government contracts.</div></div>
+    <div class="alliance-card economic"><div class="alliance-type">Economic / State</div><div class="alliance-name">Saudi Arabia (MBS / HUMAIN)</div><div class="alliance-desc">xAI and Saudi AI company HUMAIN announced 500MW joint data center Nov 2025. Starlink connectivity deals. Saudi PIF is a potential Tesla/SpaceX investor. Musk attended US-Saudi Investment Forum alongside Jensen Huang.</div></div>
+    <div class="alliance-card strategic"><div class="alliance-type">Technology</div><div class="alliance-name">NVIDIA / Jensen Huang</div><div class="alliance-desc">xAI's Colossus runs 100,000+ NVIDIA H100 GPUs. Both CEOs appeared together at the Saudi Investment Forum. Critical dependency — NVIDIA is xAI's single largest hardware vendor and the lifeblood of the Grok AI training pipeline.</div></div>
+    <div class="alliance-card tech"><div class="alliance-type">Government / Defense</div><div class="alliance-name">US Department of Defense</div><div class="alliance-desc">SpaceX holds classified launch contracts with DoD and NRO. Starlink embedded in US military doctrine globally. SpaceX launches GPS satellites, spy satellites, and classified payloads. $3.3B+ in unclassified DoD contracts in 2024 alone.</div></div>
+    <div class="alliance-card strategic"><div class="alliance-type">Space / Civil</div><div class="alliance-name">NASA</div><div class="alliance-desc">Commercial Crew (Crew Dragon carries astronauts to ISS). Artemis (Starship is NASA's lunar lander). But NASA is only 5% of SpaceX's 2026 revenue. Musk has publicly criticized NASA bureaucracy while remaining its most important contractor.</div></div>
+    <div class="alliance-card political"><div class="alliance-type">Geopolitical / Conflict</div><div class="alliance-name">Ukraine / NATO</div><div class="alliance-desc">Starlink was critical to Ukraine's battlefield communications 2022–2024. Musk later imposed limits near Crimea and publicly questioned US aid to Ukraine — a single private actor controlling a warzone's internet, a historically unprecedented situation.</div></div>
+    <div class="alliance-card economic"><div class="alliance-type">Industrial Supply</div><div class="alliance-name">CATL / Panasonic</div><div class="alliance-desc">CATL supplies LFP batteries for Tesla's standard-range fleet ($8B+ deal). Panasonic supplies NCA cylindrical cells for premium Teslas. Battery supply is Tesla's most critical vendor relationship — Musk is pushing vertical integration to reduce dependency.</div></div>
+    <div class="alliance-card tech"><div class="alliance-type">AI / Tech Bloc</div><div class="alliance-name">Andreessen Horowitz / Peter Thiel</div><div class="alliance-desc">Marc Andreessen (a16z) invested in xAI. Thiel-Musk share PayPal Mafia roots. All three are in the "techno-optimist" ideological camp — anti-regulatory, anti-DEI, pro-AI acceleration. They form the core of Silicon Valley's political-economic power bloc.</div></div>
+    <div class="alliance-card political"><div class="alliance-type">Political / Media</div><div class="alliance-name">European Far-Right (AfD, Reform UK)</div><div class="alliance-desc">Publicly endorsed AfD in Germany, Farage's Reform UK, and other EU nationalist parties via X. Intervened in German elections Jan 2025. EU invoked DSA compliance against X. Musk as ideological exporter of tech-populist anti-establishment politics into European democracies.</div></div>
+    <div class="alliance-card economic"><div class="alliance-type">Emerging Market</div><div class="alliance-name">India / PM Narendra Modi</div><div class="alliance-desc">Musk met Modi multiple times. Tesla India launched 2025. Starlink licensed in India after years of regulatory dispute. xAI and AI infrastructure potential. India represents the world's largest remaining EV market not yet fully penetrated by Tesla.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- 06 IDEOLOGY -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-title">Ideology &amp; Worldview</div>
+    <div class="divider"></div>
+  </div>
+  <div class="quote-block">
+    "The goal of SpaceX is to make humanity multiplanetary. The goal of Tesla is to accelerate the world's transition to sustainable energy. The goal of xAI is to understand the universe. The goal of X is to have a maximally truthful information platform."
+    <div class="quote-author">— ELON MUSK, 2024</div>
+  </div>
+  <div class="ideology-grid">
+    <div class="ideology-pillar"><span class="ideology-icon">&#128640;</span><div class="ideology-title">Techno-Accelerationism</div><div class="ideology-body">Musk believes technology — not policy — is the solution to humanity's problems. Rapid advancement in AI, energy, and space is not just desirable but morally necessary. He views regulatory delay as an existential threat. This drives his confrontational stance toward the FAA, SEC, and EU regulators.</div></div>
+    <div class="ideology-pillar"><span class="ideology-icon">&#128511;</span><div class="ideology-title">Techno-Libertarianism</div><div class="ideology-body">Self-described "free speech absolutist." Opposes censorship, DEI, environmental overreach, and government bureaucracy. Supports gun rights, low taxes, skilled immigration (H-1B), and UBI as automation response. Core contradiction: his companies receive $22B+ in government contracts — the state he attacks funds his empire.</div></div>
+    <div class="ideology-pillar"><span class="ideology-icon">&#127758;</span><div class="ideology-title">Civilizational Survival</div><div class="ideology-body">Mars colonization is not vanity — Musk genuinely believes Earth faces existential risks (AI misalignment, asteroids, nuclear war, climate). SpaceX exists to create a backup for humanity. This long-termism frames short-term harms as justified by species-level survival — a moral framework with no democratic accountability.</div></div>
+    <div class="ideology-pillar"><span class="ideology-icon">&#129516;</span><div class="ideology-title">Natalism &amp; Demographics</div><div class="ideology-body">Musk (12+ children) is a vocal proponent of higher birth rates. Calls declining birth rates the world's greatest civilizational threat. Warns about population collapse in Europe and Japan. This intersects with his political messaging around immigration, culture, and European identity.</div></div>
+    <div class="ideology-pillar"><span class="ideology-icon">&#129302;</span><div class="ideology-title">AI Duality</div><div class="ideology-body">Co-founded OpenAI as a "safe" AI lab, then sued it for becoming commercial. Founded xAI. Simultaneously warns about AI existential risk while aggressively accelerating it. His logic: if AGI is inevitable, it's better led by people with humanity's interests at heart — a self-serving but internally consistent worldview.</div></div>
+    <div class="ideology-pillar"><span class="ideology-icon">&#9889;</span><div class="ideology-title">Political Evolution (2020–2026)</div><div class="ideology-body">2020: voted Democrat. 2022: pivoted right after Twitter acquisition. 2024: $250M on Trump campaign + DOGE role. 2025: backed European far-right parties. 2026: influencing midterms; hinted at forming "America Party." His journey mirrors Silicon Valley's shift from liberal consensus to tech-authoritarian populism.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- 07 POWER MAP -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <div class="section-title">Power Map — Global Influence</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="power-map">
+    <svg class="power-svg" viewBox="0 0 1200 680" preserveAspectRatio="none">
+      <circle cx="600" cy="340" r="240" fill="none" stroke="rgba(0,212,255,0.06)" stroke-width="1"/>
+      <circle cx="600" cy="340" r="140" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1" stroke-dasharray="4,8"/>
+      <line x1="600" y1="340" x2="170" y2="100" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="310" y2="80" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="600" y2="70" stroke="#00d4ff" stroke-width="2" opacity="0.8"/>
+      <line x1="600" y1="340" x2="820" y2="80" stroke="#00d4ff" stroke-width="2" opacity="0.8"/>
+      <line x1="600" y1="340" x2="1050" y2="110" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="1120" y2="300" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="120" y2="310" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="160" y2="530" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="500" y2="580" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="850" y2="570" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,6" opacity="0.5"/>
+      <line x1="600" y1="340" x2="1030" y2="540" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <line x1="600" y1="340" x2="370" y2="570" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+    </svg>
+
+    <div class="power-center">
+      <div style="font-size:26px">&#129413;</div>
+      <div class="power-center-name">ELON MUSK</div>
+      <div class="power-center-sub">GLOBAL POWER NODE</div>
+      <div class="power-center-net">$852B</div>
+    </div>
+
+    <div class="power-node" style="top:15%;left:14%"><div class="node-dot" style="color:#f59e0b;border-color:#f59e0b"></div><div class="node-label">&#127963; US Government</div><div class="node-sub">DOGE &middot; $22B+ contracts</div></div>
+    <div class="power-node" style="top:12%;left:26%"><div class="node-dot" style="color:#ef4444;border-color:#ef4444"></div><div class="node-label">&#9876; US Military / DoD</div><div class="node-sub">Starlink &middot; NRO &middot; GPS</div></div>
+    <div class="power-node" style="top:10%;left:50%"><div class="node-dot" style="color:#00d4ff;border-color:#00d4ff"></div><div class="node-label">&#128640; Space / NASA</div><div class="node-sub">Crew Dragon &middot; Starship HLS</div></div>
+    <div class="power-node" style="top:12%;left:68%"><div class="node-dot" style="color:#00d4ff;border-color:#00d4ff"></div><div class="node-label">&#128225; Global Internet</div><div class="node-sub">Starlink &middot; 4M+ users</div></div>
+    <div class="power-node" style="top:16%;left:87%"><div class="node-dot" style="color:#f59e0b;border-color:#f59e0b"></div><div class="node-label">&#128330; Saudi Arabia</div><div class="node-sub">xAI &middot; HUMAIN &middot; 500MW</div></div>
+    <div class="power-node" style="top:44%;left:93%"><div class="node-dot" style="color:#10b981;border-color:#10b981"></div><div class="node-label">&#127470;&#127475; India</div><div class="node-sub">Tesla &middot; Starlink &middot; Modi</div></div>
+    <div class="power-node" style="top:46%;left:10%"><div class="node-dot" style="color:#00d4ff;border-color:#00d4ff"></div><div class="node-label">&#128243; Media / X Platform</div><div class="node-sub">200M followers &middot; narrative</div></div>
+    <div class="power-node" style="top:78%;left:13%"><div class="node-dot" style="color:#00d4ff;border-color:#00d4ff"></div><div class="node-label">&#128187; Silicon Valley</div><div class="node-sub">a16z &middot; Thiel &middot; Tech lobby</div></div>
+    <div class="power-node" style="top:85%;left:42%"><div class="node-dot" style="color:#10b981;border-color:#10b981"></div><div class="node-label">&#128200; Financial Markets</div><div class="node-sub">TSLA moves markets</div></div>
+    <div class="power-node" style="top:84%;left:71%"><div class="node-dot" style="color:#ef4444;border-color:#ef4444"></div><div class="node-label">&#127464;&#127475; China (Tension)</div><div class="node-sub">Giga Shanghai &middot; supply risk</div></div>
+    <div class="power-node" style="top:80%;left:86%"><div class="node-dot" style="color:#7c3aed;border-color:#7c3aed"></div><div class="node-label">&#127466;&#127482; Europe</div><div class="node-sub">Giga Berlin &middot; AfD &middot; DSA</div></div>
+    <div class="power-node" style="top:84%;left:30%"><div class="node-dot" style="color:#ef4444;border-color:#ef4444"></div><div class="node-label">&#127482;&#127462; Ukraine Conflict</div><div class="node-sub">Starlink leverage &middot; war comms</div></div>
+
+    <div class="pm-legend">
+      <div class="pm-legend-title">CONNECTION TYPE</div>
+      <div class="pm-legend-item"><div class="pm-legend-line" style="background:#f59e0b"></div>Political / Economic</div>
+      <div class="pm-legend-item"><div class="pm-legend-line" style="background:#ef4444"></div>Military / Conflict</div>
+      <div class="pm-legend-item"><div class="pm-legend-line" style="background:#00d4ff"></div>Technology / Media</div>
+      <div class="pm-legend-item"><div class="pm-legend-line" style="background:#10b981"></div>Trade / Investment</div>
+      <div class="pm-legend-item"><div class="pm-legend-line" style="background:#7c3aed"></div>Geopolitical Tension</div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px" class="domains-grid">
+    <div class="domain-card"><div class="domain-icon">&#128225;</div><div class="domain-name">Global Internet Infrastructure</div><div class="domain-body">Starlink's 6,000+ satellites cover 100+ countries. In conflict zones (Ukraine, Gaza, Sudan) Starlink IS the internet. Musk can throttle or cut any country's connectivity — a geopolitical weapon no private citizen has ever held before.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#128243;</div><div class="domain-name">Information Warfare (X)</div><div class="domain-body">200M+ personal followers. X affects elections in Germany, UK, Brazil. His posts move crypto markets instantly. He amplifies or suppresses narratives at will. X is the world's most geopolitically consequential private media platform.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#128640;</div><div class="domain-name">Space Access Monopoly</div><div class="domain-body">SpaceX launches 70%+ of all payloads to orbit globally. Without SpaceX, the US has no domestic way to put humans in space. NASA, DoD, and intelligence agencies are all dependent. Musk controls the world's most critical launch infrastructure.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#127963;</div><div class="domain-name">US Federal Government</div><div class="domain-body">As DOGE head, Musk accessed federal payment systems, personnel records, and agency data. Fired 200,000+ federal employees. This unprecedented access to state machinery — even temporarily — permanently reshapes the power balance between private wealth and democratic government.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#9889;</div><div class="domain-name">Energy Transition Control</div><div class="domain-body">Tesla dominates global EV market. Megapack dominates grid storage. Tesla's NACS charging standard is now the US industry standard — adopted by Ford, GM, Rivian and all major OEMs. Musk determines the physical infrastructure of the clean energy transition.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#129302;</div><div class="domain-name">AI Race Leadership</div><div class="domain-body">xAI's Colossus is the world's largest GPU cluster. Grok is integrated into X's 600M+ user base. The SpaceX-xAI merger creates a closed AI-data-compute-satellite loop. If AGI emerges from xAI, Musk becomes the most consequential human in history.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#128200;</div><div class="domain-name">Market Moving Power</div><div class="domain-body">A single Musk tweet crashed crypto markets 30%+ in 2021. Tesla stock moves on his social posts. SpaceX and xAI IPO potential can reshape global capital allocation. Institutional investors track his statements as primary market signals.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#9876;</div><div class="domain-name">Military / Defense Dependency</div><div class="domain-body">SpaceX launches classified NRO satellites, GPS replenishment, and DoD communications payloads. Starlink is embedded in US military doctrine globally. The US cannot conduct modern warfare without SpaceX — giving Musk asymmetric leverage in any policy dispute with Washington.</div></div>
+    <div class="domain-card"><div class="domain-icon">&#127760;</div><div class="domain-name">Geopolitical Pivot Tool</div><div class="domain-body">Musk can tilt geopolitical events by cutting Starlink in conflict zones, endorsing foreign candidates on X, threatening to move Giga Berlin, or expanding xAI to US adversary states. No private actor in history has held this range of simultaneous geopolitical leverage.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- 08 RISK -->
+<section>
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <div class="section-title">Risk Assessment &amp; Vulnerabilities</div>
+    <div class="divider"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div class="card">
+      <div class="card-title">Power Concentration Index</div>
+      <div class="risk-bars">
+        <div><div class="risk-label"><span class="risk-name">Geopolitical Influence</span><span class="risk-score" style="color:var(--danger)">97/100</span></div><div class="risk-track"><div class="risk-fill" style="width:97%;background:linear-gradient(90deg,var(--danger),#ff6b6b)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">Information Control (X + Grok)</span><span class="risk-score" style="color:var(--danger)">90/100</span></div><div class="risk-track"><div class="risk-fill" style="width:90%;background:linear-gradient(90deg,var(--danger),#ff6b6b)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">Space Launch Monopoly</span><span class="risk-score" style="color:var(--accent3)">88/100</span></div><div class="risk-track"><div class="risk-fill" style="width:88%;background:linear-gradient(90deg,var(--accent3),#fcd34d)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">AI Race Position (xAI)</span><span class="risk-score" style="color:var(--accent3)">82/100</span></div><div class="risk-track"><div class="risk-fill" style="width:82%;background:linear-gradient(90deg,var(--accent3),#fcd34d)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">EV Market Dominance</span><span class="risk-score" style="color:var(--accent4)">65/100</span></div><div class="risk-track"><div class="risk-fill" style="width:65%;background:linear-gradient(90deg,var(--accent4),#34d399)"></div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Key Vulnerabilities</div>
+      <div class="risk-bars">
+        <div><div class="risk-label"><span class="risk-name">China dependency (Tesla + supply chain)</span><span class="risk-score" style="color:var(--danger)">85/100</span></div><div class="risk-track"><div class="risk-fill" style="width:85%;background:linear-gradient(90deg,var(--danger),#ff6b6b)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">Regulatory backlash (EU / SEC / FTC)</span><span class="risk-score" style="color:var(--accent3)">78/100</span></div><div class="risk-track"><div class="risk-fill" style="width:78%;background:linear-gradient(90deg,var(--accent3),#fcd34d)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">Tesla brand damage from politics</span><span class="risk-score" style="color:var(--accent3)">75/100</span></div><div class="risk-track"><div class="risk-fill" style="width:75%;background:linear-gradient(90deg,var(--accent3),#fcd34d)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">TSMC / Taiwan geopolitical risk</span><span class="risk-score" style="color:var(--accent3)">72/100</span></div><div class="risk-track"><div class="risk-fill" style="width:72%;background:linear-gradient(90deg,var(--accent3),#fcd34d)"></div></div></div>
+        <div><div class="risk-label"><span class="risk-name">Political overextension / DOGE fallout</span><span class="risk-score" style="color:var(--accent4)">60/100</span></div><div class="risk-track"><div class="risk-fill" style="width:60%;background:linear-gradient(90deg,var(--accent4),#34d399)"></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:32px;padding:28px;background:var(--bg2);border:1px solid var(--border)">
+    <div class="card-title">Analyst Assessment</div>
+    <p style="font-size:14px;color:var(--muted);line-height:1.9;max-width:1000px">
+      Elon Musk represents a historically unprecedented concentration of private power. No individual has simultaneously controlled <strong style="color:#fff">global communications infrastructure</strong> (Starlink), <strong style="color:#fff">the world's dominant launch vehicle</strong> (Falcon 9), <strong style="color:#fff">a global political platform</strong> (X), <strong style="color:#fff">the leading frontier AI lab</strong> (xAI), and <strong style="color:#fff">direct access to federal government systems</strong> (DOGE). He is not a head of state, not a robber baron, not a media mogul — he is a synthesis of all three with exponentially greater technological leverage. The central geopolitical question of the late 2020s: <em style="color:var(--accent)">how should democratic societies govern an actor who is simultaneously too important to sanction and too powerful to ignore?</em>
+    </p>
+  </div>
+</div>
+</section>
+
+<div class="report-footer">
+  <div class="footer-class">&#9632; JARVIS INTELLIGENCE REPORT &#9632;</div>
+  <div class="footer-sub">Compiled: March 24, 2026 &middot; Sources: Forbes, Bloomberg, Reuters, SEC Filings, SpaceX IR, Tesla IR, CNBC, The Guardian, Wikipedia</div>
+  <div style="margin-top:8px;font-size:11px;color:rgba(100,116,139,0.5)">Generated for analytical purposes. Financial data based on publicly available estimates as of report date.</div>
+</div>
+
+</body>
+</html>
