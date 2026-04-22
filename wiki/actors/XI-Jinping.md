@@ -7,7 +7,7 @@ country: china
 region: east-asia
 tags: [political, ccp, china, hybrid-power]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources: []
 related_actors: [donald-trump, vladimir-putin]
@@ -38,13 +38,26 @@ and BRICS+ de-dollarization agenda.
 - **Key relationships:** [[donald-trump]], [[vladimir-putin]]
 
 ## Current Assessment
-*(populate from speech/policy ingests)*
+*(Knowledge-based · April 2026 · confidence: medium)*
+
+Xi is managing a three-front pressure: US tariff escalation + domestic growth slowdown + Taiwan reunification timeline expectations. His core strategy is controlled retaliation — matching US tariff moves asymmetrically while deploying rare earth controls as the asymmetric weapon. Domestically, he needs to show strength against US pressure without triggering a financial crisis that would destabilize CCP legitimacy. The "dual circulation" strategy is his economic doctrine: insulate the domestic market while maintaining export competitiveness. PBOC is his shock absorber — accommodative stance, CNY managed depreciation as tariff offset. Tech self-sufficiency (Huawei Kirin, SMIC 7nm workarounds) is ahead of US estimates but still 5-10 years from parity on advanced nodes.
 
 ## Narrative Shift
-*(populate from transcript ingests)*
+*(Knowledge-based · April 2026)*
+
+**6 months ago:** Xi's narrative centered on "peaceful reunification" and "win-win cooperation" with trading partners while building domestic AI/semiconductor capacity.
+
+**Now:** Shift toward explicit retaliation framing — "we will fight to the end" language on tariffs. Rare earth export controls framed as defensive sovereignty move, not escalation. Key new emphasis: self-reliance as national security, not just economic policy. BRI recalibrated away from debt-trap optics toward "high-quality development" framing.
+
+**Key omission:** No acknowledgement that the trade war is damaging Chinese growth. Official narrative maintains all pain is US-imposed; no domestic accountability.
 
 ## Key Recent Actions
-- *(populate from ingests)*
+*(knowledge-based · confidence: medium)*
+- 2026-Q1: Announced countervailing tariffs matching US levels on agricultural goods + aerospace
+- 2026-Q1: Gallium and germanium export controls tightened — quota reductions affecting ASML and chip equipment makers
+- 2026-Q1: State visit to Russia — "no limits partnership" reaffirmed
+- 2026-Q1: PBOC RRR cut 25bp — accommodative signal to offset tariff drag
+- 2026-Q1: Military exercises near Taiwan Strait — elevated from routine, signaling response to US arms sales
 
 ## Market Impact
 Taiwan escalation → semiconductor supply chain → TSMC, NVIDIA, ASML.

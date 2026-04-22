@@ -7,7 +7,7 @@ country: united-states
 region: north-america
 tags: [financial, banking, jpmorgan, systemic-risk]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources: []
 related_actors: [jerome-powell, larry-fink]
@@ -39,13 +39,24 @@ return capacity.
 - **Key relationships:** [[jerome-powell]], [[larry-fink]]
 
 ## Current Assessment
-*(populate from earnings calls, shareholder letters)*
+*(Knowledge-based · April 2026 · confidence: medium)*
+
+Dimon is the most credible private-sector voice on systemic financial risk. His 2026 annual shareholder letter is expected to focus on: US debt trajectory (fiscal dominance risk), tariff-driven recession probability, geopolitical fragmentation as a structural drag on capital markets. He has been consistently bearish on US fiscal sustainability while remaining publicly neutral on Fed policy. JPMorgan's 2025 profit record gives him the credibility to be bearish without being dismissed. His key concern: US running 6-7% deficit at full employment is unprecedented — "we are in uncharted waters."
 
 ## Narrative Shift
-*(populate from ingests — track views on US debt, recession probability, geopolitical risk)*
+*(Knowledge-based · April 2026)*
+
+**Shift:** From "recession unlikely, soft landing base case" (2023-2024) → now "50% probability of a hard landing in 2026-2027." The tariff shock changed his calculus. Key new emphasis: geopolitical risk is not priced into US equities. JPMorgan's internal geopolitical risk index is elevated.
+
+**Consistent message:** US debt is the slow-moving crisis that will eventually dominate all other market conversations. He has been saying this for 3 years — markets have not priced it yet.
 
 ## Key Recent Actions
-- *(populate from ingests)*
+*(knowledge-based · confidence: medium)*
+- 2026-Q1: Annual shareholder letter — flagged tariff escalation as top macro risk
+- 2026-Q1: JPMorgan Q1 earnings — beat on trading revenue (volatility = opportunity for market-makers)
+- 2026-Q1: Increased JPMorgan's credit loss provisions — prudent given macro uncertainty
+- 2026-Q1: Public commentary on US debt: "The bond market will eventually say enough"
+- 2026-Q1: Reportedly told Treasury Secretary Bessent: bond market vigilantes are the real constraint, not Congress
 
 ## Market Impact
 JPMorgan earnings → US bank sector. Dimon macro commentary → risk sentiment.

@@ -5,7 +5,7 @@ type: country
 region: middle-east
 tags: ['middle-east', 'military', 'tech', 'iran', 'conflict', 'nuclear-ambiguity']
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources:
   - raw/geopolitics/israel-country-brief-2026-04.md
@@ -56,7 +56,17 @@ Not sanctioned. Israel itself has sanctioned Hamas/Hezbollah entities. ICC arres
 Post-October 7 Israel is simultaneously stronger militarily (Hezbollah degraded, Hamas degraded) and weaker diplomatically (international isolation, ICJ proceedings). Trump re-election = strong US backing. Saudi normalisation may resume.
 
 ## Market Relevance
-Shekel (ILS) = geopolitical risk barometer for Middle East. Tel Aviv Stock Exchange (TASE) — tech-heavy. Israeli startup ecosystem = M&A target for US tech. Key risk: Iran escalation via proxies, or direct strike.
+**FX:** ILS (Shekel) = real-time geopolitical risk barometer for MENA. ILS weakens sharply on escalation news (Oct 7: ILS/USD -5% in 48h). BOI intervenes with FX reserves to stabilize. ILS strength = risk-on signal for regional stability.
+
+**Equities:** TASE TA-35 = concentrated in tech (Check Point, Amdocs, CyberArk), banks (Hapoalim, Leumi), and pharmaceuticals (Teva). Defense sector underrepresented in public markets — most defense contracts are private (Elbit, Rafael state-owned). Tech-heavy TASE = proxy for Israeli startup ecosystem health.
+
+**Defense tech exports:** Israel's Unit 8200 alumni ecosystem generates ~30% of global cybersecurity startups. M&A activity (Palo Alto, CrowdStrike, Microsoft acquisitions of Israeli companies) = ongoing. NSO Group/Pegasus = export control and diplomatic risk.
+
+**Suez/Red Sea disruption:** Eilat port (Israel's Red Sea access) effectively closed by Houthi threat since Oct 7. Direct cost to Israeli exporters + shipping rerouting costs. Houthi ceasefire = Eilat reopening = positive trade signal.
+
+**Iran escalation premium:** Direct Iran strike on Israel = immediate Hormuz risk premium ($10-20/bbl), ILS -5%+, TA-35 -3%+, global equity sell-off. Probability low but tail risk non-zero. Each proxy escalation incident → partial repricing.
+
+**Reconstruction costs:** Gaza reconstruction estimated $60-80B — burden-sharing internationally contested. Israel fiscal position (deficit at 8%+ GDP) is strained by war costs.
 
 ## Key Timelines
 *(pending — add when relevant timeline ingested)*

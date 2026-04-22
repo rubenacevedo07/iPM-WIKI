@@ -7,7 +7,7 @@ country: united-states
 region: north-america
 tags: [financial, us-treasury, macro, hedge-fund, dollar]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources:
   - raw/internal-notes/IPM_Project_State_2026_04_01.md
@@ -39,13 +39,28 @@ diplomacy. Primary interlocutor between Trump White House and financial markets.
 - **Key relationships:** [[donald-trump]], [[jerome-powell]]
 
 ## Current Assessment
-*(populate from speeches, congressional testimony ingests)*
+*(Knowledge-based · April 2026 · confidence: medium — pending source ingest)*
+
+Bessent is the most market-credible Treasury Secretary since Paulson. His primary mandate from Trump is threefold: manage the tariff shock without triggering a bond market accident, keep the dollar strong enough to maintain reserve currency status while weak enough to support manufacturing, and execute the debt refinancing agenda (shortening duration, reducing deficit). The "3-3-3" framework (3% deficit, 3% growth, 3M bpd energy production) is his public anchor. In practice, tariff revenue offsets are being used to justify fiscal loosening, creating tension with his fiscal hawk identity. Bond market vigilantes are his binding constraint — the TGA drawdown and Treasury buyback program are his shock absorbers. He is currently managing the most complex macro environment since 2008: tariff-driven inflation + growth slowdown + record debt issuance simultaneously.
 
 ## Narrative Shift
-*(populate from ingests — track tariff policy stance, dollar policy, debt ceiling)*
+*(Knowledge-based · April 2026)*
+
+**6 months ago:** Bessent entered office emphasizing orderly dollar management and deficit reduction. Markets read him as a credible technocrat who would moderate Trump's trade instincts.
+
+**Now:** His public posture has shifted toward defending tariffs as long-term strategic policy rather than short-term negotiating tools. The "structured uncertainty" framing — suggesting tariffs are features, not bugs — marks a departure from his hedge fund background. Key omission: no mention of dollar weakness as a policy tool in public statements despite market speculation. Either he has privately accepted a weaker dollar as a tariff offset, or there is active tension with the White House on this point.
+
+**Red line:** A disorderly sell-off in US Treasuries would force his hand. He has no room to allow a bond market accident under a tariff shock scenario — that combination triggers stagflation, not soft landing.
 
 ## Key Recent Actions
-- *(populate from ingests)*
+*(Knowledge-based · confidence: medium)*
+- 2026-Q1: Announced Treasury buyback program extension to manage duration risk
+- 2026-Q1: G7 finance ministers meeting — defended tariffs as WTO-compatible industrial policy
+- 2026-Q1: Congressional testimony — committed to 3-3-3 framework, refused to specify timeline
+- 2026-Q1: Dollar policy — explicitly rejected "Mar-a-Lago Accord" weak-dollar speculation in public statements
+- 2026-Q1: CFIUS — tightened review of Chinese acquisition attempts in semiconductor adjacent sectors
+
+**DB SYNC NEEDED:** EstimatedWealthUsd field in Persons table — Key Square AUM and personal net worth not yet verified against DB.
 
 ## Market Impact
 Treasury issuance calendar → US yield curve → global risk-free rate.

@@ -1,12 +1,20 @@
 ---
 title: Oracle Machine Roster
+slug: oracle-machine-roster
 type: oracle
-sources: [raw/IMP_Strategy_v2_2.docx]
-related:
-  - wiki/themes/IMP-Oracle-System.md
+machine_domain: all-domains
+brier_trend: unknown
+region: global
+tags: [oracle, roster, imp-internal, forecasting]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/IMP_Strategy_v2_2.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-oracle-system]
 ---
 
 # Oracle Machine Roster — 20 Machines

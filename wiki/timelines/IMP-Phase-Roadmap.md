@@ -1,14 +1,18 @@
 ---
 title: IMP Phase Roadmap
+slug: imp-phase-roadmap
 type: timeline
-sources: [raw/IMP_Strategy_v2_2.docx]
-related:
-  - wiki/themes/IMP-Business-Model.md
-  - wiki/themes/IMP-Oracle-System.md
-  - wiki/themes/IMP-Automation-Engine.md
+region: global
+tags: [platform, roadmap, imp-internal, phases]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/IMP_Strategy_v2_2.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-business-model, imp-oracle-system, imp-automation-engine]
 ---
 
 # IMP Phase Roadmap

@@ -1,13 +1,18 @@
 ---
 title: IMP Power Index System — Six Dimensions, Ten Indexes
+slug: imp-power-index-system
 type: theme
-sources: [raw/IMP_Strategy_v2_2.docx]
-related:
-  - wiki/themes/IMP-Platform-Architecture.md
-  - wiki/themes/IMP-Competitive-Moats.md
+region: global
+tags: [platform, power-index, PersonPowerIndex, imp-internal]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/IMP_Strategy_v2_2.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-platform-architecture, imp-competitive-moats]
 ---
 
 # IMP Power Index System — Six Dimensions, Ten Indexes

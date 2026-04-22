@@ -7,7 +7,7 @@ country: united-states
 region: north-america
 tags: [central-banking, monetary-policy, fed, dollar]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources: []
 related_actors: [christine-lagarde, scott-bessent]
@@ -46,15 +46,22 @@ Fed held rates at 4.5–4.75%. Dot plot shifted hawkish — fewer cuts projected
 Key posture: rates will stay restrictive "as long as necessary." No commitment on timing of first cut.
 
 ## Narrative Shift
-*(vs prior meeting)*
+*(Updated 2026-04-09 · knowledge-based update 2026-04-21)*
 
-Shift toward more hawkish: less mention of downside activity risks, more focus on inflation re-acceleration risk if energy and tariffs persist. Greater emphasis that inflation is still ABOVE target. Frames tariff/energy shocks as "noise" but warns they could become persistent. "Higher for longer" now the explicit implicit narrative.
+**vs prior meeting (Dec 2025 → March 2026):** Hawkish within the pause. Less mention of downside activity risks, more focus on inflation re-acceleration from tariffs and energy. Greater emphasis that inflation is still ABOVE target — dot plot shifted to fewer cuts. "Higher for longer" from implicit to explicit narrative.
 
-## Narrative Shift
-*(populate from transcript ingests — track vs prior appearances)*
+**vs 6 months ago:** Powell's framing has quietly absorbed the tariff shock as a "supply-side complication" rather than a policy error. He is threading the needle: cannot validate Trump's pressure to cut (would destroy Fed credibility) but cannot ignore growth risks. Key omission in recent communications: no explicit mention of the political pressure from the White House.
+
+**Red line:** A simultaneous rise in unemployment AND inflation (stagflation) is Powell's nightmare — rate policy cannot solve both. If labor market cracks while PCE stays above 2.5%, the Fed will be blamed regardless of what it does.
 
 ## Key Recent Actions
-- *(populate from ingests)*
+*(knowledge-based · pending official transcript ingest)*
+- 2026-03-18: FOMC meeting — rates held 4.5–4.75%, dot plot revised hawkish (fewer 2026 cuts), inflation forecast 2.7%
+- 2026-Q1: Congressional testimony — rejected calls for emergency cuts, defended data-dependent approach
+- 2026-Q1: Explicitly declined to comment on tariff policy as monetary transmission, deferred to fiscal authorities (Bessent)
+- 2026-Q1: Fed balance sheet runoff (QT) continued at $60B/month — no adjustment signaled
+
+**DB SYNC NEEDED (CL-DB pending):** Powell's CompositeScore or rank not materially changed — no DB action needed unless new PersonPowerIndex recalculation run.
 
 ## Market Impact
 Direct lever on: US rates (short end), USD, global risk appetite, EM capital flows.

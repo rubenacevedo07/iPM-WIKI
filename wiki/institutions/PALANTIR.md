@@ -14,7 +14,7 @@ related_countries: ['united-states', 'ukraine']
 related_institutions: ['pentagon', 'amazon-web-services', 'nvidia']
 related_commodities: []
 related_themes: ['ai-supply-chain-export-controls', 'energy-chokepoints-war']
-db_id: TBD
+db_id: 96
 db_type: COMPANY
 ---
 

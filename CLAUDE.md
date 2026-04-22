@@ -669,6 +669,19 @@ that creates new pages.
 Macro regime map. Compact synthesis of major themes, key actors in motion,
 structural constraints, scenario branches, market regime. Update on major shifts.
 
+### `wiki/pending-db-sync.md`
+**Single source of truth for wiki→DB gaps.** All open `DB SYNC NEEDED` flags live
+here. Format: `CL-DB-NNN | entity/edge | description | raised | status`.
+
+Rules:
+- **Always check this file** before writing DB-related SQL or confirming DB state.
+- When raising a new flag: add to Open Flags table + note in affected page's
+  `## DB Sync Notes` + log in `wiki/log.md`.
+- When a flag is confirmed live in DB: move to Closed Flags, update the wiki page,
+  add a `db-sync` log entry.
+- Never delete closed entries — they are a permanent audit trail.
+- Sequential numbering: `CL-DB-001`, `CL-DB-002`, etc. Never reuse a number.
+
 ### `wiki/log.md`
 Append-only. Never rewrite past entries. Format:
 

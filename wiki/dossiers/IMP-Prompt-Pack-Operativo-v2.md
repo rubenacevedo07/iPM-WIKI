@@ -1,3 +1,20 @@
+---
+title: IMP Prompt Pack Operativo v2.0
+slug: imp-prompt-pack-operativo-v2
+type: dossier
+region: global
+tags: [imp-internal, prompts, ops, perplexity, claude]
+created: 2026-04-09
+updated: 2026-04-09
+confidence: high
+sources: []
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-automation-engine]
+---
+
 # IMP Wiki — Prompt Pack Operativo v2.0
 *Alineado con CLAUDE.md v3.0 · April 2026*
 *Para usar con Perplexity Max → pegar output en Claude.ai → Claude ingesta automáticamente*

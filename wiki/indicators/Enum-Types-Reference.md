@@ -1,13 +1,20 @@
 ---
 title: Enum Types Reference — Valid DB Values
+slug: enum-types-reference
 type: indicator
-sources: [raw/internal-notes/IPM_SQL_Seed_Reference.docx]
-related:
-  - wiki/indicators/DB-ID-Reference.md
-  - wiki/themes/IMP-Power-Index-System.md
+domain: reference
+scope: all
+region: global
+tags: [database, reference, imp-internal, enums]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/internal-notes/IPM_SQL_Seed_Reference.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-power-index-system]
 ---
 
 # Enum Types Reference — Valid DB Values

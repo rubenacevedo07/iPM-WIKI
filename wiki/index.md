@@ -1,5 +1,8 @@
 # IMP Wiki — Master Index
-*Last updated: 2026-04-17 · v23 · 118 pages · Maintained by Claude per CLAUDE.md v3.0*
+*Last updated: 2026-04-22 · v27 · 142 pages · Maintained by Claude per CLAUDE.md v3.0*
+*2026-04-22: 6 European institution pages created (Rheinmetall, Airbus, TotalEnergies, Deutsche Bank, Volkswagen, LVMH). GERMANY.md + FRANCE.md updated with company links. pending-db-sync.md updated (CL-DB-016–022 now registered). 7 open DB flags raised this session.*
+*2026-04-21: wiki/pending-db-sync.md created — single source of truth for DB flags. CLAUDE.md updated with pending file rules. TAIWAN fully expanded. Global-Macro-Regime updated with tariff shock. XI, LAGARDE, MACRON, DIMON, POWELL enriched. BESSENT, CHINA, RUSSIA, SAUDI-ARABIA, UKRAINE, ISRAEL Market Relevance expanded. 12 schema fixes. 2 oracle pages. 4 open DB flags (CL-DB-012–015).*
+*2026-04-19: 11 company pages added to wiki/companies/ (auto-generated pipeline).*
 *2026-04-17: 6 actor pages enriched with external dossier content — MUSK, TRUMP, FINK, HUANG, GATES, ZUCKERBERG. See log.md for full changelog.*
 
 ---
@@ -52,7 +55,7 @@
 
 ---
 
-## Institutions (31)
+## Institutions (37)
 
 ### Central Banks & Monetary
 | Page | DB ID | Type |
@@ -108,6 +111,16 @@
 | [[institutions/EXXONMOBIL.md]] | 14 | Oil Major |
 | [[institutions/SAUDI-ARAMCO.md]] | 42 | National Oil |
 | [[institutions/LOCKHEED-MARTIN.md]] | 68 | Defense |
+
+### European Companies
+| Page | DB ID | Type |
+|------|-------|------|
+| [[institutions/RHEINMETALL.md]] | TBD | Defense (Germany) |
+| [[institutions/AIRBUS.md]] | TBD | Aerospace (EU) |
+| [[institutions/TOTALENERGIES.md]] | TBD | Oil/LNG (France) |
+| [[institutions/DEUTSCHE-BANK.md]] | TBD | Bank — Critical (Germany) |
+| [[institutions/VOLKSWAGEN.md]] | TBD | Auto (Germany) |
+| [[institutions/LVMH.md]] | TBD | Luxury (France) |
 
 ---
 
@@ -200,15 +213,17 @@
 
 ---
 
-## Oracle (1)
+## Oracle (3)
 
 | Page | Content |
 |------|---------|
 | [[oracle/Oracle-Machine-Roster.md]] | All 20 machines + domains |
+| [[oracle/MEI-LIN-ZHANG.md]] | China · trade war · tech decoupling · CNY |
+| [[oracle/CHEN-WEI.md]] | Asia Pacific · semiconductors · Taiwan · PLA |
 
 ---
 
-## Dossiers (5)
+## Dossiers (6)
 
 | Page | Subject |
 |------|---------|
@@ -217,6 +232,7 @@
 | [[dossiers/IMP-Raw-Collection-Prompts.md]] | 10-task Perplexity prompt pack |
 | [[dossiers/IMP-Prompt-Pack-Operativo-v2.md]] | 5-priority ops prompts (CLAUDE.md aligned) |
 | [[dossiers/Perplexity-State-Report-v13.md]] | Wiki state briefing for Perplexity |
+| [[dossiers/GPT-Context-Report-2026-04-20.md]] | Wiki state briefing for ChatGPT/GPT |
 
 ---
 
@@ -240,11 +256,34 @@
 
 ---
 
+## Companies (11)
+
+*Auto-generated pages from DB sync pipeline (2026-04-19). DB-ID-keyed filenames.*
+
+| Page | DB ID | Entity |
+|------|-------|--------|
+| [[companies/001_nvidia.md]] | 1 | NVIDIA |
+| [[companies/002_apple.md]] | 2 | Apple |
+| [[companies/004_microsoft.md]] | 4 | Microsoft |
+| [[companies/005_amazon.md]] | 5 | Amazon |
+| [[companies/041_tsmc.md]] | 41 | TSMC |
+| [[companies/068_lockheed_martin.md]] | 68 | Lockheed Martin |
+| [[companies/080_raytheon_technologies.md]] | 80 | Raytheon Technologies |
+| [[companies/090_blackrock.md]] | 90 | BlackRock |
+| [[companies/096_palantir.md]] | 96 | Palantir |
+| [[companies/097_northrop_grumman.md]] | 97 | Northrop Grumman |
+| [[companies/201_spacex.md]] | 201 | SpaceX |
+
+*Note: Raytheon (80), Northrop Grumman (97), SpaceX (201) have no institutions/ pages — companies/ is their only wiki entry.*
+
+---
+
 ## Lint Reports
 
 | Date | Pages | Key Finding |
 |------|-------|-------------|
 | [[lint-reports/2026-04-09.md]] | 73 | First audit — 8 orphans fixed, index rebuilt |
+| [[lint-reports/2026-04-21.md]] | 136 | 12 old-schema pages fixed, companies/ indexed, 4 DB flags open |
 
 ---
 

@@ -5,7 +5,7 @@ type: country
 region: europe
 tags: [coercive, energy, nuclear, sanctions, ukraine-war]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources:
   - raw/internal-notes/IPM_Session_Record_2026_03_27.md
@@ -51,8 +51,17 @@ Russia sanctions seeded as newsevent (6 PX events — 2026-03-27).
 Russia oil exports continue via shadow fleet and sales to India/China at discount to Brent. India potentially reducing purchases from ~1.2M b/d to ~0.4–0.5M b/d by April 2026 (Bloomberg). China maintaining purchases. Western enforcement tightened: more cargo inspections, blacklisting of shadow fleet entities. Urals discount vs Brent narrowing but "Russia discount" persists.
 
 ## Market Relevance
-Oil price (rerouted via India/China). Wheat/grain (Black Sea corridor).
-Ruble/CBR policy. Energy infrastructure sabotage risk.
+**Oil:** Urals crude trades at $15-20 discount to Brent — sets a floor on global oil price competition. Shadow fleet (~600 tankers) reroutes ~3.5M bpd to India/China. Any enforcement tightening (insurance denials, port bans) = immediate Brent spike. India reducing purchases → Urals discount may widen.
+
+**Natural gas:** Nordstream destroyed. TurkStream and remaining Ukraine transit routes = residual EU exposure. LNG imports from US/Qatar replacing Russian pipeline gas — structural shift, not reversible.
+
+**Wheat/grain:** Russia controls ~20% of global wheat exports. Black Sea corridor = geopolitical leverage tool. Any disruption → EM food inflation, particularly MENA and Sub-Saharan Africa.
+
+**Ruble/CBR:** Ruble managed in a dirty float. CBR raised rates aggressively (21%+) to defend against war-driven inflation. Western investors have zero direct exposure — ruble trades OTC only in non-sanctioned markets.
+
+**Sanctions transmission:** Frozen ~$300B of Russian central bank assets in Western custodians — potential weaponization as Ukraine reconstruction financing (ongoing legal debate) = precedent risk for all sovereign reserve holders.
+
+**Energy infrastructure sabotage:** Baltic Sea pipeline/cable incidents = insurance premium on European energy infrastructure globally.
 
 ## DB Sync Notes
 - MilitaryCapacity: ✅ seeded

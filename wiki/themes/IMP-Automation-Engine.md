@@ -1,13 +1,18 @@
 ---
 title: IMP Automation Engine — Perplexity + Claude + n8n
+slug: imp-automation-engine
 type: theme
-sources: [raw/IMP_Strategy_v2_2.docx]
-related:
-  - wiki/themes/IMP-Platform-Architecture.md
-  - wiki/themes/IMP-Oracle-System.md
+region: global
+tags: [platform, automation, imp-internal, n8n, perplexity]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/IMP_Strategy_v2_2.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-platform-architecture, imp-oracle-system]
 ---
 
 # IMP Automation Engine — Perplexity + Claude + n8n

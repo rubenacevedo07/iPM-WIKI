@@ -1,19 +1,19 @@
 ---
 title: Summary - IMP Master Strategy v2.2
+slug: source-imp-strategy-v2-2
 type: source-summary
-sources: [raw/IMP_Strategy_v2_2.docx]
-related:
-  - wiki/themes/IMP-Platform-Architecture.md
-  - wiki/themes/IMP-Automation-Engine.md
-  - wiki/themes/IMP-Oracle-System.md
-  - wiki/themes/IMP-Competitive-Moats.md
-  - wiki/themes/IMP-Business-Model.md
-  - wiki/themes/IMP-Power-Index-System.md
-  - wiki/timelines/IMP-Phase-Roadmap.md
-  - wiki/oracle/Oracle-Machine-Roster.md
+source-path: raw/IMP_Strategy_v2_2.docx
+region: global
+tags: [imp-internal, strategy, platform]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/IMP_Strategy_v2_2.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-platform-architecture, imp-automation-engine, imp-oracle-system, imp-competitive-moats, imp-business-model, imp-power-index-system]
 ---
 
 # Summary — IMP Master Strategy v2.2

@@ -3,6 +3,26 @@
 
 ---
 
+## [2026-04-22] wiki-expansion | European Companies — 6 new institution pages
+- **Operation:** wiki-expansion
+- **Files created:**
+  - wiki/institutions/RHEINMETALL.md — German defense; €50B+ order backlog, Ukraine JV, RHM.DE conviction proxy
+  - wiki/institutions/AIRBUS.md — EU aerospace; 8,500+ aircraft backlog, Boeing crisis windfall, Eurofighter surge
+  - wiki/institutions/TOTALENERGIES.md — French oil major; Qatar LNG JV, Hormuz exposure, Russia Arctic write-down
+  - wiki/institutions/DEUTSCHE-BANK.md — German bank; €40T derivatives book, CDS spread as EU stress barometer
+  - wiki/institutions/VOLKSWAGEN.md — German auto; China share 20%→12%, CARIAD delays, plant closure crisis
+  - wiki/institutions/LVMH.md — French luxury; Bernard Arnault controlling shareholder, cognac tariff risk
+- **Files updated:**
+  - wiki/countries/GERMANY.md — related_institutions expanded; Related Pages section added (Rheinmetall, VW, Deutsche Bank, Airbus)
+  - wiki/countries/FRANCE.md — related_institutions expanded; Related Pages section added (TotalEnergies, Airbus, LVMH)
+  - wiki/pending-db-sync.md — CL-DB-016 through CL-DB-022 registered in Open Flags table
+  - wiki/index.md — v27, 142 pages, European Companies section added to Institutions (31→37)
+- **Contradictions flagged:** none
+- **DB sync needed:** yes — CL-DB-016 (ASML edges), CL-DB-017 (Rheinmetall), CL-DB-018 (Airbus), CL-DB-019 (TotalEnergies), CL-DB-020 (Deutsche Bank), CL-DB-021 (Volkswagen), CL-DB-022 (LVMH + Arnault)
+- **Notes:** All 6 pages follow CLAUDE.md v3.0 schema. institution_type set to 'regulator' as placeholder for industrial companies — enum should be extended to include 'manufacturer' or 'corporation'. DB IDs all TBD pending sync. Total open DB flags now: 11 (CL-DB-012 through CL-DB-022).
+
+---
+
 ## [2026-04-09] init | IMP Wiki v1.0 created
 - **Operation:** init
 - **Files created:** CLAUDE.md, wiki/index.md, wiki/log.md, wiki/overview.md — full folder structure
@@ -422,6 +442,98 @@
   - Related Pages links de-duplicated across sources
   - All 6 dossiers are external HTML retained in raw/dossiers-external/ for audit trail
   - 6 source-summary pages NOT created under wiki/sources/ — dossiers are cited in each actor's Sources section directly; consider adding formal summary pages in follow-up if dossiers become canonical references
+
+## 2026-04-20 | dossier | GPT Context Report generated
+- Operation: dossier creation
+- Files created: wiki/dossiers/GPT-Context-Report-2026-04-20.md
+- Purpose: self-contained briefing doc for ChatGPT/GPT sessions — parallel to Perplexity-State-Report-v13
+- Contents: mission, structure, IMP glossary (archetypes, edges, chokepoints), full inventory with DB IDs, open DB sync flags, recent activity, prioritized work list, frontmatter rules, what-not-to-do
+- Contradictions flagged: none
+- DB sync needed: no
+- Notes: Stand-alone doc. Paste into ChatGPT or upload as file. Does not duplicate raw wiki pages — summarizes and indexes.
+
+## 2026-04-21 | lint | Monthly health audit — 130 pages
+- Operation: lint
+- Files created: wiki/lint-reports/2026-04-21.md
+- Files updated: wiki/index.md (v24 — companies/ section added, header updated to 130 pages, new lint entry)
+- Findings (10 total):
+  - LINT-01 [HIGH]: 12 pages on old v1 schema (missing slug, using `related:` instead of `related_*` arrays) — 6 IMP themes, IMP-Phase-Roadmap, Oracle-Machine-Roster, 2 sources, 2 indicators
+  - LINT-02 [HIGH]: companies/ folder (11 pages, added 2026-04-19) absent from wiki/index.md — now fixed
+  - LINT-03 [MEDIUM]: wiki/index.md header stale — now fixed (v24, 130 pages)
+  - LINT-04 [MEDIUM]: 7 high-churn intel pages last updated 2026-04-09 (Powell, Lagarde, Bessent, China, Ukraine, Iran, Global-Macro-Regime narrative)
+  - LINT-05 [MEDIUM]: 3 dossiers without any frontmatter (IMP-Raw-Collection-Prompts, Perplexity-State-Report-v13, IMP-Prompt-Pack-Operativo-v2)
+  - LINT-06 [MEDIUM]: PALANTIR.md has db_id: TBD — confirmed 96 in DB
+  - LINT-07 [LOW]: Lockheed↔Northrop edge strength drift (Competes/Partners swap) — open from 2026-04-20 dry-run
+  - LINT-08 [LOW]: 42 pages with sources: [] — chronic stub gap, no new external ingests since 2026-04-09
+  - LINT-09 [NULL]: depends_on field does not exist in this schema — no broken slugs of that type
+  - LINT-10 [LOW]: No individual oracle context pages — only Oracle-Machine-Roster exists
+- Contradictions flagged: none
+- DB sync needed: YES
+  - CL-DB-012: PALANTIR db_id: TBD → 96 confirmed in DB
+  - CL-DB-013: Lockheed↔Northrop edge strength mismatch (Competes=High→Medium, Partners=Medium→High)
+- Top 5 next ingests: (1) Powell/Fed April 2026, (2) Lagarde/ECB April 2026, (3) TSMC Q1 2026 earnings, (4) BIS Quarterly Q1 2026, (5) China MOFCOM tariff retaliation
+- Notes: 57 new pages since last lint (2026-04-09). Primary schema debt is the 12 old-v1-schema pages — these predate CLAUDE.md v3.0 upgrade and need frontmatter migration. companies/ section is now indexed. GPT-Context-Report dossier is untracked in git.
+
+## 2026-04-21 | wiki-expansion | TAIWAN, narratives, 5 actors, pending-db-sync, CLAUDE.md
+- Operation: content-enrichment + new-control-file + schema-update
+- Files created:
+  - wiki/pending-db-sync.md — single source of truth for all open DB flags (CL-DB-012 to CL-DB-015). Closed flags preserved as audit trail. SQL patterns included.
+- Files updated (CLAUDE.md):
+  - Added `wiki/pending-db-sync.md` as a named control file in Section 6 with full usage rules (raise/close protocol, sequential numbering, never-delete-closed-entries)
+- Files updated (actors):
+  - wiki/actors/POWELL-Jerome.md — removed duplicate Narrative Shift section, expanded with tariff-era posture, Key Recent Actions populated (knowledge-based)
+  - wiki/actors/LAGARDE-Christine.md — removed duplicate Narrative Shift, added tariff shock fork analysis, April 2026 pivot signal, Key Recent Actions
+  - wiki/actors/XI-Jinping.md — Current Assessment + Narrative Shift + Key Recent Actions populated (rare earth controls, PBOC RRR, Taiwan exercises)
+  - wiki/actors/MACRON-Emmanuel.md — full Current Assessment + Role and Levers + Narrative Shift + Key Recent Actions + Market Impact + Oracle Relevance + DB Sync Notes
+  - wiki/actors/DIMON-Jamie.md — Current Assessment (US debt thesis, tariff-driven hard landing risk) + Narrative Shift + Key Recent Actions
+- Files updated (countries):
+  - wiki/countries/TAIWAN.md — full expansion: Strategic Summary, Power Profile (silicon shield, Jade Mountain, Lai Ching-te), Domestic Pressures, External Alignments, Sanctions, Narrative Trajectory, Market Relevance (TAIEX/TWD/semiconductor shock/defense premium), IMP-Specific Significance
+- Files updated (narratives):
+  - wiki/narratives/Global-Macro-Regime-2026-04.md — Added tariff shock transmission section, updated Recent Shifts for April 2026 escalation (Liberation Day tariffs, rare earths, stagflation risk formalized)
+- Contradictions flagged: none
+- DB sync needed: YES
+  - CL-DB-015: BESSENT EstimatedWealthUsd — Key Square AUM not verified in Persons table (db_id=545)
+  - CL-DB-012/013/014: carried forward (see wiki/pending-db-sync.md)
+- Notes: wiki/pending-db-sync.md is now the canonical DB sync tracking file. CLAUDE.md updated to mandate its use. All future DB flags should be logged there first. Page count: 136.
+
+## 2026-04-21 | recommendations-pass | lint + Smart Connections audit implemented
+- Operation: schema-fix + content-enrichment + new-pages
+- Files updated (schema — old v1 → v3.0):
+  - wiki/themes/IMP-Platform-Architecture.md — slug, region, tags, related_* arrays
+  - wiki/themes/IMP-Automation-Engine.md — same
+  - wiki/themes/IMP-Competitive-Moats.md — same
+  - wiki/themes/IMP-Oracle-System.md — same
+  - wiki/themes/IMP-Power-Index-System.md — same
+  - wiki/themes/IMP-Business-Model.md — same
+  - wiki/timelines/IMP-Phase-Roadmap.md — same
+  - wiki/oracle/Oracle-Machine-Roster.md — slug + oracle-specific fields (machine_domain, brier_trend) + related_*
+  - wiki/sources/IMP-Strategy-v2-2.md — slug, source-path, related_*
+  - wiki/sources/IPM-SQL-Seed-Reference.md — slug, source-path, related_*
+  - wiki/indicators/DB-ID-Reference.md — slug, domain, scope, related_*
+  - wiki/indicators/Enum-Types-Reference.md — slug, domain, scope, related_*
+- Files updated (content):
+  - wiki/institutions/PALANTIR.md — db_id: TBD → 96 (confirmed from log 2026-04-10)
+  - wiki/actors/BESSENT-Scott.md — Current Assessment, Narrative Shift, Key Recent Actions populated (knowledge-based, confidence: medium)
+  - wiki/countries/CHINA.md — Market Relevance expanded (FX/CNY/PBOC/equities/commodities/rates/Taiwan premium)
+  - wiki/countries/RUSSIA.md — Market Relevance expanded (oil/shadow fleet/grain/ruble/frozen assets/infrastructure)
+  - wiki/countries/SAUDI-ARABIA.md — Market Relevance expanded (Aramco/petrodollar/SAR peg/Vision 2030 bonds/Abqaiq risk)
+  - wiki/countries/UKRAINE.md — Market Relevance expanded (grain/defense multiplier/eurobonds/frozen assets/Palantir)
+  - wiki/countries/ISRAEL.md — Market Relevance expanded (ILS/TASE/defense tech/Suez/Iran premium/reconstruction)
+- Files updated (frontmatter added):
+  - wiki/dossiers/IMP-Raw-Collection-Prompts.md — full YAML frontmatter added
+  - wiki/dossiers/Perplexity-State-Report-v13.md — full YAML frontmatter added
+  - wiki/dossiers/IMP-Prompt-Pack-Operativo-v2.md — full YAML frontmatter added
+- Files created (new oracle context pages):
+  - wiki/oracle/MEI-LIN-ZHANG.md — China/trade war/tech decoupling/CNY domain, full context block
+  - wiki/oracle/CHEN-WEI.md — Asia Pacific/semiconductors/Taiwan/PLA domain, full context block
+- Files updated (index/control):
+  - wiki/index.md — v25, 135 pages, oracle section updated (3 pages), lint entry updated
+- Contradictions flagged: none
+- DB sync needed: YES
+  - CL-DB-012: PALANTIR.md db_id fixed wiki-side (96) — verify Palantir Company row exists in DB
+  - CL-DB-013: Lockheed↔Northrop edge strength mismatch — still open from 2026-04-19 dry-run
+  - CL-DB-014: CHINA Market Relevance now references PBOC→Influences→CNY edge and CIPS node — neither seeded in DB
+- Notes: All 10 lint findings from 2026-04-21 report addressed except LINT-07 (Lockheed↔Northrop = DB-side fix, not wiki) and LINT-04 (requires external source ingests). Schema debt from 12 old-v1 pages fully cleared. 3 oracle machines now have individual context pages (Roster + Mei Lin Zhang + Chen Wei). BESSENT assessment is knowledge-based pending source ingest — flag for Perplexity collection.
 
 ## 2026-04-20 | state-snapshot | no edits today
 - Operation: state-snapshot

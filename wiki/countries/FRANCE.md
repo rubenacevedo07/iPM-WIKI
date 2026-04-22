@@ -5,13 +5,13 @@ type: country
 region: europe
 tags: ['europe', 'g7', 'eu', 'nuclear', 'ecb', 'nato']
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-22
 confidence: medium
 sources:
   - raw/geopolitics/france-country-brief-2026-04.md
 related_actors: ['christine-lagarde', 'emmanuel-macron']
 related_countries: ['germany', 'united-states', 'russia']
-related_institutions: ['ecb', 'federal-reserve']
+related_institutions: ['ecb', 'federal-reserve', 'totalenergies', 'airbus', 'lvmh']
 related_commodities: []
 related_themes: ['monetary-policy-weaponized-world', 'geoeconomic-fragmentation']
 db_id: 30
@@ -65,6 +65,16 @@ EUR/USD exposure via ECB. CAC 40 = luxury goods (LVMH, Hermès), energy (TotalEn
 - DB ID: 30 — verify in Persons table
 - Power scores above are wiki estimates — pending DB seed via PowerMapIntelligence
 - IdeologyProfile for key actors: see actor pages
+
+## Related Pages
+- [[../actors/MACRON-Emmanuel]]
+- [[../actors/LAGARDE-Christine]]
+- [[../institutions/ECB]]
+- [[../institutions/TOTALENERGIES]]
+- [[../institutions/AIRBUS]]
+- [[../institutions/LVMH]]
+- [[../themes/Geoeconomic-Fragmentation]]
+- [[../themes/Monetary-Policy-Weaponized-World]]
 
 ## Sources
 - [[../indicators/DB-ID-Reference]]

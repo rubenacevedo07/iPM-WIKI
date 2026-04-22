@@ -1,14 +1,18 @@
 ---
 title: IMP Competitive Moats — 17 Moats, 5 Categories
+slug: imp-competitive-moats
 type: theme
-sources: [raw/IMP_Strategy_v2_2.docx]
-related:
-  - wiki/themes/IMP-Platform-Architecture.md
-  - wiki/themes/IMP-Oracle-System.md
-  - wiki/themes/IMP-Business-Model.md
+region: global
+tags: [platform, moats, imp-internal, strategy]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/IMP_Strategy_v2_2.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-platform-architecture, imp-oracle-system, imp-business-model]
 ---
 
 # IMP Competitive Moats — 17 Moats, 5 Categories

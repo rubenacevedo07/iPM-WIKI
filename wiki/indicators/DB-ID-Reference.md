@@ -1,12 +1,20 @@
 ---
 title: DB ID Reference — Verified Entity IDs
+slug: db-id-reference
 type: indicator
-sources: [raw/internal-notes/IPM_SQL_Seed_Reference.docx]
-related:
-  - wiki/indicators/Enum-Types-Reference.md
+domain: reference
+scope: all
+region: global
+tags: [database, reference, imp-internal, entity-ids]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/internal-notes/IPM_SQL_Seed_Reference.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-power-index-system]
 ---
 
 # DB ID Reference — Verified Entity IDs

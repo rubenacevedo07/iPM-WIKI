@@ -1,14 +1,19 @@
 ---
 title: Summary - IPM SQL Seed Reference
+slug: source-ipm-sql-seed-reference
 type: source-summary
-sources: [raw/internal-notes/IPM_SQL_Seed_Reference.docx]
-related:
-  - wiki/themes/IMP-Power-Index-System.md
-  - wiki/indicators/DB-ID-Reference.md
-  - wiki/indicators/Enum-Types-Reference.md
+source-path: raw/internal-notes/IPM_SQL_Seed_Reference.docx
+region: global
+tags: [imp-internal, database, sql, seed]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
+sources: [raw/internal-notes/IPM_SQL_Seed_Reference.docx]
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-power-index-system]
 ---
 
 # Summary — IPM SQL Seed Reference

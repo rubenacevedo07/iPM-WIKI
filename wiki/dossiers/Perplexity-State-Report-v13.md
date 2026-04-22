@@ -1,3 +1,20 @@
+---
+title: IMP LLM Wiki — State Report for Perplexity v13
+slug: perplexity-state-report-v13
+type: dossier
+region: global
+tags: [imp-internal, state-report, perplexity, briefing]
+created: 2026-04-09
+updated: 2026-04-09
+confidence: high
+sources: []
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-automation-engine, imp-platform-architecture]
+---
+
 # IMP LLM Wiki — State Report for Perplexity
 **Version:** v13 · **Date:** 2026-04-09 · **Prepared by:** Claudio
 

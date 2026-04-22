@@ -4,7 +4,7 @@ slug: global-macro-regime-2026-04
 type: narrative
 tags: [macro, rates, growth, inflation, fragmentation]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: high
 sources:
   - raw/transcripts/powell-fomc-2026-04.md
@@ -30,10 +30,19 @@ The IMF projects 3.3% global growth for 2026. The US and India are the primary g
 2026: "higher for longer" becomes the dominant regime. Cuts delayed further. Tariff shocks threatening re-acceleration.
 
 ## Recent Shifts (as of April 2026)
-- **Fed:** hawkish pivot within the pause — dot plot revised to fewer 2026 cuts, inflation projections revised up to 2.7%
-- **ECB:** holding at slightly restrictive levels; watchful pause; weak eurozone growth limits further tightening
-- **IMF:** global growth slightly revised up but fragmentation risk escalating; fiscal consolidation urgently needed in US
-- **Trade:** Trump tariff investigations expanding to 16+ countries — fragmentation accelerating
+- **Fed:** hawkish pivot within the pause — dot plot revised to fewer 2026 cuts, inflation projections revised up to 2.7%. Stagflation risk now active scenario, not tail risk.
+- **ECB:** holding at slightly restrictive levels; watchful pause; weak eurozone growth limits further tightening. EUR/USD pressure from divergence with Fed.
+- **IMF:** global growth slightly revised up (3.3%) but fragmentation risk escalating; fiscal consolidation urgently needed in US; tariff shocks flagged as primary downside risk.
+- **Trade:** Trump "Liberation Day" tariffs (April 2026) — 10% baseline + targeted tariffs on 16+ countries. China retaliation ongoing. Supply chain rerouting accelerating.
+- **China:** Rare earth export control threats as asymmetric retaliation. PBOC managing CNY depreciation as partial offset.
+- **Markets:** Equity volatility elevated (VIX >20). Credit spreads widening in EM. Gold bid on uncertainty. Bitcoin regime ambiguous — liquidity-off but uncertainty hedge bid emerging.
+
+## Tariff Shock Transmission (added 2026-04-21)
+The April 2026 tariff escalation has introduced a new variable into the macro regime: **supply-side inflation + demand-side slowdown simultaneously.** Central bank playbooks are written for one or the other, not both. Key transmission:
+1. Tariffs → import prices → CPI → keeps central banks on hold longer than growth warrants
+2. Trade uncertainty → capex delay → growth slowdown → argues for cuts
+3. Dollar strength (safe haven bid) → EM currency pressure → EM growth headwind
+4. Supply chain rerouting → shipping costs → second-order inflation persistence
 
 ## Carriers
 - **Powell:** "higher for longer, data dependent, no hurry to cut"

@@ -5,13 +5,13 @@ type: country
 region: europe
 tags: ['europe', 'g7', 'eu', 'industrial', 'nato', 'manufacturing']
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-22
 confidence: medium
 sources:
   - raw/geopolitics/germany-country-brief-2026-04.md
 related_actors: ['christine-lagarde']
 related_countries: ['france', 'russia', 'united-states', 'china']
-related_institutions: ['ecb']
+related_institutions: ['ecb', 'deutsche-bank', 'volkswagen', 'rheinmetall', 'airbus']
 related_commodities: []
 related_themes: ['geoeconomic-fragmentation', 'energy-chokepoints-war', 'monetary-policy-weaponized-world']
 db_id: 29
@@ -65,6 +65,17 @@ DAX 40 = industrials (Siemens, BASF), autos (VW, BMW, Mercedes), financials (Deu
 - DB ID: 29 — verify in Persons table
 - Power scores above are wiki estimates — pending DB seed via PowerMapIntelligence
 - IdeologyProfile for key actors: see actor pages
+
+## Related Pages
+- [[../actors/LAGARDE-Christine]]
+- [[../institutions/ECB]]
+- [[../institutions/DEUTSCHE-BANK]]
+- [[../institutions/VOLKSWAGEN]]
+- [[../institutions/RHEINMETALL]]
+- [[../institutions/AIRBUS]]
+- [[../themes/Geoeconomic-Fragmentation]]
+- [[../themes/Energy-Chokepoints-War]]
+- [[../themes/Monetary-Policy-Weaponized-World]]
 
 ## Sources
 - [[../indicators/DB-ID-Reference]]

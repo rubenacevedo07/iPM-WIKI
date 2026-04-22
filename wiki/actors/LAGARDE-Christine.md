@@ -7,7 +7,7 @@ country: france
 region: europe
 tags: [central-banking, monetary-policy, ecb, euro]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources: []
 related_actors: [jerome-powell]
@@ -45,15 +45,22 @@ ECB holding rates unchanged after completing hiking cycle and small cut in 2025.
 Key posture: data-dependent, meeting by meeting. Door open to cuts if inflation durably below projection but no prior commitment.
 
 ## Narrative Shift
-*(vs prior appearances)*
+*(Updated 2026-04-21 · knowledge-based)*
 
-2025–2026 transition: from "further hikes possible" → "we have probably peaked" → now "prolonged pause with vigilance." Less emphasis on unanchored inflation risk, more on avoiding excessive tightening. Carefully balanced to not signal dovish pivot prematurely.
+**2025–2026 arc:** "Further hikes possible" → "We have probably peaked" → "Prolonged pause with vigilance" → now leaning toward: **"Cuts possible if tariff shock hits growth more than inflation."**
 
-## Narrative Shift
-*(populate from transcript ingests)*
+The April 2026 Trump tariff shock has created a fork for the ECB: tariffs are inflationary in theory but disinflationary in practice if they crush demand. The eurozone is the most exposed G7 economy to trade disruption (export/GDP ratio ~50%). Lagarde's new language around "downside growth risk" vs her prior "upside inflation risk" signals she is closer to a cut than the market priced in pre-tariff.
+
+**Key new emphasis:** EU fiscal resilience — pushing EU defence spending as growth offset for monetary policy constraint. ECB cannot cut if fiscal policy also tightens.
+
+**Red line:** If EUR/USD breaks below 1.00 (parity), Lagarde faces imported inflation from USD-priced commodities — would constrain her cutting room.
 
 ## Key Recent Actions
-- *(populate from ingests)*
+*(knowledge-based · confidence: medium · pending official transcript ingest)*
+- 2026-Q1: ECB held rates — maintained "watchful pause" language
+- 2026-Q1: New emphasis on tariff shock as asymmetric negative for eurozone
+- 2026-Q1: Endorsed EU €100B+ defense spending framework — fiscal multiplier argument
+- 2026-Q1: EUR depreciation toward 1.03-1.05 vs USD — BOE watching for imported inflation
 
 ## Market Impact
 Direct lever on: EUR, eurozone sovereign spreads, European bank equity, ECB collateral

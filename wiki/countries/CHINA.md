@@ -5,7 +5,7 @@ type: country
 region: east-asia
 tags: [superpower, manufacturing, semiconductors, taiwan, brics, de-dollarization]
 created: 2026-04-09
-updated: 2026-04-09
+updated: 2026-04-21
 confidence: medium
 sources:
   - raw/internal-notes/IPM_Session_Record_2026_03_27.md
@@ -51,8 +51,17 @@ Fertilizer export restrictions seeded as newsevent (6 PX events — 2026-03-27).
 GDP growth ~4–4.5% for 2026 — below historical rates but solid vs advanced economies. Growth driven by tech exports, public investment, some services recovery. Property sector still a drag. PBOC maintaining accommodative stance with room for further RRR/rate cuts. Trade war response: "dual circulation" strategy and tech self-sufficiency drive. Gold reserves incrementally increasing as de-dollarization hedge.
 
 ## Market Relevance
-CNY internationalisation pace. PBOC gold accumulation (+45t seeded in B44-001).
-Chinese equity market sentiment. Rare earth export policy → global tech supply chain.
+**FX:** CNY internationalisation pace — CIPS volumes, bilateral swap agreements, share of EM trade invoicing in yuan. CNY/USD directly managed by PBOC; offshore CNH = risk barometer. PBOC gold accumulation (+45t seeded in B44-001) = de-dollarization signal.
+
+**Equities:** Shanghai/Shenzhen composites = domestic policy sentiment. Hang Seng = offshore China risk proxy. ADR delistings and VIE structure risk = ongoing discount to fair value for foreign investors.
+
+**Commodities:** China is the price-setting marginal buyer for: oil (16M bpd), iron ore, copper, lithium, soybeans. Any demand slowdown = commodity deflation globally. Rare earth export bans/restrictions → immediate tech supply chain shock (60%+ of neodymium, gallium, germanium, hafnium).
+
+**Rates/Credit:** PBOC RRR cuts and LPR adjustments = EM liquidity signal. Property sector NPLs → systemic credit risk (Evergrande contagion precedent).
+
+**Geopolitical premium:** Trade war escalation → USD/CNY management test. Any Taiwan military action → global equity sell-off, oil spike, tech supply chain shock simultaneously.
+
+**DB SYNC NEEDED:** PBOC → Influences → CNY RelationEdge not yet seeded. CIPS node not in institutions.
 
 ## DB Sync Notes
 - MilitaryCapacity: ✅ seeded

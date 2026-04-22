@@ -1,3 +1,20 @@
+---
+title: IMP Raw Collection Prompts
+slug: imp-raw-collection-prompts
+type: dossier
+region: global
+tags: [imp-internal, prompts, collection, perplexity, raw]
+created: 2026-04-09
+updated: 2026-04-09
+confidence: high
+sources: []
+related_actors: []
+related_countries: []
+related_institutions: []
+related_commodities: []
+related_themes: [imp-automation-engine]
+---
+
 # IMP Raw Collection Prompts
 *Standard prompt pack for collecting raw source material into `raw/`.*
 *Use with Claude Code, Claude.ai, or any agent that can read/write files.*
