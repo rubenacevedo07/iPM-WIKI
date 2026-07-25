@@ -141,17 +141,57 @@ brier_trend: <improving|stable|degrading|unknown>
 - `confidence`: `high` = multiple corroborating sources, recent, no contradictions.
   `medium` = single source or partially corroborated. `low` = thin sourcing.
   `conflicted` = sources actively contradict each other.
-- `db_id` / `db_type`: IMP-specific. Always populate when the page maps to a
-  PostgreSQL entity. See `wiki/indicators/DB-ID-Reference.md` for verified IDs.
+- `db_id` / `db_type`: **legacy, historical — do not extend.** These point at the old
+  `public.*` tables, not at canonical truth. Leave existing values alone; do not fill in
+  new ones. `wiki/indicators/DB-ID-Reference.md` documents them and remains as history.
+- `core_slug`: **the canonical link.** Points at `core.Entity.Slug` in meridian, which is
+  the frozen canonical truth. Populate it on every page that maps to an entity. The only
+  valid source of values is `core_vocabulario.json` — see §3.4.
 
-### 3.4 Reciprocal relationship rule
+### 3.4 The canonical vocabulary contract
+
+`core_vocabulario.json` (with a human-readable `core_vocabulario.md` beside it) is a
+**generated copy** of the canonical entity vocabulary: 1,054 documentable entities with
+their slug, canonical name, type, aliases and UUID. Regenerate and validate with:
+
+```bash
+python ipm_wiki_audit.py --out-manifest core_vocabulario.json   # regenerate
+python ipm_wiki_audit.py --check-manifest                       # validate, exit != 0 on drift
+```
+
+Three rules, and the first one matters most:
+
+1. **Never rename a wiki slug to match the canonical one.** Wiki slugs are internal keys —
+   `related_*` fields reference them, and `ecb` alone appears in 20 documents. Renaming
+   breaks the internal graph. This is precisely why `core.Entity` has a `WikiSlug` column:
+   the database records the name the wiki already uses. Neither side renames. The wiki
+   keeps `ecb`; the frontmatter declares `core_slug: european-central-bank`.
+
+2. **`core_slug` values come only from the manifest.** Never invent one, never infer it
+   from a name. If an entity is absent from the manifest it does not exist in canonical
+   truth — which is a finding to report, not a gap to paper over.
+
+3. **Pages that are not entities get no `core_slug`.** Themes, scenarios, sources,
+   indicators, comparisons and timelines are not `core.Entity` and never will be. Forcing
+   a link on them would invent a correspondence that does not exist.
+
+Run `--check-manifest` before committing frontmatter changes: it fails if the manifest has
+drifted from the database, if it was hand-edited, or if any `core_slug` in the wiki points
+at something the manifest does not contain.
+
+> This manifest is a bridge, not the destination. It is a copy of database state living in
+> another repository — the same shape of duplication that has already caused incidents.
+> When `mcp-ipm-postgres-ro` has handlers, the agent will query live truth and this file
+> retires.
+
+### 3.5 Reciprocal relationship rule
 
 Whenever you add X to a `related_*` field on page A, check whether page X should
 also link back to A. Maintain bidirectional consistency where meaningful.
 
 Avoid overlinking weak associations — noisy links reduce graph quality.
 
-### 3.5 Deduplication rules
+### 3.6 Deduplication rules
 
 If near-duplicate pages exist:
 1. Choose the canonical page (cleanest title, most complete content).

@@ -30,6 +30,7 @@ Sin --dsn se toma IPM_CANONICAL_DB_PASSWORD sobre el host/puerto por defecto.
 
 import argparse
 import collections
+import hashlib
 import json
 import os
 import pathlib
@@ -51,6 +52,10 @@ ENTITY_TYPES = {"actor", "person", "institution", "company", "country", "commodi
 # facility no es sujeto de documentación: una planta o un centro de datos no
 # tiene doc wiki. Se separa para no falsear el tamaño del hueco.
 NOT_DOCUMENTABLE = {"facility"}
+
+# Ruta por defecto del manifiesto dentro de este repo, para que --check-manifest
+# funcione sin argumentos en un hook de pre-commit.
+DEFAULT_MANIFEST = "core_vocabulario.json"
 
 
 # ── Parser (formato compartido con ipm_wiki_to_graph.py) ─────────────────────
@@ -84,6 +89,9 @@ def load_wiki(wiki_dir):
             "type": fm.get("type") or None,
             "db_id": fm.get("db_id") or None,
             "db_type": fm.get("db_type") or None,
+            # Enlace canónico. Campo nuevo: db_id apunta al legacy y se deja
+            # como está (histórico, no se amplía); core_slug apunta a core.Entity.
+            "core_slug": fm.get("core_slug") or None,
         })
     return docs
 
@@ -109,7 +117,9 @@ def load_core(cur):
             "type": r["EntityType"],
             "wiki_slug": r["WikiSlug"],
             "legacy_ids": legacy_ids,
-            "aliases": list(r["AliasNames"] or []),
+            # AliasNames trae nulos en algunas filas; se filtran aquí para que
+            # el resto del programa pueda asumir una lista de cadenas.
+            "aliases": [a for a in (r["AliasNames"] or []) if a],
         })
     return rows
 
@@ -243,6 +253,120 @@ def audit(docs, core):
         "sin_doc_no_candidata": sin_doc_no_candidata,
         "dup_core": dup_core,
     }
+
+
+# ── Manifiesto de vocabulario canónico ───────────────────────────────────────
+#
+# Contrato entre core.* y el repo de la wiki. Su razón de ser: el agente que
+# trabaja en la wiki no tiene acceso a la base, y sin vocabulario canónico
+# inventaría correspondencias.
+#
+# NO es una orden de renombrado. Los slugs de la wiki son claves internas — los
+# related_* referencian por slug, y 'ecb' aparece en 20 documentos — así que
+# renombrarlos rompería el grafo interno. core.Entity.WikiSlug existe justamente
+# para que la base apunte al nombre que la wiki ya usa. Nadie renombra.
+
+MANIFEST_NOTE = (
+    "COPIA GENERADA del vocabulario canónico de core.Entity. No editar a mano: "
+    "se regenera con `python ipm_wiki_audit.py --out-manifest <ruta>` y se valida "
+    "con `--check-manifest`, que sale con código != 0 si diverge de la base. "
+    "Es un puente provisional: cuando mcp-ipm-postgres-ro tenga handlers, el agente "
+    "consultará la verdad en vivo y este archivo se retira."
+)
+
+
+def build_manifest(core, ts):
+    """Vocabulario canónico documentable, con checksum de contenido."""
+    ents = [
+        {
+            "core_slug": e["slug"],
+            "nombre": e["name"],
+            "tipo": e["type"],
+            "alias": e["aliases"],
+            "core_id": e["id"],
+            "legacy": e["legacy_ids"],
+        }
+        for e in core if e["type"] not in NOT_DOCUMENTABLE
+    ]
+    ents.sort(key=lambda x: (x["tipo"], x["core_slug"] or ""))
+    return {
+        "_nota": MANIFEST_NOTE,
+        "generado_utc": ts,
+        "filas": len(ents),
+        "checksum": checksum_entities(ents),
+        "excluido": {
+            "tipos": sorted(NOT_DOCUMENTABLE),
+            "motivo": "una planta o un centro de datos no es sujeto de un documento wiki",
+            "filas": sum(1 for e in core if e["type"] in NOT_DOCUMENTABLE),
+        },
+        "entidades": ents,
+    }
+
+
+def checksum_entities(ents):
+    """Huella del contenido, independiente del formato y del orden de claves."""
+    canon = "\n".join(
+        "|".join([e["core_slug"] or "", e["nombre"] or "", e["tipo"] or "",
+                  ",".join(sorted(e["alias"] or [])), e["core_id"] or ""])
+        for e in sorted(ents, key=lambda x: (x["tipo"], x["core_slug"] or ""))
+    )
+    return hashlib.sha256(canon.encode("utf-8")).hexdigest()
+
+
+def render_manifest_md(man):
+    L = [f"# Vocabulario canónico — core.Entity\n",
+         f"**Generado:** {man['generado_utc']} · **Entidades:** {man['filas']} · "
+         f"**Checksum:** `{man['checksum'][:16]}…`\n",
+         f"> {MANIFEST_NOTE}\n",
+         "> **Los slugs de la wiki NO se renombran.** Este documento dice a qué entidad\n"
+         "> canónica corresponde cada documento, no cómo debe llamarse. La wiki mantiene\n"
+         "> `ecb`; core lo registra en su columna `WikiSlug`. El enlace se declara en el\n"
+         "> frontmatter con `core_slug`.\n",
+         f"Excluidas {man['excluido']['filas']} filas de tipo "
+         f"{man['excluido']['tipos']}: {man['excluido']['motivo']}.\n"]
+    por_tipo = collections.defaultdict(list)
+    for e in man["entidades"]:
+        por_tipo[e["tipo"]].append(e)
+    for t in sorted(por_tipo, key=lambda k: -len(por_tipo[k])):
+        L.append(f"\n## {t} ({len(por_tipo[t])})\n")
+        L.append("| `core_slug` | Nombre canónico | Alias |")
+        L.append("|---|---|---|")
+        for e in por_tipo[t]:
+            alias = ", ".join(e["alias"][:4]) + ("…" if len(e["alias"]) > 4 else "")
+            L.append(f"| `{e['core_slug']}` | {e['nombre']} | {alias} |")
+    return "\n".join(L) + "\n"
+
+
+def check_manifest(path, core, docs):
+    """Verifica el manifiesto en tres frentes. Devuelve lista de fallos."""
+    fallos = []
+    p = pathlib.Path(path)
+    if not p.exists():
+        return [f"el manifiesto no existe: {path}"]
+
+    man = json.loads(p.read_text(encoding="utf-8"))
+    ents = man.get("entidades", [])
+
+    # 1. Integridad interna: ¿lo editaron a mano?
+    recalc = checksum_entities(ents)
+    if recalc != man.get("checksum"):
+        fallos.append(f"checksum interno no cuadra: el archivo fue editado a mano "
+                      f"(declara {str(man.get('checksum'))[:16]}…, contiene {recalc[:16]}…)")
+
+    # 2. Deriva contra la base.
+    actual = build_manifest(core, "")["checksum"]
+    if actual != recalc:
+        fallos.append(f"el manifiesto no refleja la base: regenerar "
+                      f"(manifiesto {recalc[:16]}…, base {actual[:16]}…)")
+
+    # 3. core_slug colgantes en el frontmatter: un enlace roto es un fallo.
+    validos = {e["core_slug"] for e in ents}
+    for d in docs:
+        cs = d.get("core_slug")
+        if cs and cs not in validos:
+            fallos.append(f"core_slug colgante en {d['file']}: '{cs}' no existe en el manifiesto")
+
+    return fallos
 
 
 # ── Informe ──────────────────────────────────────────────────────────────────
@@ -408,6 +532,10 @@ def main():
     ap.add_argument("--dsn", default=None)
     ap.add_argument("--out-md", default=None)
     ap.add_argument("--out-json", default=None)
+    ap.add_argument("--out-manifest", default=None,
+                    help="ruta del manifiesto JSON; escribe también un .md hermano")
+    ap.add_argument("--check-manifest", nargs="?", const=DEFAULT_MANIFEST, default=None,
+                    help="valida el manifiesto contra la base y el frontmatter; exit != 0 si diverge")
     args = ap.parse_args()
 
     dsn = args.dsn or (
@@ -423,8 +551,32 @@ def main():
 
     docs = load_wiki(args.wiki_dir)
     core = load_core(cur)
-    a = audit(docs, core)
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # --check-manifest es un modo terminal: valida y sale con código de salida
+    # útil para un hook o CI. No genera informe.
+    if args.check_manifest:
+        fallos = check_manifest(args.check_manifest, core, docs)
+        if fallos:
+            print("MANIFIESTO INVALIDO (%d fallo/s):" % len(fallos))
+            for f in fallos:
+                print("  - " + f)
+            conn.close()
+            sys.exit(1)
+        print("manifiesto OK: refleja la base y ningun core_slug cuelga")
+        conn.close()
+        sys.exit(0)
+
+    if args.out_manifest:
+        man = build_manifest(core, ts)
+        mp = pathlib.Path(args.out_manifest)
+        mp.write_text(json.dumps(man, ensure_ascii=False, indent=2), encoding="utf-8")
+        print("manifiesto -> " + str(mp))
+        md_path = mp.with_suffix(".md")
+        md_path.write_text(render_manifest_md(man), encoding="utf-8")
+        print("indice     -> " + str(md_path))
+
+    a = audit(docs, core)
 
     md = render_md(a, docs, core, ts)
     if args.out_md:
