@@ -103,10 +103,10 @@ Jassy has transitioned Amazon from Bezos's expansion-at-all-costs model to rigor
 | 🟠 High | **[[../actors/BEZOS-Jeff|Jeff Bezos]]** | `Owns` | Jeff Bezos founded Amazon in 1994. Executive chairman and largest shareholder. |
 | 🟠 High | **[[Anthropic|Anthropic]]** | `Partners` | Amazon invested up to $4B. AWS is primary cloud. |
 | 🟠 High | **[[Microsoft|Microsoft]]** | `Competes` | Two largest cloud providers by revenue. |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `DependsOn` | Amazon AWS Data Center Cluster is a DataCenter facility operated by Amazon in As... |
+| 🟡 Medium | **«entidad no resuelta»** | `DependsOn` | Amazon AWS Data Center Cluster is a DataCenter facility operated by Amazon in As... |
 | 🟡 Medium | **[[State Street Corporation|State Street Corporation]]** | `Owns` | State Street Corporation holds approximately 3.4% of Amazon via index ETFs per S... |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `Distributes` | JFK8 Fulfillment Center is a Logistics facility operated by Amazon in Staten Isl... |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `Distributes` | Amazon BFI4 Fulfillment Center is a Logistics facility operated by Amazon in Ken... |
+| 🟡 Medium | **«entidad no resuelta»** | `Distributes` | JFK8 Fulfillment Center is a Logistics facility operated by Amazon in Staten Isl... |
+| 🟡 Medium | **«entidad no resuelta»** | `Distributes` | Amazon BFI4 Fulfillment Center is a Logistics facility operated by Amazon in Ken... |
 
 ## Recent Events
 

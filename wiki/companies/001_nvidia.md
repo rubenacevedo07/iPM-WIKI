@@ -90,7 +90,7 @@ Positions NVIDIA as core infrastructure provider for accelerated computing as th
 | 🟠 High | **[[Alphabet|Alphabet]]** | `DependsOn` | Alphabet/Google DeepMind and GCP depend on NVIDIA H100/A100 for AI training. Own... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | BIS export controls restrict A100, H100, and derivatives to China. NVIDIA respon... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is largest institutional holder of NVIDIA at approximately 8.6% a... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Santa Clara HQ Operations is a HQ facility operated by NVIDIA in Santa Clara |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Santa Clara HQ Operations is a HQ facility operated by NVIDIA in Santa Clara |
 | 🟠 High | **[[Intel|Intel]]** | `Competes` | Intel Gaudi vs NVIDIA GPUs for AI inference and training. |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
 | 🟠 High | **[[Advanced Micro Devices|Advanced Micro Devices]]** | `Competes` |  |
@@ -98,8 +98,8 @@ Positions NVIDIA as core infrastructure provider for accelerated computing as th
 | 🟠 High | **[[TSMC|TSMC]]** | `Supplies` | NVIDIA H100 on N4P, H200 and Blackwell on N3. TSMC is the only foundry capable o... |
 | 🟠 High | **[[Chris Malachowsky|Chris Malachowsky]]** | `Owns` | Chris Malachowsky co-founded NVIDIA with Jensen Huang in 1993. |
 | 🟡 Medium | **[[../companies/201_spacex|SpaceX]]** | `DependsOn` | Starlink ground stations and network management require GPU compute for beam-for... |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `Influences` | NVIDIA Israel R&D Center is a R&D facility operated by NVIDIA in Yokneam |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `Influences` | NVIDIA Bangalore Engineering Center is a R&D facility operated by NVIDIA in Bang... |
+| 🟡 Medium | **«entidad no resuelta»** | `Influences` | NVIDIA Israel R&D Center is a R&D facility operated by NVIDIA in Yokneam |
+| 🟡 Medium | **«entidad no resuelta»** | `Influences` | NVIDIA Bangalore Engineering Center is a R&D facility operated by NVIDIA in Bang... |
 | 🟡 Medium | **[[State Street Corporation|State Street Corporation]]** | `Owns` | State Street Corporation holds approximately 4.2% of NVIDIA through institutiona... |
 | 🟡 Medium | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Lockheed integrates NVIDIA GPU-based AI for autonomous systems, targeting soluti... |
 | ⚪ Low | **[[Apple|Apple]]** | `Competes` | Apple M4 Ultra targets professional creative workflows previously dominated by N... |

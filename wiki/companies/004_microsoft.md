@@ -100,10 +100,10 @@ Nadella positions Microsoft as the AI platform layer for every enterprise — no
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is largest institutional holder of Microsoft at approximately 8.5... |
 | 🟠 High | **[[../actors/GATES-Bill|Bill Gates]]** | `Owns` | Bill Gates co-founded Microsoft in 1975. |
 | 🟠 High | **[[Oracle|Oracle]]** | `Competes` | Compete in cloud databases and enterprise software. |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Redmond Campus is a HQ facility operated by Microsoft in Redmond |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Redmond Campus is a HQ facility operated by Microsoft in Redmond |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `DependsOn` | Quincy Data Center Complex is a DataCenter facility operated by Microsoft in Qui... |
-| 🟡 Medium | **[[Unknown|Unknown]]** | `DependsOn` | Dublin Data Center is a DataCenter facility operated by Microsoft in Dublin |
+| 🟡 Medium | **«entidad no resuelta»** | `DependsOn` | Quincy Data Center Complex is a DataCenter facility operated by Microsoft in Qui... |
+| 🟡 Medium | **«entidad no resuelta»** | `DependsOn` | Dublin Data Center is a DataCenter facility operated by Microsoft in Dublin |
 | 🟡 Medium | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | BIS AI model export control ANPRM 2024 affects Microsoft/OpenAI model distributi... |
 | 🟡 Medium | **[[Apple|Apple]]** | `Partners` | Microsoft 365 (Word, Excel, Teams, Outlook) among top apps on iOS/macOS App Stor... |
 | 🟡 Medium | **[[TSMC|TSMC]]** | `Supplies` | Microsoft custom silicon (Maia 100 AI accelerator, Cobalt 100 ARM CPU) manufactu... |

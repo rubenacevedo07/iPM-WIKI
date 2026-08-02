@@ -66,9 +66,9 @@ tags: [ipm-entity, military]
 | 🟠 High | **[[CIA|CIA]]** | `Partners` | Lockheed Skunk Works (Advanced Development Programs) has a multi-decade relation... |
 | 🟠 High | **[[../institutions/PALANTIR|Palantir]]** | `Partners` | Integrate Palantir AI platforms with Lockheed Martin defense systems. |
 | 🟠 High | **[[../companies/201_spacex|SpaceX]]** | `Partners` | SpaceX competes and cooperates in national security space launches. |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Lockheed Martin Aeronautics Fort Worth is a HQ facility operated by Lockheed Mar... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Lockheed Martin Space Sunnyvale is a HQ facility operated by Lockheed Martin in ... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Lockheed Martin Missiles Titusville is a HQ facility operated by Lockheed Martin... |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Lockheed Martin Aeronautics Fort Worth is a HQ facility operated by Lockheed Mar... |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Lockheed Martin Space Sunnyvale is a HQ facility operated by Lockheed Martin in ... |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Lockheed Martin Missiles Titusville is a HQ facility operated by Lockheed Martin... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is largest institutional holder of Lockheed Martin at approximate... |
 | 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Partners` | Northrop Grumman manufactures the center fuselage for all F-35 variants at its P... |
 | 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | Northrop and Lockheed compete in space systems, C4ISR architecture, and advanced... |

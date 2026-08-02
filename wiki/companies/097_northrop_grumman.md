@@ -51,10 +51,10 @@ tags: [ipm-entity, military]
 
 | Strength | Source | Type | Description |
 |----------|--------|------|-------------|
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | Northrop Grumman Falls Church HQ is a HQ facility operated by Northrop Grumman i... |
+| 🔴 Critical | **«entidad no resuelta»** | `Governs` | Northrop Grumman Falls Church HQ is a HQ facility operated by Northrop Grumman i... |
 | 🔴 Critical | **[[Kathy Warden|Kathy Warden]]** | `Governs` | Warden became CEO in January 2019 and added Chairman role in 2020. Former VP of ... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | All Northrop exports face ITAR (defense articles) and EAR (dual-use) compliance.... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Northrop Grumman Palmdale B-21 Facility is a HQ facility operated by Northrop Gr... |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Northrop Grumman Palmdale B-21 Facility is a HQ facility operated by Northrop Gr... |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock holds significant Northrop Grumman shares through defense/aerospace ET... |
 | 🟠 High | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Competes` | RTX and Northrop compete in missile defense (Patriot vs GBMD), advanced radars, ... |
 | 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Competes` | Top US defense primes for DOD programs. |

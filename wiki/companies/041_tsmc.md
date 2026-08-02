@@ -105,11 +105,11 @@ C.C. Wei positions TSMC as a neutral, technology-driven manufacturer — the tru
 | 🔴 Critical | **[[Advanced Micro Devices|Advanced Micro Devices]]** | `DependsOn` |  |
 | 🔴 Critical | **[[NVIDIA|NVIDIA]]** | `DependsOn` | NVIDIA fabricates ~100% of advanced chips (4nm, 3nm) at TSMC. Single point of fa... |
 | 🔴 Critical | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | BIS export controls bar TSMC from supplying advanced nodes to China (Huawei, SMI... |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Manufactures` | Fab 18 is a Fab facility operated by TSMC in Tainan |
+| 🔴 Critical | **«entidad no resuelta»** | `Manufactures` | Fab 18 is a Fab facility operated by TSMC in Tainan |
 | 🔴 Critical | **[[ASML|ASML]]** | `Partners` | Jointly develop EUV lithography roadmap for sub-2nm nodes. |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Manufactures` | TSMC Arizona Fab is a Fab facility operated by TSMC in Phoenix |
+| 🔴 Critical | **«entidad no resuelta»** | `Manufactures` | TSMC Arizona Fab is a Fab facility operated by TSMC in Phoenix |
 | 🔴 Critical | **[[C.C. Wei|C.C. Wei]]** | `Governs` | C.C. Wei became CEO in 2018. Focuses on maintaining node leadership (N3/N2), dis... |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Manufactures` | TSMC Hsinchu Science Park Fab is a Fab facility operated by TSMC in Hsinchu |
+| 🔴 Critical | **«entidad no resuelta»** | `Manufactures` | TSMC Hsinchu Science Park Fab is a Fab facility operated by TSMC in Hsinchu |
 | 🔴 Critical | **[[CC Wei|CC Wei]]** | `Governs` | CC Wei leads TSMC, the world most important semiconductor manufacturer. |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
 | 🟠 High | **[[../actors/CHANG-Morris|Morris Chang]]** | `Influences` | Morris Chang founded TSMC in 1987 and retired as Chairman in 2018. Remains activ... |

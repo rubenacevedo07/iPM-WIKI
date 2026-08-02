@@ -51,14 +51,14 @@ tags: [ipm-entity, military]
 
 | Strength | Source | Type | Description |
 |----------|--------|------|-------------|
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | RTX Headquarters is a HQ facility operated by Raytheon Technologies in Arlington |
+| 🔴 Critical | **«entidad no resuelta»** | `Governs` | RTX Headquarters is a HQ facility operated by Raytheon Technologies in Arlington |
 | 🔴 Critical | **[[Chris Calio|Chris Calio]]** | `Governs` | Calio succeeded Greg Hayes as CEO on April 22, 2024. Former COO of RTX. Focuses ... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | Every RTX export (Patriot, AMRAAM, F135 spares, radar systems) requires State De... |
 | 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Co-develop Javelin missile system. |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock is RTX's second-largest institutional shareholder at approximately 7.4... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is RTX's largest institutional shareholder at approximately 8.8% ... |
 | 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | Northrop and RTX compete in ground-based missile defense, advanced radars, and e... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Pratt and Whitney East Hartford is a HQ facility operated by Raytheon Technologi... |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Pratt and Whitney East Hartford is a HQ facility operated by Raytheon Technologi... |
 | 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Competes` | Lockheed THAAD competes with Raytheon Patriot/PAC-3 for missile defense mandates... |
 
 ## Recent Events

@@ -71,10 +71,10 @@ Technology in service of Western civilizational defense. Aggressive critic of Si
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[Alex Karp|Alex Karp]]** | `Governs` | Alex Karp co-founded Palantir with Peter Thiel in 2003. |
 | 🔴 Critical | **[[../actors/THIEL-Peter|Peter Thiel]]** | `Owns` |  |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | Palantir Denver Headquarters is a HQ facility operated by Palantir in Denver |
+| 🔴 Critical | **«entidad no resuelta»** | `Governs` | Palantir Denver Headquarters is a HQ facility operated by Palantir in Denver |
 | 🔴 Critical | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock holds approximately 7% of Palantir shares per SEC 13F-HR Q4 2025. Larg... |
 | 🟠 High | **[[Marc Andreessen|Marc Andreessen]]** | `Finances` |  |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Palantir London Office is a HQ facility operated by Palantir in London |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Palantir London Office is a HQ facility operated by Palantir in London |
 | 🟠 High | **[[Andreessen Horowitz|Andreessen Horowitz]]** | `Finances` | Andreessen Horowitz led/participated in Palantir Series C and subsequent rounds. |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group holds approximately 6% of PLTR shares per SEC 13F Q4 2025. |
 | 🟡 Medium | **[[../companies/201_spacex|SpaceX]]** | `Partners` | Palantir AIP processes battlefield data; Starlink provides the communications ba... |

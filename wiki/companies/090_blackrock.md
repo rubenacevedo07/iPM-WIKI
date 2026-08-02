@@ -62,7 +62,7 @@ Fink positions BlackRock as global steward of capital with the power to shape ho
 
 | Strength | Target | Type | Description |
 |----------|--------|------|-------------|
-| 🔴 Critical | **[[Unknown|Unknown]]** | `DependsOn` |  |
+| 🔴 Critical | **«entidad no resuelta»** | `DependsOn` |  |
 | 🔴 Critical | **[[Aladdin — BlackRock Risk OS|Aladdin — BlackRock Risk OS]]** | `Owns` | BlackRock developed and owns Aladdin (Asset Liability Debt and Derivative Invest... |
 | 🔴 Critical | **[[Vanguard Group|Vanguard Group]]** | `Competes` | BlackRock ($11.5T AUM) and Vanguard (~$9T AUM) are two pillars of the Big Three ... |
 | 🔴 Critical | **[[../institutions/PALANTIR|Palantir]]** | `Owns` | BlackRock holds approximately 7% of Palantir shares per SEC 13F-HR Q4 2025. Larg... |
@@ -92,10 +92,10 @@ Fink positions BlackRock as global steward of capital with the power to shape ho
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[../actors/FINK-Larry|Larry Fink]]** | `Governs` | Larry Fink co-founded BlackRock in 1988. $10T+ AUM. |
 | 🔴 Critical | **[[../institutions/FEDERAL-RESERVE|Federal Reserve]]** | `Partners` | Federal Reserve hired BlackRock Financial Markets Advisory in March 2020 to mana... |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | BlackRock Global Headquarters is a HQ facility operated by BlackRock in New York |
+| 🔴 Critical | **«entidad no resuelta»** | `Governs` | BlackRock Global Headquarters is a HQ facility operated by BlackRock in New York |
 | 🔴 Critical | **[[../actors/FINK-Larry|Larry Fink]]** | `Governs` | Larry Fink — CEO and co-founder of BlackRock. Controls $10T+ AUM. Aladdin platfo... |
 | 🟠 High | **[[European Commission|European Commission]]** | `Regulates` | EC regulates BlackRock under MiFID, Sustainable Finance Disclosure Regulation (S... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | BlackRock EMEA HQ is a HQ facility operated by BlackRock in London |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | BlackRock EMEA HQ is a HQ facility operated by BlackRock in London |
 | 🟡 Medium | **[[Federal Trade Commission|Federal Trade Commission]]** | `Regulates` | FTC reviews BlackRock acquisitions (GIP merger cleared Jan 2024) and researches ... |
 
 ## Recent Events

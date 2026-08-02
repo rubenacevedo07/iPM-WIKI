@@ -76,13 +76,13 @@ Cook's strategy centers on operational excellence, ecosystem lock-in, and servic
 | 🔴 Critical | **[[TSMC|TSMC]]** | `Partners` | Apple is TSMC single largest customer. First access to latest nodes. |
 | 🔴 Critical | **[[TSMC|TSMC]]** | `Supplies` | Apple is TSMC's largest single customer at ~25% of revenue. A18, M4 series manuf... |
 | 🔴 Critical | **[[Alphabet|Alphabet]]** | `Finances` | Google pays Apple an estimated $18-20B per year (revealed in DOJ v. Google trial... |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | Apple Park is a HQ facility operated by Apple in Cupertino |
-| 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | Foxconn Zhengzhou Contract is a HQ facility operated by Apple in Zhengzhou |
+| 🔴 Critical | **«entidad no resuelta»** | `Governs` | Apple Park is a HQ facility operated by Apple in Cupertino |
+| 🔴 Critical | **«entidad no resuelta»** | `Governs` | Foxconn Zhengzhou Contract is a HQ facility operated by Apple in Zhengzhou |
 | 🔴 Critical | **[[Tim Cook|Tim Cook]]** | `Governs` | Tim Cook succeeded Steve Jobs in August 2011. |
 | 🟠 High | **[[US Department of Justice|US Department of Justice]]** | `Regulates` | US DOJ and 16 state attorneys general filed antitrust lawsuit March 21, 2024 all... |
 | 🟠 High | **[[European Commission|European Commission]]** | `Regulates` | EC designated Apple DMA gatekeeper Sep 2023 for iOS, App Store, Safari. Complian... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group holds approximately 7.8% of Apple per SEC 13F Q4 2025. Largest in... |
-| 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Apple Cork Operations is a HQ facility operated by Apple in Cork |
+| 🟠 High | **«entidad no resuelta»** | `Governs` | Apple Cork Operations is a HQ facility operated by Apple in Cork |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
 | 🟡 Medium | **[[Federal Trade Commission|Federal Trade Commission]]** | `Regulates` | FTC published mobile app stores report Dec 2023 criticizing Apple-Google duopoly... |
 | 🟡 Medium | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | BIS export controls on advanced semiconductors affect Apple indirectly via TSMC ... |
