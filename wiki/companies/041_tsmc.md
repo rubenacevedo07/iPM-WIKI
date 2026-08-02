@@ -91,9 +91,9 @@ C.C. Wei positions TSMC as a neutral, technology-driven manufacturer — the tru
 | 🟠 High | **[[NVIDIA|NVIDIA]]** | `Supplies` | NVIDIA H100 on N4P, H200 and Blackwell on N3. TSMC is the only foundry capable o... |
 | 🟠 High | **[[Advanced Micro Devices|Advanced Micro Devices]]** | `Supplies` | AMD is fully fabless — 100% of Zen CPUs (Ryzen, EPYC) and Radeon/Instinct GPUs m... |
 | 🟠 High | **[[Qualcomm|Qualcomm]]** | `Supplies` | Qualcomm Snapdragon 8 Gen series and X Elite laptop chips manufactured by TSMC o... |
-| 🟠 High | **[[Samsung Electronics|Samsung Electronics]]** | `Competes` | Samsung Foundry is the only peer competing at 3nm/2nm nodes. Trails TSMC in yiel... |
+| 🟠 High | **[[../institutions/SAMSUNG|Samsung Electronics]]** | `Competes` | Samsung Foundry is the only peer competing at 3nm/2nm nodes. Trails TSMC in yiel... |
 | 🟠 High | **[[Intel|Intel]]** | `Competes` | Intel IFS aims to challenge TSMC in advanced foundry services. Intel 18A process... |
-| 🟠 High | **[[United States|United States]]** | `Partners` | $65B to reduce US Taiwan dependence. |
+| 🟠 High | **[[../countries/UNITED-STATES|United States]]** | `Partners` | $65B to reduce US Taiwan dependence. |
 | 🟡 Medium | **[[Microsoft|Microsoft]]** | `Supplies` | Microsoft custom silicon (Maia 100 AI accelerator, Cobalt 100 ARM CPU) manufactu... |
 | 🟡 Medium | **[[Pentagon|Pentagon]]** | `Supplies` | TSMC chips flow into defense systems via integrators (Lockheed, Raytheon). F-35'... |
 
@@ -112,10 +112,10 @@ C.C. Wei positions TSMC as a neutral, technology-driven manufacturer — the tru
 | 🔴 Critical | **[[Unknown|Unknown]]** | `Manufactures` | TSMC Hsinchu Science Park Fab is a Fab facility operated by TSMC in Hsinchu |
 | 🔴 Critical | **[[CC Wei|CC Wei]]** | `Governs` | CC Wei leads TSMC, the world most important semiconductor manufacturer. |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
-| 🟠 High | **[[Morris Chang|Morris Chang]]** | `Influences` | Morris Chang founded TSMC in 1987 and retired as Chairman in 2018. Remains activ... |
+| 🟠 High | **[[../actors/CHANG-Morris|Morris Chang]]** | `Influences` | Morris Chang founded TSMC in 1987 and retired as Chairman in 2018. Remains activ... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group holds significant TSMC ADR position via global and EM index funds... |
-| 🟠 High | **[[Morris Chang|Morris Chang]]** | `Owns` | Morris Chang founded TSMC in 1987, creating the pure-play foundry model. |
-| 🟠 High | **[[Samsung Electronics|Samsung Electronics]]** | `Competes` | 3nm GAA vs N3 for advanced node customers. |
+| 🟠 High | **[[../actors/CHANG-Morris|Morris Chang]]** | `Owns` | Morris Chang founded TSMC in 1987, creating the pure-play foundry model. |
+| 🟠 High | **[[../institutions/SAMSUNG|Samsung Electronics]]** | `Competes` | 3nm GAA vs N3 for advanced node customers. |
 | 🟡 Medium | **[[Amazon|Amazon]]** | `DependsOn` | Amazon custom silicon (Graviton CPU, Trainium AI accelerator, Inferentia inferen... |
 | 🟡 Medium | **[[Microsoft|Microsoft]]** | `DependsOn` | Microsoft custom AI chips (Maia 100 AI accelerator, Cobalt 100 ARM CPU) manufact... |
 

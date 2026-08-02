@@ -39,7 +39,7 @@ The core commercial differentiator. When these three diverge, that gap is the pr
 Unlike hit-rate metrics, Brier penalizes overconfidence. A machine that says 90% and is right 70% of the time scores **worse** than one that says 70% and is right 70% of the time. No competitor uses it. Most analyst tracking uses hit rate, which rewards confidence over calibration.
 
 ## The 20 Machines
-See [[Oracle-Machine-Roster.md]] for full roster with domains.
+See [[../oracle/Oracle-Machine-Roster]] for full roster with domains.
 
 Key machines by domain cluster:
 - **Monetary policy:** Alexandra Voss (Fed/dollar), Isabelle Fontaine (ECB/EUR), David O'Connor (Fed/US rates)

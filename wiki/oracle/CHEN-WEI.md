@@ -39,7 +39,7 @@ Asia Pacific geopolitics — Taiwan Strait military risk, semiconductor supply c
 - [[../themes/Chokepoint-Intelligence]] — Taiwan Strait ClosureRiskScore=8
 - [[../institutions/TSMC]] — Fab18 SupplyRiskScore=9, Arizona partial hedge
 - [[../institutions/ASML]] — EUV monopoly, Veldhoven chokepoint
-- [[../actors/JENSEN-Huang]] — NVIDIA DependsOn Taiwan (Critical edge)
+- [[../actors/HUANG-Jensen]] — NVIDIA DependsOn Taiwan (Critical edge)
 - [[../actors/CHANG-Morris]] — Owns TSMC (High edge)
 - [[../countries/JAPAN]] — Front-line state, TSMC Kumamoto, Malacca exposure
 

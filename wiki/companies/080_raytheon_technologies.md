@@ -41,11 +41,11 @@ tags: [ipm-entity, military]
 | Strength | Target | Type | Description |
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[Pentagon|Pentagon]]** | `Supplies` | DoD accounts for approximately 38-40% of RTX revenue across Patriot/PAC-3 air de... |
-| 🔴 Critical | **[[Lockheed Martin|Lockheed Martin]]** | `Supplies` | Pratt & Whitney (RTX) is the only producer of the F135 engine that powers all F-... |
+| 🔴 Critical | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Supplies` | Pratt & Whitney (RTX) is the only producer of the F135 engine that powers all F-... |
 | 🔴 Critical | **[[Ukraine|Ukraine]]** | `Exports` | RTX supplied Patriot air-defense systems, PAC-3 MSE interceptors, NASAMS (Norweg... |
-| 🟠 High | **[[Northrop Grumman|Northrop Grumman]]** | `Competes` | RTX and Northrop compete in missile defense (Patriot vs GBMD), advanced radars, ... |
+| 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | RTX and Northrop compete in missile defense (Patriot vs GBMD), advanced radars, ... |
 | 🟠 High | **[[NATO|NATO]]** | `Exports` | Patriot is the standard tier-3 air defense system for NATO allies. AMRAAM is the... |
-| 🟡 Medium | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Javelin Joint Venture (JJV) is a 50/50 partnership between RTX and Lockheed Mart... |
+| 🟡 Medium | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Javelin Joint Venture (JJV) is a 50/50 partnership between RTX and Lockheed Mart... |
 
 ### Inbound (others → this entity)
 
@@ -54,12 +54,12 @@ tags: [ipm-entity, military]
 | 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | RTX Headquarters is a HQ facility operated by Raytheon Technologies in Arlington |
 | 🔴 Critical | **[[Chris Calio|Chris Calio]]** | `Governs` | Calio succeeded Greg Hayes as CEO on April 22, 2024. Former COO of RTX. Focuses ... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | Every RTX export (Patriot, AMRAAM, F135 spares, radar systems) requires State De... |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Co-develop Javelin missile system. |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Co-develop Javelin missile system. |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock is RTX's second-largest institutional shareholder at approximately 7.4... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is RTX's largest institutional shareholder at approximately 8.8% ... |
-| 🟠 High | **[[Northrop Grumman|Northrop Grumman]]** | `Competes` | Northrop and RTX compete in ground-based missile defense, advanced radars, and e... |
+| 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | Northrop and RTX compete in ground-based missile defense, advanced radars, and e... |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Pratt and Whitney East Hartford is a HQ facility operated by Raytheon Technologi... |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Competes` | Lockheed THAAD competes with Raytheon Patriot/PAC-3 for missile defense mandates... |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Competes` | Lockheed THAAD competes with Raytheon Patriot/PAC-3 for missile defense mandates... |
 
 ## Recent Events
 

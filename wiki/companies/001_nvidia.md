@@ -67,13 +67,13 @@ Positions NVIDIA as core infrastructure provider for accelerated computing as th
 | 🟠 High | **[[Alphabet|Alphabet]]** | `Supplies` | NVIDIA supplies Google Cloud for AI infrastructure. Dual relationship — Alphabet... |
 | 🟠 High | **[[Advanced Micro Devices|Advanced Micro Devices]]** | `Competes` | MI300X/MI350 vs H100/H200/B200 in AI accelerators. |
 | 🟠 High | **[[Amazon|Amazon]]** | `Supplies` | NVIDIA supplies AWS for Anthropic hosting, SageMaker AI, and EC2 GPU instances. ... |
-| 🟠 High | **[[Meta Platforms|Meta Platforms]]** | `Supplies` | NVIDIA supplies Meta for Llama training clusters. Estimated ~13% of NVIDIA reven... |
+| 🟠 High | **[[../institutions/META|Meta Platforms]]** | `Supplies` | NVIDIA supplies Meta for Llama training clusters. Estimated ~13% of NVIDIA reven... |
 | 🟠 High | **[[Microsoft|Microsoft]]** | `Supplies` | NVIDIA supplies top client Microsoft for Azure AI. Estimated 15-19% of NVIDIA re... |
 | 🟠 High | **[[xAI|xAI]]** | `Supplies` | xAI Colossus cluster uses 100,000 H100 GPUs. Top-10 NVIDIA customer 2024-2025. M... |
 | 🟠 High | **[[OpenAI|OpenAI]]** | `Supplies` | NVIDIA supplies OpenAI primarily via Microsoft Azure. Direct relationship develo... |
 | 🟡 Medium | **[[Pentagon|Pentagon]]** | `Supplies` | NVIDIA supplies GPUs to DoD for AI research and defense applications. Not a prim... |
 | 🟡 Medium | **[[Anthropic|Anthropic]]** | `Supplies` | NVIDIA supplies Anthropic but with lower exposure than Microsoft/Meta. Anthropic... |
-| 🟡 Medium | **[[Samsung Electronics|Samsung Electronics]]** | `Partners` | Samsung Foundry as alternative fab option. Not currently primary but strategic h... |
+| 🟡 Medium | **[[../institutions/SAMSUNG|Samsung Electronics]]** | `Partners` | Samsung Foundry as alternative fab option. Not currently primary but strategic h... |
 | 🟡 Medium | **[[Oracle|Oracle]]** | `Supplies` | Oracle strategic client for sovereign AI deployments. Growing relationship via O... |
 
 ### Inbound (others → this entity)
@@ -81,12 +81,12 @@ Positions NVIDIA as core infrastructure provider for accelerated computing as th
 | Strength | Source | Type | Description |
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[xAI|xAI]]** | `DependsOn` |  |
-| 🔴 Critical | **[[Meta Platforms|Meta Platforms]]** | `DependsOn` |  |
-| 🔴 Critical | **[[Jensen Huang|Jensen Huang]]** | `Governs` | Jensen Huang co-founded NVIDIA in 1993. Largest individual shareholder. |
+| 🔴 Critical | **[[../institutions/META|Meta Platforms]]** | `DependsOn` |  |
+| 🔴 Critical | **[[../actors/HUANG-Jensen|Jensen Huang]]** | `Governs` | Jensen Huang co-founded NVIDIA in 1993. Largest individual shareholder. |
 | 🔴 Critical | **[[SK Hynix|SK Hynix]]** | `Partners` | SK Hynix co-develops HBM3E/HBM4 specifications with NVIDIA. |
 | 🟠 High | **[[Amazon|Amazon]]** | `DependsOn` | Amazon AWS deploys large NVIDIA GPU clusters for EC2 P-instances. Developing Tra... |
 | 🟠 High | **[[Microsoft|Microsoft]]** | `DependsOn` | Microsoft Azure AI compute fleet depends heavily on NVIDIA H100 and H200 GPUs. T... |
-| 🟠 High | **[[Palantir|Palantir]]** | `DependsOn` |  |
+| 🟠 High | **[[../institutions/PALANTIR|Palantir]]** | `DependsOn` |  |
 | 🟠 High | **[[Alphabet|Alphabet]]** | `DependsOn` | Alphabet/Google DeepMind and GCP depend on NVIDIA H100/A100 for AI training. Own... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | BIS export controls restrict A100, H100, and derivatives to China. NVIDIA respon... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is largest institutional holder of NVIDIA at approximately 8.6% a... |
@@ -97,11 +97,11 @@ Positions NVIDIA as core infrastructure provider for accelerated computing as th
 | 🟠 High | **[[Arm Holdings|Arm Holdings]]** | `Supplies` |  |
 | 🟠 High | **[[TSMC|TSMC]]** | `Supplies` | NVIDIA H100 on N4P, H200 and Blackwell on N3. TSMC is the only foundry capable o... |
 | 🟠 High | **[[Chris Malachowsky|Chris Malachowsky]]** | `Owns` | Chris Malachowsky co-founded NVIDIA with Jensen Huang in 1993. |
-| 🟡 Medium | **[[SpaceX|SpaceX]]** | `DependsOn` | Starlink ground stations and network management require GPU compute for beam-for... |
+| 🟡 Medium | **[[../companies/201_spacex|SpaceX]]** | `DependsOn` | Starlink ground stations and network management require GPU compute for beam-for... |
 | 🟡 Medium | **[[Unknown|Unknown]]** | `Influences` | NVIDIA Israel R&D Center is a R&D facility operated by NVIDIA in Yokneam |
 | 🟡 Medium | **[[Unknown|Unknown]]** | `Influences` | NVIDIA Bangalore Engineering Center is a R&D facility operated by NVIDIA in Bang... |
 | 🟡 Medium | **[[State Street Corporation|State Street Corporation]]** | `Owns` | State Street Corporation holds approximately 4.2% of NVIDIA through institutiona... |
-| 🟡 Medium | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Lockheed integrates NVIDIA GPU-based AI for autonomous systems, targeting soluti... |
+| 🟡 Medium | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Lockheed integrates NVIDIA GPU-based AI for autonomous systems, targeting soluti... |
 | ⚪ Low | **[[Apple|Apple]]** | `Competes` | Apple M4 Ultra targets professional creative workflows previously dominated by N... |
 
 ## Recent Events

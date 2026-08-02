@@ -34,7 +34,7 @@ De facto ruler since 2017. Controls Saudi Aramco production decisions, OPEC+ quo
 - **CompositeScore:** 78 ✅ seeded (rank 6 globally)
 - **Primary domain:** Energy, coercive, financial (PIF)
 - **Key institutions:** Saudi Aramco, PIF, OPEC+
-- **Key relationships:** [[donald-trump]], [[vladimir-putin]], [[xi-jinping]]
+- **Key relationships:** [[../actors/TRUMP-Donald]], [[../actors/PUTIN-Vladimir]], [[xi-jinping]]
 
 ## Current Assessment
 *(populate from transcripts/geopolitics ingests)*

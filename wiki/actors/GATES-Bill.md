@@ -126,7 +126,7 @@ BMGF is world's largest private charitable foundation by assets. Founded 2000. $
 - **Global Development** — agriculture, nutrition, financial inclusion. Africa / South Asia smallholder farming. Criticized for undermining food sovereignty.
 - **US Program** — K-12 education reform, community colleges. Common Core (Gates funded, controversial).
 
-**[[warren-buffett]] partnership** — pledged ~$50B+ to BMGF over time. Gates + Buffett = ~$150B pledged combined. Both co-founded Giving Pledge — 240+ billionaire signatories.
+**[[../actors/BUFFETT-Warren]] partnership** — pledged ~$50B+ to BMGF over time. Gates + Buffett = ~$150B pledged combined. Both co-founded Giving Pledge — 240+ billionaire signatories.
 
 **Structural critique:** A private foundation controlled by one person shapes global health policy, funds WHO priorities, influences regulatory frameworks for vaccines and food, and simultaneously holds equity positions benefiting from those frameworks. Governance problem with no analogue in prior history.
 
@@ -142,9 +142,9 @@ Gates has been more public about AI than any topic since COVID. Position: radica
 | Bioterrorism warning | AI dramatically lowers barrier for bad actors to design biological weapons. Gates rates this as most dangerous near-term AI risk — ahead of job displacement or AGI alignment. | Immediate |
 
 ## Banks, Corporations, and Key Partners
-- **[[warren-buffett]]** — 30-year friendship; ~$50B+ pledged; BRK.B largest Foundation Trust holding
+- **[[../actors/BUFFETT-Warren]]** — 30-year friendship; ~$50B+ pledged; BRK.B largest Foundation Trust holding
 - **[[satya-nadella]] / Microsoft** — Gates emotionally invested in Azure + OpenAI strategy; no formal role but influential informally
-- **OpenAI / [[sam-altman]]** — via Microsoft's $13B investment; Gates cites OpenAI deal as most significant tech development of his lifetime
+- **OpenAI / [[../actors/ALTMAN-Sam]]** — via Microsoft's $13B investment; Gates cites OpenAI deal as most significant tech development of his lifetime
 - **Saudi Prince Al-Waleed bin Talal** — 23% Four Seasons partner; Gulf SWF / PIF connection
 - **WHO / GAVI / CEPI** — structurally dependent on BMGF funding
 - **Moderna, AstraZeneca, BioNTech** — early COVID vaccine funding recipients; equity positions via Foundation Trust

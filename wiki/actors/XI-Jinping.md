@@ -35,7 +35,7 @@ and BRICS+ de-dollarization agenda.
 - **CompositeScore:** 79 ✅ seeded
 - **Primary domain:** Political, coercive, industrial
 - **Key institutions:** CCP, PLA, State Council
-- **Key relationships:** [[donald-trump]], [[vladimir-putin]]
+- **Key relationships:** [[../actors/TRUMP-Donald]], [[../actors/PUTIN-Vladimir]]
 
 ## Current Assessment
 *(Knowledge-based · April 2026 · confidence: medium)*

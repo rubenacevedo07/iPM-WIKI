@@ -65,35 +65,35 @@ Fink positions BlackRock as global steward of capital with the power to shape ho
 | 🔴 Critical | **[[Unknown|Unknown]]** | `DependsOn` |  |
 | 🔴 Critical | **[[Aladdin — BlackRock Risk OS|Aladdin — BlackRock Risk OS]]** | `Owns` | BlackRock developed and owns Aladdin (Asset Liability Debt and Derivative Invest... |
 | 🔴 Critical | **[[Vanguard Group|Vanguard Group]]** | `Competes` | BlackRock ($11.5T AUM) and Vanguard (~$9T AUM) are two pillars of the Big Three ... |
-| 🔴 Critical | **[[Palantir|Palantir]]** | `Owns` | BlackRock holds approximately 7% of Palantir shares per SEC 13F-HR Q4 2025. Larg... |
+| 🔴 Critical | **[[../institutions/PALANTIR|Palantir]]** | `Owns` | BlackRock holds approximately 7% of Palantir shares per SEC 13F-HR Q4 2025. Larg... |
 | 🟠 High | **[[Microsoft|Microsoft]]** | `Owns` |  |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Owns` |  |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Owns` |  |
 | 🟠 High | **[[ExxonMobil|ExxonMobil]]** | `Owns` |  |
 | 🟠 High | **[[ASML|ASML]]** | `Owns` |  |
 | 🟠 High | **[[TSMC|TSMC]]** | `Owns` |  |
 | 🟠 High | **[[NVIDIA|NVIDIA]]** | `Owns` |  |
 | 🟠 High | **[[MSCI Inc|MSCI Inc]]** | `Partners` | iShares ETFs use MSCI indexes. |
-| 🟠 High | **[[Northrop Grumman|Northrop Grumman]]** | `Owns` | BlackRock holds significant Northrop Grumman shares through defense/aerospace ET... |
-| 🟠 High | **[[Raytheon Technologies|Raytheon Technologies]]** | `Owns` | BlackRock is RTX's second-largest institutional shareholder at approximately 7.4... |
-| 🟠 High | **[[SpaceX|SpaceX]]** | `Owns` | BlackRock-managed funds participated in SpaceX secondary share sales and tender ... |
+| 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Owns` | BlackRock holds significant Northrop Grumman shares through defense/aerospace ET... |
+| 🟠 High | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Owns` | BlackRock is RTX's second-largest institutional shareholder at approximately 7.4... |
+| 🟠 High | **[[../companies/201_spacex|SpaceX]]** | `Owns` | BlackRock-managed funds participated in SpaceX secondary share sales and tender ... |
 | 🟠 High | **[[Alphabet|Alphabet]]** | `Owns` |  |
 | 🟠 High | **[[Global Infrastructure Partners|Global Infrastructure Partners]]** | `Owns` | BlackRock completed acquisition of Global Infrastructure Partners on October 1, ... |
 | 🟠 High | **[[State Street Corporation|State Street Corporation]]** | `Competes` | State Street SPDR franchise competes with BlackRock iShares in ETF market. Both ... |
 | 🟠 High | **[[Amazon|Amazon]]** | `Owns` |  |
 | 🟠 High | **[[Apple|Apple]]** | `Owns` |  |
-| 🟡 Medium | **[[Goldman Sachs|Goldman Sachs]]** | `Competes` | Goldman Sachs Asset Management competes with BlackRock for institutional alterna... |
-| 🟡 Medium | **[[JPMorgan Chase|JPMorgan Chase]]** | `Competes` | JPMorgan Asset Management competes with BlackRock for institutional mandates, ET... |
-| 🟡 Medium | **[[Saudi Aramco|Saudi Aramco]]** | `Finances` | Saudi Aramco CEO Amin Nasser joined BlackRock board in 2023. BlackRock invested ... |
-| 🟡 Medium | **[[Saudi Aramco|Saudi Aramco]]** | `Owns` |  |
+| 🟡 Medium | **[[../institutions/GOLDMAN-SACHS|Goldman Sachs]]** | `Competes` | Goldman Sachs Asset Management competes with BlackRock for institutional alterna... |
+| 🟡 Medium | **[[../institutions/JPMORGAN|JPMorgan Chase]]** | `Competes` | JPMorgan Asset Management competes with BlackRock for institutional mandates, ET... |
+| 🟡 Medium | **[[../institutions/SAUDI-ARAMCO|Saudi Aramco]]** | `Finances` | Saudi Aramco CEO Amin Nasser joined BlackRock board in 2023. BlackRock invested ... |
+| 🟡 Medium | **[[../institutions/SAUDI-ARAMCO|Saudi Aramco]]** | `Owns` |  |
 
 ### Inbound (others → this entity)
 
 | Strength | Source | Type | Description |
 |----------|--------|------|-------------|
-| 🔴 Critical | **[[Larry Fink|Larry Fink]]** | `Governs` | Larry Fink co-founded BlackRock in 1988. $10T+ AUM. |
-| 🔴 Critical | **[[Federal Reserve|Federal Reserve]]** | `Partners` | Federal Reserve hired BlackRock Financial Markets Advisory in March 2020 to mana... |
+| 🔴 Critical | **[[../actors/FINK-Larry|Larry Fink]]** | `Governs` | Larry Fink co-founded BlackRock in 1988. $10T+ AUM. |
+| 🔴 Critical | **[[../institutions/FEDERAL-RESERVE|Federal Reserve]]** | `Partners` | Federal Reserve hired BlackRock Financial Markets Advisory in March 2020 to mana... |
 | 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | BlackRock Global Headquarters is a HQ facility operated by BlackRock in New York |
-| 🔴 Critical | **[[Larry Fink|Larry Fink]]** | `Governs` | Larry Fink — CEO and co-founder of BlackRock. Controls $10T+ AUM. Aladdin platfo... |
+| 🔴 Critical | **[[../actors/FINK-Larry|Larry Fink]]** | `Governs` | Larry Fink — CEO and co-founder of BlackRock. Controls $10T+ AUM. Aladdin platfo... |
 | 🟠 High | **[[European Commission|European Commission]]** | `Regulates` | EC regulates BlackRock under MiFID, Sustainable Finance Disclosure Regulation (S... |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | BlackRock EMEA HQ is a HQ facility operated by BlackRock in London |
 | 🟡 Medium | **[[Federal Trade Commission|Federal Trade Commission]]** | `Regulates` | FTC reviews BlackRock acquisitions (GIP merger cleared Jan 2024) and researches ... |

@@ -13,7 +13,7 @@ sources:
   - raw/dossiers-external/musk-elon-dossier-2026-04.html
 related_actors: [donald-trump, sam-altman, jensen-huang, benjamin-netanyahu, vladimir-putin, xi-jinping]
 related_countries: [united-states, china, germany]
-related_institutions: [tesla, spacex, x-corp, xai, neuralink, the-boring-company, openai]
+related_institutions: [tesla, spacex, x-corp, xai, neuralink, the-boring-company, openai, afd]
 related_commodities: [lithium, cobalt, nickel, rare-earths, semiconductors]
 related_themes: [ai-race, ev-transition, political-influence, space-commercialization, brain-computer-interface]
 db_id: 7
@@ -40,7 +40,7 @@ Additional leverage points from the April 2026 dossier: Starlink provides 50–8
 - **CompositeScore:** 74 ✅ seeded (fully seeded — standard migration test pair)
 - **Primary domain:** Technology, space, media, political influence
 - **Key companies:** Tesla (DB: 7), SpaceX, X, xAI
-- **Key relationships:** [[donald-trump]], [[sam-altman]]
+- **Key relationships:** [[../actors/TRUMP-Donald]], [[../actors/ALTMAN-Sam]]
 - **Net worth (Mar 2026):** $852B Forbes — #1 global
 - **Combined enterprise value:** ~$3T across 6 major companies
 - **Wealth liquidity:** ~5% liquid (~95% illiquid equity)
@@ -86,11 +86,11 @@ Lithium, cobalt, nickel, copper, graphite (battery chemistry); rare earths + neo
 Key supply dependency: NVIDIA H100 / H200 GPUs for Colossus expansion. Musk is among NVIDIA's largest direct customers via xAI.
 
 ## Strategic Alliances
-- **[[donald-trump]]** — $250M+ in 2024 campaign; DOGE role; public breakup mid-2025; EV credits gutted as retaliation.
-- **[[sam-altman]]** — former OpenAI co-founder and current public rival; Stargate vs xAI defines the Silicon Valley AI schism.
-- **[[jensen-huang]]** — NVIDIA H100 supply relationship; xAI among top 5 customers by volume.
+- **[[../actors/TRUMP-Donald]]** — $250M+ in 2024 campaign; DOGE role; public breakup mid-2025; EV credits gutted as retaliation.
+- **[[../actors/ALTMAN-Sam]]** — former OpenAI co-founder and current public rival; Stargate vs xAI defines the Silicon Valley AI schism.
+- **[[../actors/HUANG-Jensen]]** — NVIDIA H100 supply relationship; xAI among top 5 customers by volume.
 - **benjamin-netanyahu** — Starlink deployed in Gaza per Israeli government coordination (2023–2026).
-- **[[vladimir-putin]]** — reported direct communication channel (WSJ 2024 disputed); Starlink access denial as wartime leverage over Ukraine.
+- **[[../actors/PUTIN-Vladimir]]** — reported direct communication channel (WSJ 2024 disputed); Starlink access denial as wartime leverage over Ukraine.
 - **[[xi-jinping]]** — Tesla Shanghai deep ties; data localization compliance; delicate balance with US security establishment.
 - Saudi PIF — reported interest in Tesla, SpaceX, xAI stakes.
 
@@ -119,9 +119,13 @@ Tracked divergences vs prior IMP assessment:
 - **DOGE role evolution:** from federal spending review (Jan–May 2025) → removed after Trump fallout (May 2025) → no formal government role since; residual personnel placements at GSA, OPM.
 - **X platform policy:** continued reinstatement of previously-banned accounts; advertising has partially recovered under linear Amazon/Tesla cross-subsidization; EU DSA enforcement risk escalating.
 - **AI alignment stance:** shifted from "existential risk advocate" (2015–2023) to "xAI must lead" (2024–2026); increasingly dismissive of OpenAI safety framing.
+- **European political actor (new dimension, 2024–2025):** Active campaigning for AfD ahead of Germany's February 2025 federal election — unprecedented for a US tech CEO. X Space with Alice Weidel (Jan 2025), virtual AfD rally appearance. First case of a US platform owner openly intervening in a European election. EU DSA enforcement investigation of X accelerated as a result. Complicates Musk's business position in Europe (Tesla Gigafactory Berlin; EU regulatory exposure). AfD ultimately finished second (~20%) but remains excluded from all coalition talks.
 
 ## Key Recent Actions
 - 2024-11: $250M+ spent supporting Trump 2024 campaign — largest single-donor contribution in US history.
+- 2024-12: Begins endorsing AfD on X — calls it "the only party that can save Germany"; op-ed in major German newspaper; triggers 8x increase in collective views for AfD politicians that week (DFRLab).
+- 2025-01-09: X Space livestream with AfD leader Alice Weidel (~200K live listeners) — opens by calling her "the leading candidate to run Germany"; urges Germans to vote AfD; Weidel claims Hitler was "a communist, socialist guy," Musk agrees; European Commission monitors for DSA violations.
+- 2025-01-25: Virtual appearance at 4,500-person AfD rally in Eastern Germany — tells crowd to "fight for a great future for Germany."
 - 2025-01: Appointed head of DOGE (Department of Government Efficiency) via Trump executive action.
 - 2025-05: Public falling out with Trump over EV policy and DOGE scope; removed from government role.
 - 2025-Q3: Europe Tesla sales −35% YoY following Musk political activity boycott.

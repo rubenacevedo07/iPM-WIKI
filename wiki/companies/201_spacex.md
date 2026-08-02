@@ -44,24 +44,24 @@ tags: [ipm-entity, technological]
 | 🔴 Critical | **[[Pentagon|Pentagon]]** | `Supplies` | SpaceX holds NSSL Phase 2 and Phase 3 Lane 2 contracts making it the default US ... |
 | 🟠 High | **[[Amazon|Amazon]]** | `Competes` | SpaceX Starlink (6,000+ satellites, 4M+ subscribers, $8B ARR) vs Amazon Project ... |
 | 🟠 High | **[[Blue Origin|Blue Origin]]** | `Competes` | Blue Origin New Glenn entered orbital launch in 2024, competing with Falcon 9 fo... |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | SpaceX competes and cooperates in national security space launches. |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | SpaceX competes and cooperates in national security space launches. |
 | 🟠 High | **[[NATO|NATO]]** | `Supplies` | Starlink terminals deployed across NATO member forces in Ukraine and Eastern Eur... |
 | 🟠 High | **[[CIA|CIA]]** | `Partners` | SpaceX launches NRO (National Reconnaissance Office) classified imaging and SIGI... |
 | 🟡 Medium | **[[NVIDIA|NVIDIA]]** | `DependsOn` | Starlink ground stations and network management require GPU compute for beam-for... |
 | 🟡 Medium | **[[xAI|xAI]]** | `Partners` | Gemini found evidence of integration between Grok AI and Starlink for remote/edg... |
-| 🟡 Medium | **[[Palantir|Palantir]]** | `Partners` | Palantir AIP processes battlefield data; Starlink provides the communications ba... |
+| 🟡 Medium | **[[../institutions/PALANTIR|Palantir]]** | `Partners` | Palantir AIP processes battlefield data; Starlink provides the communications ba... |
 | 🟡 Medium | **[[Tesla|Tesla]]** | `Partners` | Musk simultaneously leads SpaceX and Tesla. Engineering cross-pollination: stain... |
 
 ### Inbound (others → this entity)
 
 | Strength | Source | Type | Description |
 |----------|--------|------|-------------|
-| 🔴 Critical | **[[Elon Musk|Elon Musk]]** | `Governs` | Musk founded SpaceX in 2002. ~42% stake. 70%+ of global orbital launches. $22B+ ... |
+| 🔴 Critical | **[[../actors/MUSK-Elon|Elon Musk]]** | `Governs` | Musk founded SpaceX in 2002. ~42% stake. 70%+ of global orbital launches. $22B+ ... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | FCC regulates Starlink spectrum and orbital slots (existential for Starlink). IT... |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock-managed funds participated in SpaceX secondary share sales and tender ... |
 | 🟠 High | **[[Tesla|Tesla]]** | `Partners` | Shared manufacturing techniques and Musk leadership. |
 | 🟡 Medium | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard has limited exposure to SpaceX via alternative investment vehicles give... |
-| 🟡 Medium | **[[Northrop Grumman|Northrop Grumman]]** | `Competes` | Northrop space systems (satellites, sensors) compete with SpaceX for national se... |
+| 🟡 Medium | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | Northrop space systems (satellites, sensors) compete with SpaceX for national se... |
 
 ## Recent Events
 

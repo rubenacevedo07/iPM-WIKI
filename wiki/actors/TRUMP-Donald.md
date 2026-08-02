@@ -11,9 +11,9 @@ updated: 2026-04-17
 confidence: high
 sources:
   - raw/dossiers-external/trump-donald-power-profile-2026-04.html
-related_actors: [scott-bessent, jerome-powell, xi-jinping, elon-musk, larry-fink, jamie-dimon, mbs, vladimir-putin, benjamin-netanyahu]
+related_actors: [scott-bessent, jerome-powell, xi-jinping, elon-musk, larry-fink, jamie-dimon, mbs, vladimir-putin, benjamin-netanyahu, thiel-peter, vance-jd]
 related_countries: [united-states, china, russia, saudi-arabia, israel, iran]
-related_institutions: [us-treasury, federal-reserve, blackrock, goldman-sachs, jpmorgan, trump-media, softbank]
+related_institutions: [us-treasury, federal-reserve, blackrock, goldman-sachs, jpmorgan, trump-media, softbank, palantir]
 related_commodities: [oil, gold, bitcoin]
 related_themes: [trade-war, sanctions, de-dollarization, nato-friction, us-sovereign-wealth-fund, crypto-policy, ai-race]
 db_id: 173
@@ -40,7 +40,7 @@ Additional levers from April 2026 power profile: US Sovereign Wealth Fund creati
 - **CompositeScore:** 76 ✅ seeded (rank 1 globally)
 - **Primary domain:** Political power, trade policy, sanctions
 - **Key institutions:** Executive Branch, US Treasury (via Bessent)
-- **Key relationships:** [[scott-bessent]], [[jerome-powell]], [[xi-jinping]]
+- **Key relationships:** [[../actors/BESSENT-Scott]], [[../actors/POWELL-Jerome]], [[xi-jinping]]
 - **Net worth (Mar 2026):** $6.5B Forbes / $7.08B Bloomberg
 - **2nd term growth:** +$1.4B (+27% in 14 months)
 - **Wealth liquidity:** ~17% liquid (~$1.1B cash/bonds)
@@ -142,12 +142,12 @@ Regulatory pattern: Fired crypto-hostile SEC Chair. Appointed pro-crypto Paul At
 | Entity | Key Person | Status 2026 |
 |---|---|---|
 | Goldman Sachs | David Solomon | ● Aligned — deregulation ally, SWF advisor |
-| BlackRock | [[larry-fink]] | ● Aligned — dropped ESG, manages $37B US infrastructure fund |
-| JPMorgan | [[jamie-dimon]] | ● Cautious ally — critical but compliant |
+| BlackRock | [[../actors/FINK-Larry]] | ● Aligned — dropped ESG, manages $37B US infrastructure fund |
+| JPMorgan | [[../actors/DIMON-Jamie]] | ● Cautious ally — critical but compliant |
 | Saudi Arabia / PIF | [[mbs]] | ● Strategic partner — $600B investment pledge; Riyadh visit May 2025; LIV Golf hosted |
 | SoftBank | Masayoshi Son | ● Aligned — $100B US investment commitment; Stargate |
 | US Sovereign Wealth Fund | — | ● Created Feb 2025 via EO; seeded w/ Fannie-Freddie + tariffs |
-| Federal Reserve | [[jerome-powell]] | ● Hostile — war, exploring firing |
+| Federal Reserve | [[../actors/POWELL-Jerome]] | ● Hostile — war, exploring firing |
 | IMF / World Bank | — | ● Undermining — threatens funding cuts |
 
 ## US Sovereign Wealth Fund
@@ -182,6 +182,7 @@ Shift from "reviewing inherited agreements" to explicitly confrontational. Tarif
 **Fed relationship shift:** From "I nominated him" posture (2020) to open confrontation with explicit dismissal threats (2025–2026).
 
 ## Key Recent Actions
+- 2021-XX: Peter Thiel introduces JD Vance to Trump at Mar-a-Lago — the meeting that set Vance's VP trajectory.
 - 2025-01-17: TRUMP meme coin launch — 3 days before inauguration.
 - 2025-01-19: MELANIA meme coin — crashed TRUMP coin −50%.
 - 2025-01-21: Stargate announcement — $500B AI infrastructure joint venture with OpenAI, SoftBank, Oracle.
@@ -191,6 +192,7 @@ Shift from "reviewing inherited agreements" to explicitly confrontational. Tarif
 - 2025-12: State AI laws preempted via EO.
 - 2026-01: Bitcoin Strategic Reserve EO.
 - 2026-03-20: National AI Framework released.
+- 2026-04: Palantir federal contract haul reaches $1.3B+ across 14+ agencies since inauguration; CEO Karp is a Mar-a-Lago regular in Trump 2.0 era; PLTR +180% since Trump election.
 - 2026-03: Trade investigations vs China + EU announced (new tariffs by summer).
 
 ## Market Impact

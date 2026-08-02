@@ -114,7 +114,7 @@ Wife Priscilla Chan (pediatrician) runs CZI independently — one of the most qu
 Visible personal reinvention coinciding with business refocus:
 - Brazilian jiu-jitsu training; won gold in competitive tournaments.
 - Backyard MMA octagon at Palo Alto home (reportedly against Priscilla's wishes).
-- Nearly fought [[elon-musk]] in cage match — social media beef consumed weeks of global attention before fizzling.
+- Nearly fought [[../actors/MUSK-Elon]] in cage match — social media beef consumed weeks of global attention before fizzling.
 - Physical transformation coincided precisely with "Year of Efficiency" layoffs, stock recovery, political pivot, AI refocus.
 - Observers suggest deliberate identity reinvention from "awkward robot CEO" → "physical decisive leader."
 - Public persona visibly shifted. Effective either way.

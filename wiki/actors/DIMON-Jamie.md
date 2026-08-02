@@ -36,7 +36,7 @@ return capacity.
 - **CompositeScore:** NOT YET SEEDED
 - **Primary domain:** Banking, financial stability, credit markets
 - **Key institution:** JPMorgan Chase (DB ID: 12)
-- **Key relationships:** [[jerome-powell]], [[larry-fink]]
+- **Key relationships:** [[../actors/POWELL-Jerome]], [[../actors/FINK-Larry]]
 
 ## Current Assessment
 *(Knowledge-based · April 2026 · confidence: medium)*

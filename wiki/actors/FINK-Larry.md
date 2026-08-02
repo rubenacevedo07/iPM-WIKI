@@ -40,7 +40,7 @@ Additional levers from April 2026 power profile: hired by Fed (2020) to run $750
 - **CompositeScore:** 72 ✅ seeded
 - **Primary domain:** Financial, asset management
 - **Key institutions:** BlackRock (DB: 90), Aladdin platform
-- **Key relationships:** [[jerome-powell]], [[jamie-dimon]]
+- **Key relationships:** [[../actors/POWELL-Jerome]], [[../actors/DIMON-Jamie]]
 - **BlackRock AUM (Q4 2025):** $14T — larger than China's GDP
 - **Aladdin monitored assets:** $21T — ~10% of all global financial assets
 - **BlackRock market cap:** ~$130B (NYSE: BLK)
@@ -116,10 +116,10 @@ Power score by domain (from April 2026 dossier):
 - **2026** — Advising Ukraine reconstruction fund; AI pivot in annual letter warning wealth gap widening.
 
 ## Strategic Alliances and Relationships
-- **[[jerome-powell]]** — Fed-BlackRock relationship dates to 2008. Pragmatic cooperation; Powell uses BlackRock for market operations BlackRock benefits from.
-- **[[donald-trump]]** — Full alignment post-2025. Dropped ESG commitments. Managing US infrastructure fund. Private channel established 2024–25.
-- **[[jamie-dimon]]** — Parallel systemic actor. Not direct rival; both benefit from banking deregulation under Trump.
-- **[[janet-yellen]]** — Deep Treasury-era relationship continues via former BlackRock executives (Brian Deese etc.).
+- **[[../actors/POWELL-Jerome]]** — Fed-BlackRock relationship dates to 2008. Pragmatic cooperation; Powell uses BlackRock for market operations BlackRock benefits from.
+- **[[../actors/TRUMP-Donald]]** — Full alignment post-2025. Dropped ESG commitments. Managing US infrastructure fund. Private channel established 2024–25.
+- **[[../actors/DIMON-Jamie]]** — Parallel systemic actor. Not direct rival; both benefit from banking deregulation under Trump.
+- **[[../actors/YELLEN-Janet]]** — Deep Treasury-era relationship continues via former BlackRock executives (Brian Deese etc.).
 - **Ukraine government** — Advising reconstruction fund; positions BlackRock as manager of post-war capital inflows.
 - **Saudi PIF / Gulf SWFs** — Multiple SWFs use Aladdin; commercial relationship matures into strategic dependency.
 - **Norway SWF** — Competing model ($1.7T sovereign fund); reference architecture for US SWF under Trump.

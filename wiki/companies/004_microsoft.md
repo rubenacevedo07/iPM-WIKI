@@ -98,7 +98,7 @@ Nadella positions Microsoft as the AI platform layer for every enterprise — no
 | 🟠 High | **[[Federal Trade Commission|Federal Trade Commission]]** | `Regulates` | FTC filed suit Dec 2022 to block $69B Activision acquisition. Lost in US federal... |
 | 🟠 High | **[[NVIDIA|NVIDIA]]** | `Supplies` | NVIDIA supplies top client Microsoft for Azure AI. Estimated 15-19% of NVIDIA re... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is largest institutional holder of Microsoft at approximately 8.5... |
-| 🟠 High | **[[Bill Gates|Bill Gates]]** | `Owns` | Bill Gates co-founded Microsoft in 1975. |
+| 🟠 High | **[[../actors/GATES-Bill|Bill Gates]]** | `Owns` | Bill Gates co-founded Microsoft in 1975. |
 | 🟠 High | **[[Oracle|Oracle]]** | `Competes` | Compete in cloud databases and enterprise software. |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Redmond Campus is a HQ facility operated by Microsoft in Redmond |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
@@ -107,9 +107,9 @@ Nadella positions Microsoft as the AI platform layer for every enterprise — no
 | 🟡 Medium | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | BIS AI model export control ANPRM 2024 affects Microsoft/OpenAI model distributi... |
 | 🟡 Medium | **[[Apple|Apple]]** | `Partners` | Microsoft 365 (Word, Excel, Teams, Outlook) among top apps on iOS/macOS App Stor... |
 | 🟡 Medium | **[[TSMC|TSMC]]** | `Supplies` | Microsoft custom silicon (Maia 100 AI accelerator, Cobalt 100 ARM CPU) manufactu... |
-| 🟡 Medium | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Microsoft Azure Government (IL4/IL5 and TS/SCI environments) provides classified... |
+| 🟡 Medium | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Microsoft Azure Government (IL4/IL5 and TS/SCI environments) provides classified... |
 | 🟡 Medium | **[[State Street Corporation|State Street Corporation]]** | `Owns` | State Street Corporation holds approximately 3.8% of Microsoft per SEC 13F Q4 20... |
-| 🟡 Medium | **[[Bill Gates|Bill Gates]]** | `Influences` | Bill Gates co-founded Microsoft 1975. Resigned from board March 2020. Retains ~1... |
+| 🟡 Medium | **[[../actors/GATES-Bill|Bill Gates]]** | `Influences` | Bill Gates co-founded Microsoft 1975. Resigned from board March 2020. Retains ~1... |
 | 🟡 Medium | **[[Apple|Apple]]** | `Competes` | Apple increasingly targets enterprise with iPhone+Mac+iPad combo vs Microsoft 36... |
 
 ## Recent Events

@@ -40,7 +40,7 @@ Additional levers from April 2026 dossier: Blackwell (B200) architecture shippin
 - **CompositeScore:** 68 ✅ seeded
 - **Primary domain:** AI chips, GPU architecture, CUDA ecosystem
 - **Key company:** NVIDIA (DB ID: 1)
-- **Key relationships:** [[morris-chang]], [[sam-altman]]
+- **Key relationships:** [[../actors/CHANG-Morris]], [[../actors/ALTMAN-Sam]]
 - **Personal net worth (Mar 2026):** ~$160B (rank ~#8 globally)
 - **NVIDIA market cap:** ~$3.3T
 - **NVIDIA revenue FY2025:** $130.5B (data center: $115.2B)
@@ -102,8 +102,8 @@ Huang's stated position: export controls are counterproductive because they push
 | Google / DeepMind | Strategic partner + TPU rival | Billions in annual H100/B200; TPUs cover ~20% workload |
 | Amazon / AWS | Major hyperscaler client | Trainium/Inferentia niche; NVIDIA still dominates |
 | Meta Platforms | Major training customer | 350,000+ H100s ordered 2023–24; all LLaMA on NVIDIA |
-| [[sam-altman]] / OpenAI | Symbolic + commercial origin | Huang delivered first DGX-1 personally 2016; GPT-4/o1 on NVIDIA |
-| [[elon-musk]] / xAI | Complex — partner-turned-rival | xAI Grok on 100,000+ H100s; Tesla builds Dojo as partial alternative |
+| [[../actors/ALTMAN-Sam]] / OpenAI | Symbolic + commercial origin | Huang delivered first DGX-1 personally 2016; GPT-4/o1 on NVIDIA |
+| [[../actors/MUSK-Elon]] / xAI | Complex — partner-turned-rival | xAI Grok on 100,000+ H100s; Tesla builds Dojo as partial alternative |
 | Sovereign AI nations | New strategic vertical | UAE, Saudi Arabia, Japan, India, France, Singapore engaged. $10B+ new annual revenue stream emerging |
 | Automotive (DRIVE) | AV platform | Mercedes, Volvo, BYD, Li Auto, Waymo. ~$1.7B FY2025 — growing fast |
 

@@ -64,7 +64,7 @@ The user's thesis made structural.
 - Portfolio Exposure Map: holdings mapped to graph nodes showing structural risk
 
 ## Layer 5 — Enterprise Automation Engine
-What makes IMP self-sustaining. See [[IMP-Automation-Engine.md]].
+What makes IMP self-sustaining. See [[../themes/IMP-Automation-Engine]].
 
 Protocol: IMP_ENVELOPE v1 — Perplexity (collects) + Claude (structures) + n8n (orchestrates)
 

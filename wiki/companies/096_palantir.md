@@ -58,28 +58,28 @@ Technology in service of Western civilizational defense. Aggressive critic of Si
 | 🔴 Critical | **[[IDF|IDF]]** | `Supplies` | Palantir strategic partnership with Israeli defense. AI targeting deployed since... |
 | 🔴 Critical | **[[CIA|CIA]]** | `Supplies` | Palantir Gotham deployed across US Intelligence Community since CIA origin (In-Q... |
 | 🔴 Critical | **[[Pentagon|Pentagon]]** | `Partners` |  |
-| 🔴 Critical | **[[United States|United States]]** | `Partners` |  |
+| 🔴 Critical | **[[../countries/UNITED-STATES|United States]]** | `Partners` |  |
 | 🟠 High | **[[NVIDIA|NVIDIA]]** | `DependsOn` |  |
 | 🟠 High | **[[Ukraine|Ukraine]]** | `Partners` |  |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Integrate Palantir AI platforms with Lockheed Martin defense systems. |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Integrate Palantir AI platforms with Lockheed Martin defense systems. |
 | 🟠 High | **[[ICE|ICE]]** | `Supplies` | Palantir Falcon + HAIM case management for ICE targeting and enforcement. $96M+ ... |
-| 🟡 Medium | **[[Northrop Grumman|Northrop Grumman]]** | `Partners` |  |
+| 🟡 Medium | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Partners` |  |
 
 ### Inbound (others → this entity)
 
 | Strength | Source | Type | Description |
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[Alex Karp|Alex Karp]]** | `Governs` | Alex Karp co-founded Palantir with Peter Thiel in 2003. |
-| 🔴 Critical | **[[Peter Thiel|Peter Thiel]]** | `Owns` |  |
+| 🔴 Critical | **[[../actors/THIEL-Peter|Peter Thiel]]** | `Owns` |  |
 | 🔴 Critical | **[[Unknown|Unknown]]** | `Governs` | Palantir Denver Headquarters is a HQ facility operated by Palantir in Denver |
 | 🔴 Critical | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock holds approximately 7% of Palantir shares per SEC 13F-HR Q4 2025. Larg... |
 | 🟠 High | **[[Marc Andreessen|Marc Andreessen]]** | `Finances` |  |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Palantir London Office is a HQ facility operated by Palantir in London |
 | 🟠 High | **[[Andreessen Horowitz|Andreessen Horowitz]]** | `Finances` | Andreessen Horowitz led/participated in Palantir Series C and subsequent rounds. |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group holds approximately 6% of PLTR shares per SEC 13F Q4 2025. |
-| 🟡 Medium | **[[SpaceX|SpaceX]]** | `Partners` | Palantir AIP processes battlefield data; Starlink provides the communications ba... |
+| 🟡 Medium | **[[../companies/201_spacex|SpaceX]]** | `Partners` | Palantir AIP processes battlefield data; Starlink provides the communications ba... |
 | 🟡 Medium | **[[State Street Corporation|State Street Corporation]]** | `Owns` | State Street Corporation holds approximately 4% of PLTR. |
-| 🟡 Medium | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Palantir Gotham is integrated into multiple Lockheed Martin program offices and ... |
+| 🟡 Medium | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Palantir Gotham is integrated into multiple Lockheed Martin program offices and ... |
 
 ## Recent Events
 

@@ -36,7 +36,7 @@ diplomacy. Primary interlocutor between Trump White House and financial markets.
 - **CompositeScore:** 58 ✅ seeded (rank 12, tied with Lagarde)
 - **Primary domain:** Treasury, dollar, debt management, sanctions
 - **Key institutions:** US Treasury, OFAC
-- **Key relationships:** [[donald-trump]], [[jerome-powell]]
+- **Key relationships:** [[../actors/TRUMP-Donald]], [[../actors/POWELL-Jerome]]
 
 ## Current Assessment
 *(Knowledge-based · April 2026 · confidence: medium — pending source ingest)*

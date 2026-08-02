@@ -41,17 +41,17 @@ tags: [ipm-entity, military]
 | Strength | Target | Type | Description |
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[Pentagon|Pentagon]]** | `Supplies` | Approximately 70% of Lockheed Martin revenue comes from US government (DoD + NAS... |
-| 🟠 High | **[[Raytheon Technologies|Raytheon Technologies]]** | `Competes` | Lockheed THAAD competes with Raytheon Patriot/PAC-3 for missile defense mandates... |
+| 🟠 High | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Competes` | Lockheed THAAD competes with Raytheon Patriot/PAC-3 for missile defense mandates... |
 | 🟠 High | **[[NATO|NATO]]** | `Exports` | F-35 serves 17+ nations via FMS: UK, Netherlands, Norway, Denmark, Belgium, Ital... |
 | 🟠 High | **[[IDF|IDF]]** | `Exports` | Israel operates F-35I Adir with custom avionics. First international customer (2... |
 | 🟠 High | **[[United Kingdom|United Kingdom]]** | `Exports` | UK is a Tier 1 F-35 partner nation (unique status) with industrial work share an... |
 | 🟠 High | **[[Japan|Japan]]** | `Exports` | Japan ordered 147 F-35s (105 F-35A + 42 F-35B) making it the largest single inte... |
-| 🟠 High | **[[Northrop Grumman|Northrop Grumman]]** | `Competes` | Top US defense primes for DOD programs. |
-| 🟠 High | **[[Raytheon Technologies|Raytheon Technologies]]** | `Partners` | Co-develop Javelin missile system. |
+| 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | Top US defense primes for DOD programs. |
+| 🟠 High | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Partners` | Co-develop Javelin missile system. |
 | 🟡 Medium | **[[Microsoft|Microsoft]]** | `Partners` | Microsoft Azure Government (IL4/IL5 and TS/SCI environments) provides classified... |
-| 🟡 Medium | **[[Palantir|Palantir]]** | `Partners` | Palantir Gotham is integrated into multiple Lockheed Martin program offices and ... |
+| 🟡 Medium | **[[../institutions/PALANTIR|Palantir]]** | `Partners` | Palantir Gotham is integrated into multiple Lockheed Martin program offices and ... |
 | 🟡 Medium | **[[NVIDIA|NVIDIA]]** | `Partners` | Lockheed integrates NVIDIA GPU-based AI for autonomous systems, targeting soluti... |
-| 🟡 Medium | **[[Northrop Grumman|Northrop Grumman]]** | `Partners` | Northrop Grumman manufactures the center fuselage of the F-35 under subcontract ... |
+| 🟡 Medium | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Partners` | Northrop Grumman manufactures the center fuselage of the F-35 under subcontract ... |
 
 ### Inbound (others → this entity)
 
@@ -60,19 +60,19 @@ tags: [ipm-entity, military]
 | 🔴 Critical | **[[US Department of State|US Department of State]]** | `Regulates` | Directorate of Defense Trade Controls (DDTC) under State Dept regulates ALL Lock... |
 | 🔴 Critical | **[[James Taiclet|James Taiclet]]** | `Governs` | James Taiclet became CEO June 2020. Former AT&T executive, bringing digital tran... |
 | 🔴 Critical | **[[Pentagon|Pentagon]]** | `Finances` |  |
-| 🔴 Critical | **[[Raytheon Technologies|Raytheon Technologies]]** | `Supplies` | Pratt & Whitney (RTX) is the only producer of the F135 engine that powers all F-... |
+| 🔴 Critical | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Supplies` | Pratt & Whitney (RTX) is the only producer of the F135 engine that powers all F-... |
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | Bureau of Industry and Security (BIS) controls dual-use technology exports under... |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
 | 🟠 High | **[[CIA|CIA]]** | `Partners` | Lockheed Skunk Works (Advanced Development Programs) has a multi-decade relation... |
-| 🟠 High | **[[Palantir|Palantir]]** | `Partners` | Integrate Palantir AI platforms with Lockheed Martin defense systems. |
-| 🟠 High | **[[SpaceX|SpaceX]]** | `Partners` | SpaceX competes and cooperates in national security space launches. |
+| 🟠 High | **[[../institutions/PALANTIR|Palantir]]** | `Partners` | Integrate Palantir AI platforms with Lockheed Martin defense systems. |
+| 🟠 High | **[[../companies/201_spacex|SpaceX]]** | `Partners` | SpaceX competes and cooperates in national security space launches. |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Lockheed Martin Aeronautics Fort Worth is a HQ facility operated by Lockheed Mar... |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Lockheed Martin Space Sunnyvale is a HQ facility operated by Lockheed Martin in ... |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Lockheed Martin Missiles Titusville is a HQ facility operated by Lockheed Martin... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is largest institutional holder of Lockheed Martin at approximate... |
-| 🟠 High | **[[Northrop Grumman|Northrop Grumman]]** | `Partners` | Northrop Grumman manufactures the center fuselage for all F-35 variants at its P... |
-| 🟠 High | **[[Northrop Grumman|Northrop Grumman]]** | `Competes` | Northrop and Lockheed compete in space systems, C4ISR architecture, and advanced... |
-| 🟡 Medium | **[[Raytheon Technologies|Raytheon Technologies]]** | `Partners` | Javelin Joint Venture (JJV) is a 50/50 partnership between RTX and Lockheed Mart... |
+| 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Partners` | Northrop Grumman manufactures the center fuselage for all F-35 variants at its P... |
+| 🟠 High | **[[../companies/097_northrop_grumman|Northrop Grumman]]** | `Competes` | Northrop and Lockheed compete in space systems, C4ISR architecture, and advanced... |
+| 🟡 Medium | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Partners` | Javelin Joint Venture (JJV) is a 50/50 partnership between RTX and Lockheed Mart... |
 
 ## Recent Events
 

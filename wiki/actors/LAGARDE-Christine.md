@@ -35,7 +35,7 @@ narrative. Former IMF Managing Director — retains multilateral credibility.
 - **CompositeScore:** 58 ✅ seeded
 - **Primary domain:** Monetary policy, EUR, eurozone rates
 - **Key institutions:** ECB, formerly IMF
-- **Key relationships:** [[jerome-powell]]
+- **Key relationships:** [[../actors/POWELL-Jerome]]
 
 ## Current Assessment
 *(Updated 2026-04-09 from ECB Q1 2026 meeting)*

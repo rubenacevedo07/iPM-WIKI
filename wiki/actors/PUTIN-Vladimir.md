@@ -35,7 +35,7 @@ Ukraine war narrative.
 - **CompositeScore:** 81 ✅ seeded (highest among all seeded persons)
 - **Primary domain:** Military, coercive, energy
 - **Key institutions:** Kremlin, FSB, Gazprom
-- **Key relationships:** [[xi-jinping]], [[donald-trump]]
+- **Key relationships:** [[xi-jinping]], [[../actors/TRUMP-Donald]]
 
 ## Current Assessment
 *(populate from speech/intelligence ingests)*

@@ -61,10 +61,10 @@ Cook's strategy centers on operational excellence, ecosystem lock-in, and servic
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[TSMC|TSMC]]** | `DependsOn` | Apple Silicon (A18, M4 series) manufactured exclusively by TSMC on 3nm process. ... |
 | 🔴 Critical | **[[Ecuador|Ecuador]]** | `DependsOn` | All Apple Silicon from TSMC Taiwan. |
-| 🟠 High | **[[Samsung Electronics|Samsung Electronics]]** | `DependsOn` | Samsung Display is primary OLED supplier for iPhone Pro/Pro Max (alongside LG an... |
+| 🟠 High | **[[../institutions/SAMSUNG|Samsung Electronics]]** | `DependsOn` | Samsung Display is primary OLED supplier for iPhone Pro/Pro Max (alongside LG an... |
 | 🟠 High | **[[Hon Hai (Foxconn)|Hon Hai (Foxconn)]]** | `DependsOn` | Hon Hai (Foxconn) assembles ~70% of iPhone volume. Apple owns the manufacturing ... |
 | 🟠 High | **[[Alphabet|Alphabet]]** | `Competes` | iOS vs Android is the dominant mobile OS duopoly. App Store vs Google Play. Siri... |
-| 🟠 High | **[[Samsung Electronics|Samsung Electronics]]** | `Competes` | Apple and Samsung are the top-2 smartphone vendors globally (Apple ~18%, Samsung... |
+| 🟠 High | **[[../institutions/SAMSUNG|Samsung Electronics]]** | `Competes` | Apple and Samsung are the top-2 smartphone vendors globally (Apple ~18%, Samsung... |
 | 🟡 Medium | **[[Microsoft|Microsoft]]** | `Competes` | Apple increasingly targets enterprise with iPhone+Mac+iPad combo vs Microsoft 36... |
 | 🟡 Medium | **[[Microsoft|Microsoft]]** | `Partners` | Microsoft 365 (Word, Excel, Teams, Outlook) among top apps on iOS/macOS App Stor... |
 | ⚪ Low | **[[NVIDIA|NVIDIA]]** | `Competes` | Apple M4 Ultra targets professional creative workflows previously dominated by N... |

@@ -97,10 +97,10 @@ Jassy has transitioned Amazon from Bezos's expansion-at-all-costs model to rigor
 | 🟠 High | **[[NVIDIA|NVIDIA]]** | `Supplies` | NVIDIA supplies AWS for Anthropic hosting, SageMaker AI, and EC2 GPU instances. ... |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is Amazon's largest institutional shareholder at approximately 7.... |
 | 🟠 High | **[[Oracle|Oracle]]** | `Partners` | Oracle databases available as managed service on AWS. |
-| 🟠 High | **[[Jeff Bezos|Jeff Bezos]]** | `Influences` | Bezos founded Amazon in 1994, served as CEO until July 2021, now Executive Chair... |
+| 🟠 High | **[[../actors/BEZOS-Jeff|Jeff Bezos]]** | `Influences` | Bezos founded Amazon in 1994, served as CEO until July 2021, now Executive Chair... |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` |  |
-| 🟠 High | **[[SpaceX|SpaceX]]** | `Competes` | SpaceX Starlink (6,000+ satellites, 4M+ subscribers, $8B ARR) vs Amazon Project ... |
-| 🟠 High | **[[Jeff Bezos|Jeff Bezos]]** | `Owns` | Jeff Bezos founded Amazon in 1994. Executive chairman and largest shareholder. |
+| 🟠 High | **[[../companies/201_spacex|SpaceX]]** | `Competes` | SpaceX Starlink (6,000+ satellites, 4M+ subscribers, $8B ARR) vs Amazon Project ... |
+| 🟠 High | **[[../actors/BEZOS-Jeff|Jeff Bezos]]** | `Owns` | Jeff Bezos founded Amazon in 1994. Executive chairman and largest shareholder. |
 | 🟠 High | **[[Anthropic|Anthropic]]** | `Partners` | Amazon invested up to $4B. AWS is primary cloud. |
 | 🟠 High | **[[Microsoft|Microsoft]]** | `Competes` | Two largest cloud providers by revenue. |
 | 🟡 Medium | **[[Unknown|Unknown]]** | `DependsOn` | Amazon AWS Data Center Cluster is a DataCenter facility operated by Amazon in As... |

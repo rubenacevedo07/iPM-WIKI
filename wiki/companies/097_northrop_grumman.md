@@ -41,11 +41,11 @@ tags: [ipm-entity, military]
 | Strength | Target | Type | Description |
 |----------|--------|------|-------------|
 | 🔴 Critical | **[[Pentagon|Pentagon]]** | `Supplies` | Northrop is the sole prime contractor for: (1) B-21 Raider stealth bomber — next... |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Northrop Grumman manufactures the center fuselage for all F-35 variants at its P... |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Competes` | Northrop and Lockheed compete in space systems, C4ISR architecture, and advanced... |
-| 🟠 High | **[[Raytheon Technologies|Raytheon Technologies]]** | `Competes` | Northrop and RTX compete in ground-based missile defense, advanced radars, and e... |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Northrop Grumman manufactures the center fuselage for all F-35 variants at its P... |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Competes` | Northrop and Lockheed compete in space systems, C4ISR architecture, and advanced... |
+| 🟠 High | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Competes` | Northrop and RTX compete in ground-based missile defense, advanced radars, and e... |
 | 🟠 High | **[[Boeing|Boeing]]** | `Partners` | Jointly develop defense systems (B-21 components, satellite networks). |
-| 🟡 Medium | **[[SpaceX|SpaceX]]** | `Competes` | Northrop space systems (satellites, sensors) compete with SpaceX for national se... |
+| 🟡 Medium | **[[../companies/201_spacex|SpaceX]]** | `Competes` | Northrop space systems (satellites, sensors) compete with SpaceX for national se... |
 
 ### Inbound (others → this entity)
 
@@ -56,11 +56,11 @@ tags: [ipm-entity, military]
 | 🟠 High | **[[US Department of Commerce|US Department of Commerce]]** | `Regulates` | All Northrop exports face ITAR (defense articles) and EAR (dual-use) compliance.... |
 | 🟠 High | **[[Unknown|Unknown]]** | `Governs` | Northrop Grumman Palmdale B-21 Facility is a HQ facility operated by Northrop Gr... |
 | 🟠 High | **[[BlackRock|BlackRock]]** | `Owns` | BlackRock holds significant Northrop Grumman shares through defense/aerospace ET... |
-| 🟠 High | **[[Raytheon Technologies|Raytheon Technologies]]** | `Competes` | RTX and Northrop compete in missile defense (Patriot vs GBMD), advanced radars, ... |
-| 🟠 High | **[[Lockheed Martin|Lockheed Martin]]** | `Competes` | Top US defense primes for DOD programs. |
+| 🟠 High | **[[../companies/080_raytheon_technologies|Raytheon Technologies]]** | `Competes` | RTX and Northrop compete in missile defense (Patriot vs GBMD), advanced radars, ... |
+| 🟠 High | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Competes` | Top US defense primes for DOD programs. |
 | 🟠 High | **[[Vanguard Group|Vanguard Group]]** | `Owns` | Vanguard Group is among Northrop Grumman's largest institutional shareholders vi... |
-| 🟡 Medium | **[[Lockheed Martin|Lockheed Martin]]** | `Partners` | Northrop Grumman manufactures the center fuselage of the F-35 under subcontract ... |
-| 🟡 Medium | **[[Palantir|Palantir]]** | `Partners` |  |
+| 🟡 Medium | **[[../institutions/LOCKHEED-MARTIN|Lockheed Martin]]** | `Partners` | Northrop Grumman manufactures the center fuselage of the F-35 under subcontract ... |
+| 🟡 Medium | **[[../institutions/PALANTIR|Palantir]]** | `Partners` |  |
 
 ## Recent Events
 

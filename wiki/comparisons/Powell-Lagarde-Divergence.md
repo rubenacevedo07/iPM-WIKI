@@ -114,7 +114,7 @@ Monitor: `IdeologyShiftLog` table for any entries on EntityId 191 or 192.
 ---
 
 ## Related
-- [[Trump-Powell-Divergence.md]] — political pressure signal (different instrument)
+- [[../comparisons/Trump-Powell-Divergence]] — political pressure signal (different instrument)
 - [[../actors/POWELL-Jerome.md]]
 - [[../actors/LAGARDE-Christine.md]]
 - [[../indicators/DB-ID-Reference.md]]
