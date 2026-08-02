@@ -3,6 +3,20 @@
 
 ---
 
+## 2026-08-02 | lint-fix | Wikilink dialect remediation (Acciones 1 y 2)
+
+- **Operation:** lint-fix — normalización de wikilinks rotos/dialectales, sin creación de páginas nuevas
+- **Commits:** `114c951` (Acción 1), `2463f7a` (Acción 2)
+- **Acción 1 — rewrite dialectal:** 106 ocurrencias de wikilinks rotos (kebab-case gen-2 y nombre-natural-con-alias gen-3) reescritas a formato relativo canónico `[[../carpeta/PAGINA]]`, validado contra el filesystem. 27 archivos tocados (12 actors/, 11 companies/, comparisons/, oracle/, 2 themes/). Criterio: `institutions/` preferido sobre `companies/` en las 8 entidades duplicadas; `wiki/incoming/` excluido (cola de parches sin mergear — ver entrada 2026-04-22 fix).
+- **Acción 2 — placeholder Unknown:** 27 `[[Unknown|Unknown]]` → texto plano «entidad no resuelta» en los 10 wiki/companies/*.md generados 2026-04-19. Origen: edges hacia *facilities* (HQ/DataCenter/Fab/Logistics), tipo excluido de core_vocabulario.json (451 filas fuera del vocabulario canónico) — el generador no encontró nombre canónico y dejó "Unknown".
+- **Estado post-operación:** 950→923 ocurrencias `[[...]]` totales (-27 por Acción 2); rotos/ambiguos 232→99 (-133).
+  - De los 99 restantes: 88 sin página destino (backlog — candidatos a Acción 3, creación de páginas), 6 dentro de wiki/incoming/ (fuera de alcance), 5 falsos positivos de prosa (ejemplos de sintaxis entre backticks en log.md:210 y lint-reports/2026-04-09.md:69,71,73 — no son links reales; excluyéndolos del check, el número objetivo baja a 94).
+- **Contradictions flagged:** none
+- **DB sync needed:** no — cambios wiki-only, no tocan schema ni entidades
+- **Notes:** Los 27 «entidad no resuelta» quedan pendientes de cruce manual contra la tabla `Facilities` de la DB. `resolve-unresolved-facilities.sh` es un nombre **propuesto** para ese script futuro — no existe todavía, no confundir con un artefacto ya creado. No se tocó `core_vocabulario.md`, `raw/`, `ipm-agent-stack/`, ni `wiki/incoming/`.
+
+---
+
 ## [2026-04-22] wiki-expansion | European Companies — 6 new institution pages
 - **Operation:** wiki-expansion
 - **Files created:**
