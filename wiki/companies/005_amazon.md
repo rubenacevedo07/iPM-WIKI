@@ -1,5 +1,6 @@
 ---
 entity_id: 5
+slug: amazon
 ticker: AMZN
 archetype: HYBRID
 composite_score: 94.00

@@ -1,5 +1,6 @@
 ---
 entity_id: 1
+slug: nvidia
 ticker: NVDA
 archetype: TECHNOLOGICAL
 composite_score: 72.00

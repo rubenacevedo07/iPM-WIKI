@@ -1,5 +1,6 @@
 ---
 entity_id: 4
+slug: microsoft
 ticker: MSFT
 archetype: HYBRID
 composite_score: 79.00

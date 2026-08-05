@@ -1,5 +1,6 @@
 ---
 entity_id: 90
+slug: blackrock
 ticker: BLK
 archetype: FINANCIAL
 composite_score: 87.00

@@ -1,5 +1,6 @@
 ---
 entity_id: 201
+slug: spacex
 ticker: PRIVATE
 archetype: TECHNOLOGICAL
 composite_score: 88.00

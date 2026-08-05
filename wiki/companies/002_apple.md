@@ -1,5 +1,6 @@
 ---
 entity_id: 2
+slug: apple
 ticker: AAPL
 archetype: HYBRID
 composite_score: 83.00

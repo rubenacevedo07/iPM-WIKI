@@ -1,5 +1,6 @@
 ---
 entity_id: 68
+slug: lockheed-martin
 ticker: LMT
 archetype: MILITARY
 composite_score: 85.00

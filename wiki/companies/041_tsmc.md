@@ -1,5 +1,6 @@
 ---
 entity_id: 41
+slug: tsmc
 ticker: TSM
 archetype: INDUSTRIAL
 composite_score: 95.00

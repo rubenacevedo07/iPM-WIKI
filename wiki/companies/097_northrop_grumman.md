@@ -1,5 +1,6 @@
 ---
 entity_id: 97
+slug: northrop-grumman
 ticker: NOC
 archetype: MILITARY
 composite_score: 92.00

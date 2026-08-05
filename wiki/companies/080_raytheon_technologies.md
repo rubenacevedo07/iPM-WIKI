@@ -1,5 +1,6 @@
 ---
 entity_id: 80
+slug: raytheon-technologies
 ticker: RTX
 archetype: MILITARY
 composite_score: 88.00
