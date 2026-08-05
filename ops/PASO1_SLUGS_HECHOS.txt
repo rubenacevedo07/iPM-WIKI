@@ -1,0 +1,131 @@
+PASO1_SLUGS_HECHOS — corte único ejecutado
+==============================================================================
+Fecha            : 2026-08-05
+Plan             : Opción C para 7 institutions/ + slug: en 10 companies/ + UNA reingesta
+Palantir         : FUERA del encargo. institutions/PALANTIR.md conserva su slug:.
+
+COMMITS
+------------------------------------------------------------------------------
+  paso 1  8be60d9c7e4c0031761077f6b35ac24af55a48e0
+          fix(wiki): quitar slug: a 7 institutions/ — opción C del corte único
+  paso 2  dfe3d09c102a4e41e4d87c115ad864617c0bf274
+          feat(wiki): slug: en los 10 companies/ puenteados
+  rama    main
+
+LOS 17 PATHS
+------------------------------------------------------------------------------
+Paso 1 · slug: QUITADO (los ficheros quedan en disco, íntegros):
+  wiki/institutions/NVIDIA.md
+  wiki/institutions/APPLE.md
+  wiki/institutions/MICROSOFT.md
+  wiki/institutions/AMAZON.md
+  wiki/institutions/TSMC.md
+  wiki/institutions/LOCKHEED-MARTIN.md
+  wiki/institutions/BLACKROCK.md
+
+Paso 2 · slug: AÑADIDO:
+  wiki/companies/001_nvidia.md                  slug: nvidia
+  wiki/companies/002_apple.md                   slug: apple
+  wiki/companies/004_microsoft.md               slug: microsoft
+  wiki/companies/005_amazon.md                  slug: amazon
+  wiki/companies/041_tsmc.md                    slug: tsmc
+  wiki/companies/068_lockheed_martin.md         slug: lockheed-martin
+  wiki/companies/080_raytheon_technologies.md   slug: raytheon-technologies
+  wiki/companies/090_blackrock.md               slug: blackrock
+  wiki/companies/097_northrop_grumman.md        slug: northrop-grumman
+  wiki/companies/201_spacex.md                  slug: spacex
+
+NO TOCADO a propósito: wiki/institutions/PALANTIR.md
+
+LOS CUATRO CONTADORES
+------------------------------------------------------------------------------
+  MAX("IngestedAt") wiki."Document"  : 2026-08-05 20:09:12.99257+00
+  MAX("IngestedAt") wiki."Chunk"     : 2026-08-05 20:09:12.99257+00
+  COUNT Document vigentes            : 164
+  COUNT(DISTINCT "CoreSlug") vigentes: 0     <-- si vale 0, el efecto es el declarado
+
+Antes del corte: Document 2026-07-25 21:38:14 · Chunk 2026-07-31 14:20:01 ·
+vigentes 156 · CoreSlug distintos 55.
+
+EL NÚMERO QUE DECIDE
+------------------------------------------------------------------------------
+  suma known de las 33 entidades puenteadas : 157     PREDICHO: 157   OK
+
+  Discriminadores acordados, ninguno se activó:
+    170 -> habría quedado slug: en los 7 institutions/     (no ocurrió)
+    161 -> la reingesta no habría corrido                   (no ocurrió)
+    155 -> se habrían puesto 7 slugs en vez de 10           (no ocurrió)
+
+  Solo se movieron dos entidades, y hacia abajo:
+    Microsoft  7 -> 5     NVIDIA  7 -> 5
+  Son el residuo del 31/07 que ChunkCount recalculado corrige
+  (ipm_wiki_ingest.py:127 y :161). Las otras 31, clavadas.
+
+  capean: 8 antes -> 8 después. BlackRock NO entró (habría sido known=14
+  contra expected=8). Chunks descartados por el cap: 16, no 22.
+  Ese era el objetivo de elegir C.
+
+  colisiones de Slug entre companies/ e institutions/: 0
+
+EFECTO COLATERAL — DECLARADO ANTES DE EJECUTAR, ESPERADO Y CORRECTO
+------------------------------------------------------------------------------
+  documentos con CoreSlug             : 62  -> 0        predicho 0    OK
+  CoreSlug distintos vigentes          : 55  -> 0        predicho 0    OK
+  wiki."v_PuenteIncoherente"           : 10  -> 65       predicho 65   OK
+  documentos con Title                 : 153 -> 142      (los 11 companies/)
+  documentos con DocType               : 153 -> 142      (los 11 companies/)
+  core."Entity"."WikiSlug"             : 65  -> 65       la reingesta no toca core
+
+  CAUSA: ipm_wiki_ingest.py:160 hace "CoreSlug"=EXCLUDED."CoreSlug" desde
+  fm.get("core_slug"), y NINGÚN .md del vault lleva core_slug: en frontmatter.
+  Los 62 los había escrito ipm_wiki_puentes.py:106 por UPDATE, no el ingest.
+
+  NO SE PIERDE COBERTURA:
+    · wikiDepth une por d."Slug" = e."WikiSlug"      -> intacto (de ahí los 157)
+    · Context Pack une por Slug                      -> intacto
+    · WikiChunkRef resuelve por DocumentId           -> intacto
+  Ningún .cs de producción lee CoreSlug. Sus únicos consumidores son
+  wiki.v_ChunkResolved (columna de salida, no join) y wiki.v_PuenteIncoherente.
+
+  POR ESO ESTA CAÍDA NO DISPARA LA REGLA DE PARADA. Cualquier otra cosa que
+  aparezca o desaparezca, sí.
+
+LAS 13 CITAS — mejoraron, no se rompieron
+------------------------------------------------------------------------------
+  RelationEvidence con WikiChunkRef   : 85  -> 85
+  citas que resuelven a texto          : 85  -> 85
+  citas sobre documento RETIRADO       : 13  -> 0
+
+  Los 8 institutions/ volvieron a vigente (el upsert pone "RetiredAt"=NULL) y
+  sus chunks con ellos: el Id es content-addressed y el texto no cambió. Las 13
+  citas de BLACKROCK (10), AMAZON, MICROSOFT y TSMC ahora resuelven sobre
+  documento vigente. Efecto colateral favorable, previsto en el análisis de V2.
+
+UNA DESVIACIÓN, Y ES ERROR DE MÉTODO DE QUIEN MIDE
+------------------------------------------------------------------------------
+  documentos con Slug : predicho 140, real 145.
+
+  Mi 140 salió de reutilizar el «137 páginas tienen slug: propio» de §1 del
+  informe MEDICION_WIKI_CORE_2026-08-05.md en vez de medirlo. Medido con el
+  parser del propio ingest, antes del corte eran 142, no 137 (y 22 sin slug,
+  no 27). 142 - 7 + 10 = 145.
+
+  No afecta a nada: known dio 157 exacto y Slug no es contador de puerta. Se
+  deja escrito porque la desviación es el hallazgo: usé un catálogo donde la
+  regla manda medir por efecto.
+
+INTEGRIDAD OPERATIVA
+------------------------------------------------------------------------------
+  Reingesta por TCP (127.0.0.1:5433), jamás docker exec psql.
+  chunks retirados en la pasada: 44. chunks vigentes: 1290 -> 1313.
+  Contenedores tras el corte: meridian Up 6 days · ipm_backend_canonical healthy.
+  Ningún reinicio de clúster.
+
+  Toda la medición de este fichero se tomó en sesión readonly=True con
+  statement_timeout='25s'. La única escritura fue ipm_wiki_ingest.py.
+
+PENDIENTE, NO EN ESTE CORTE
+------------------------------------------------------------------------------
+  ipm_wiki_puentes.py aplicar() para restaurar CoreSlug. Es escritura y va
+  después, con su propia medición. Este corte mide la reingesta, no la
+  reingesta más una reparación.
