@@ -3,6 +3,31 @@
 
 ---
 
+## 2026-08-05 | fix | Bridge wikiDepth de 7 entidades — companies/ vs institutions/ duplicados
+
+- **Operation:** fix (remediación del defecto medido en MEDICION_WIKI_CORE_2026-08-05.md, §2 y §4)
+- **Contexto:** la limpieza de duplicados del 2026-07-31 retiró 8 páginas institutions/{NVIDIA,APPLE,MICROSOFT,AMAZON,TSMC,LOCKHEED-MARTIN,BLACKROCK,PALANTIR}.md sin puentear su contraparte más rica en companies/, dejando 7 entidades con wikiDepth=0 pese a tener 5.000-12.000 caracteres de contenido real esperando en companies/.
+- **Decisión (Opción C, negociada con ipm_science tras descartar mover-fuera-de-wiki/ y excluir Palantir):**
+  - `slug:` removido del frontmatter de 7 institutions/*.md (NVIDIA, APPLE, MICROSOFT, AMAZON, TSMC, LOCKHEED-MARTIN, BLACKROCK) — quedan en disco, sin bridge, para no perder el respaldo de las citas de `core.RelationEvidence.WikiChunkRef` que apuntan a sus chunks.
+  - `slug:` agregado al frontmatter de 10 companies/*.md: 001_nvidia→nvidia, 002_apple→apple, 004_microsoft→microsoft, 005_amazon→amazon, 041_tsmc→tsmc, 068_lockheed_martin→lockheed-martin, 090_blackrock→blackrock, 097_northrop_grumman→northrop-grumman, 080_raytheon_technologies→raytheon-technologies, 201_spacex→spacex.
+  - `institutions/PALANTIR.md` y `companies/096_palantir.md` explícitamente NO tocados: `core.Entity` de palantir tiene `WikiSlug=NULL` (bloqueado por los 5 ambiguos de wiki/incoming/), así que ninguno de los dos alimenta wikiDepth hoy — es un problema distinto, con otro dueño.
+- **Commits:** `8be60d9` (7 institutions/), `dfe3d09` (10 companies/), `1b89c1f` (docs/ops: corte registrado)
+- **Reingesta:** `ipm_wiki_ingest.py` corrido una sola vez, después de ambos commits. `MAX("IngestedAt")` en wiki.Document y wiki.Chunk: 2026-08-05 20:09:12 UTC (antes: 2026-07-25 21:38:14 en Document — Chunk ya tenía escrituras del 31/07 sin explicar, ver Notes).
+- **Verificado tras la reingesta:**
+  - Σ known (wikiDepth) sobre las 33 companies puenteadas: 161 → **157** (predicho antes de conocer el resultado, coincide exacto). El delta no es pérdida de cobertura: NVIDIA y Microsoft tenían 7 chunks vigentes por un escritor no identificado del 31/07 (2 de más cada uno, `Document.ChunkCount` seguía en 5) — la reingesta corrige a los 5 reales. Las otras 31 entidades, sin cambios. BlackRock no capeó (known=5, no 14) — ese era el objetivo de elegir C.
+  - `citas_sobre_documento_retirado`: **13 → 0**. Los 8 institutions/ volvieron a vigente (el upsert pone `RetiredAt=NULL` a cualquier archivo presente en disco) y sus chunks con ellos — el `Id` es content-addressed (`content_uuid(ruta, encabezado, texto)`) y ninguno de esos textos cambió. Las 13 citas pasaron de resolver sobre documento retirado a resolver sobre documento vigente. Las 85 con referencia siguen resolviendo las 85.
+    **Nota para el lector futuro:** los 7 archivos quedan VIGENTES en la base y SIN `slug:`. Eso no es contradictorio — es exactamente el estado que buscaba la Opción C: documento vivo, chunks vivos, citas resolviendo, sin bridge y por tanto sin colisión de Slug ni capeo de wikiDepth.
+  - `ipm_wiki_audit.py`: 9 conflictos, sin cambios — los 5 `duplicado_en_wiki` siguen siendo los de la red Palantir/Thiel/Vance, ninguno nuevo introducido.
+- **Contradictions flagged:** none
+- **DB sync needed:** no — cambios wiki-only + reingesta, no tocan core.*
+- **Notes / riesgos abiertos, fuera de este alcance:**
+  - **Efecto colateral declarado, no un fallo:** la reingesta puso `CoreSlug` en NULL para los 62 documentos que lo tenían (`ipm_wiki_ingest.py` lo reescribe desde `fm.get("core_slug")`, y ningún .md del vault tiene ese campo en frontmatter — los 62 los había escrito `ipm_wiki_puentes.py` por UPDATE directo a la base, no el ingest). `wiki."v_PuenteIncoherente"` pasó de 10 a 65 en consecuencia. No afecta wikiDepth (une por `Slug`, no por `CoreSlug`) ni a `WikiChunkRef` (resuelve por `DocumentId`). Restaurar `CoreSlug` con `ipm_wiki_puentes.py aplicar()` queda pendiente, deliberadamente fuera de este corte — es escritura y necesita su propia medición antes/después.
+  - `institutions/PALANTIR.md` resucitó como efecto colateral de la reingesta (queda en disco, cualquier archivo vivo se revive con `RetiredAt=NULL`). Inofensivo hoy porque `WikiSlug` de palantir es NULL — pero el día que esa ambigüedad se resuelva, este documento va a volver a sumar sus 13 chunks junto a companies/096_palantir.md, reproduciendo el mismo doble conteo que este fix acaba de resolver para los otros 7. Quien cierre wiki/incoming/ debe aplicar la misma Opción C ahí.
+  - `ipm_wiki_generator.py` no escribe `slug:` en su plantilla y sus `--company-ids` por defecto (1,2,4,41,68,90,96) cubren 6 de estos 10 archivos. Si se vuelve a correr para "refrescar" las páginas auto-generadas, sobrescribe el `slug:` recién agregado sin aviso, y el defecto vuelve a aparecer recién en la siguiente reingesta. Diagnóstico y propuesta de fix: encargo aparte, no en este commit.
+  - **Desviación de método registrada:** la predicción de `documentos_con_Slug` (140) se derivó del «137 páginas con slug: propio» del informe fuente en vez de medirlo con el parser del propio ingest. Medido: 142 antes del corte (y 22 sin slug, no 27), 145 después. No afecta a ningún contador de puerta — Σknown dio 157 exacto y Slug no era contador de verificación. Es la tercera cifra de MEDICION_WIKI_CORE_2026-08-05.md que no se reproduce, junto con «55 entidades puenteadas» (medía CoreSlug cuando el join de wikiDepth usa Slug) y «el ingest corrió una sola vez» (midió IngestedAt sobre Document y no sobre Chunk, que tenía 7 filas del 31/07 12:58 y 7 del 14:20). Ese informe se cita como catálogo con cuidado: cada cifra trae su consulta al lado, pero tres eligieron la columna adyacente a la que gobierna el comportamiento.
+
+---
+
 ## 2026-08-02 | lint-fix | Wikilink dialect remediation (Acciones 1 y 2)
 
 - **Operation:** lint-fix — normalización de wikilinks rotos/dialectales, sin creación de páginas nuevas
@@ -14,6 +39,53 @@
 - **Contradictions flagged:** none
 - **DB sync needed:** no — cambios wiki-only, no tocan schema ni entidades
 - **Notes:** Los 27 «entidad no resuelta» quedan pendientes de cruce manual contra la tabla `Facilities` de la DB. `resolve-unresolved-facilities.sh` es un nombre **propuesto** para ese script futuro — no existe todavía, no confundir con un artefacto ya creado. No se tocó `core_vocabulario.md`, `raw/`, `ipm-agent-stack/`, ni `wiki/incoming/`.
+
+---
+
+## [2026-04-22] fix | Schema corrections — Palantir Political Network pages
+
+- **Operation:** schema-fix (triggered by ipm_wiki_generator.py / ipm_wiki_to_graph.py audit)
+- **Root cause:** Prior session created 4 pages using `last_updated` instead of `updated`, missing `created`, invalid enum values in `role` and `type` fields, and one pending-db-sync SQL with wrong column names.
+- **Files updated:**
+  - wiki/actors/THIEL-Peter.md — `last_updated` → `updated`; added `created: 2026-04-22`; `role: founder` → `role: oligarch` (enum fix); added missing `related_countries`, `related_commodities` fields
+  - wiki/actors/VANCE-JD.md — `last_updated` → `updated`; added `created: 2026-04-22`; added missing `related_countries`, `related_commodities` fields
+  - wiki/themes/Tech-Power-Nexus.md — `last_updated` → `updated`; added `created: 2026-04-22`; added missing `related_countries`, `related_commodities` fields
+  - wiki/dossiers/Palantir-Political-Network.md — `last_updated` → `updated`; added `created: 2026-04-22`; `type: dossier` → `type: reference` (enum fix); added missing `sources`, `related_countries`, `related_commodities`
+  - wiki/pending-db-sync.md — CL-DB-028 SQL corrected: `"FromEntityId"`/`"ToEntityId"` → `"SourceId"`/`"TargetId"` (actual DB schema confirmed via ipm_wiki_to_graph.py)
+- **Known gap not fixed:** `institution_type: regulator` on PALANTIR.md is semantically wrong but no correct enum value exists — needs schema extension (`corporation` or `defense-tech`)
+- **Known gap not fixed:** `wiki/incoming/` directory (14 stale draft files) — orphaned staging area from prior session; pending manual cleanup
+- **Contradictions flagged:** none
+- **DB sync needed:** no — fixes are wiki schema only
+- **Notes:** The two pipeline scripts (`ipm_wiki_generator.py`, `ipm_wiki_to_graph.py`) are blind to hand-crafted pages (actors/institutions/themes use `db_id`; sync script requires `entity_id`). Hand-crafted pages reach DB exclusively via manual SQL in pending-db-sync.md.
+
+---
+
+## [2026-04-22] ingest | Palantir Political Network — research pass
+
+- **Operation:** ingest (4 internal research notes → wiki pages)
+- **Sources ingested:**
+  - raw/internal-notes/palantir-manifesto-2025.md (Priority 7 — Karp doctrine, 22-point thread, reception)
+  - raw/internal-notes/palantir-wars-ice-programs.md (Priority 7 — ImmigrationOS, Maven, Ukraine, Gaza)
+  - raw/internal-notes/vance-thiel-palantir-network.md (Priority 7 — career pipeline, Thiel network in Trump 2.0)
+  - raw/internal-notes/musk-afd-research-2025.md (Priority 7 — AfD endorsement timeline, DFRLab analysis)
+- **Files created:**
+  - wiki/actors/THIEL-Peter.md — co-founder Palantir, Founders Fund GP, Vance kingmaker, $24B est. net worth
+  - wiki/actors/VANCE-JD.md — 49th/50th VP, Thiel protégé, Mithril→Narya→Senate→VP pipeline
+  - wiki/themes/Tech-Power-Nexus.md — Silicon Valley → state coercive power convergence under Trump 2.0
+  - wiki/dossiers/Palantir-Political-Network.md — synthesis: network map, manifesto, ICE stack, Maven, Musk/AfD, political risk
+  - raw/internal-notes/palantir-manifesto-2025.md (source note)
+  - raw/internal-notes/palantir-wars-ice-programs.md (source note)
+  - raw/internal-notes/vance-thiel-palantir-network.md (source note)
+  - raw/internal-notes/musk-afd-research-2025.md (source note)
+- **Files updated:**
+  - wiki/institutions/PALANTIR.md — full rewrite: product stack (Gotham/Foundry/AIP/Maven/Skykit/MetaConstellations), internal structure (Karp/Cohen/Sankar/Thiel), Trump 2.0 contract surge ($1.3B+), ImmigrationOS, Ukraine, narrative shift, market channels. db_id fixed to 96.
+  - wiki/actors/MUSK-Elon.md — AfD endorsement entries added to Key Recent Actions (Dec 2024, Jan 9, Jan 25 2025); European political actor dimension added to Narrative Shift; afd added to related_institutions.
+  - wiki/actors/TRUMP-Donald.md — Thiel/Vance/Palantir entries added to Key Recent Actions; thiel-peter + vance-jd added to related_actors; palantir added to related_institutions.
+  - wiki/pending-db-sync.md — CL-DB-023 through CL-DB-029 registered (7 new flags: Thiel Person, Vance Person, AfD Company, Thiel→Palantir edge, Thiel→Vance edge, Palantir→ICE edge, Musk→AfD edge)
+  - wiki/index.md — v28, 146 pages; THIEL + VANCE added to actors table; Tech-Power-Nexus added to themes; Palantir-Political-Network added to dossiers; PALANTIR db_id corrected to 96
+- **Contradictions flagged:** None — internal notes are Priority 7 hypotheses; no contradiction with existing Priority 1-4 sourced wiki content
+- **DB sync needed:** yes — CL-DB-023 (Thiel Person), CL-DB-024 (Vance Person), CL-DB-025 (AfD Company), CL-DB-026 (Thiel→Palantir edge), CL-DB-027 (Thiel→Vance edge), CL-DB-028 (Palantir→ICE edge), CL-DB-029 (Musk→AfD edge)
+- **Notes:** All new pages confidence=MEDIUM per CLAUDE.md — Priority 7 sources only; requires upgrade when Priority 1-4 corroborating sources (official contract filings, Palantir SEC filings, Congressional testimony) ingested. IDF/Gaza claim confidence=LOW — allegation only, no direct contract confirmation. Total open DB flags now: 18 (CL-DB-012 through CL-DB-029).
 
 ---
 
