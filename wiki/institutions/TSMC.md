@@ -1,6 +1,5 @@
 ---
 title: TSMC
-slug: tsmc
 type: institution
 institution_type: ministry
 region: east-asia

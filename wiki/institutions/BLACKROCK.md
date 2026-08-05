@@ -1,6 +1,5 @@
 ---
 title: BlackRock
-slug: blackrock
 type: institution
 institution_type: sovereign-fund
 region: north-america

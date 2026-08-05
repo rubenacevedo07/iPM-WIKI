@@ -1,6 +1,5 @@
 ---
 title: NVIDIA
-slug: nvidia
 type: institution
 institution_type: ministry
 region: north-america

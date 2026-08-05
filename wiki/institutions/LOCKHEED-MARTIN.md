@@ -1,6 +1,5 @@
 ---
 title: Lockheed Martin
-slug: lockheed-martin
 type: institution
 institution_type: ministry
 region: north-america

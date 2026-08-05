@@ -1,6 +1,5 @@
 ---
 title: Amazon
-slug: amazon
 type: institution
 institution_type: ministry
 region: north-america

@@ -1,6 +1,5 @@
 ---
 title: Microsoft
-slug: microsoft
 type: institution
 institution_type: ministry
 region: north-america

@@ -1,6 +1,5 @@
 ---
 title: Apple
-slug: apple
 type: institution
 institution_type: ministry
 region: north-america
