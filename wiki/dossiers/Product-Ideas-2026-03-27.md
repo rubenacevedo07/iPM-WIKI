@@ -65,17 +65,6 @@ Shows who is gaining power and through which specific dimension. Identifies emer
 
 Free, single-purpose viral tool. User enters any event (war, bailout, rate hike, disaster). Platform traces through the ownership/finance graph and shows who actually benefits. Powered by `OilImpactRanking` + `RelationEdge` traversal. Drives traffic to IPM for the full intelligence picture.
 
----
-
-## Idea 5 — Celonis Partnership (Oliver Mieth)
-**Status:** Identified, not pursued.
-
-Three angles:
-1. Celonis enterprise clients as IPM Observatory/enterprise tier targets
-2. Celonis process mining data as IPM supply chain signal source (supplier switching patterns = early geopolitical signal)
-3. Joint pitch: "Celonis for internal process intelligence, IPM for external power intelligence"
-
-Ask Oliver: "Which of your enterprise clients has the most exposure to geopolitical supply chain risk right now?"
 
 ---
 
