@@ -3,6 +3,72 @@
 
 ---
 
+## 2026-08-06 | verificación + cierre de sesión | Alcance del corpus e identidad de documento en el tooling
+
+> **ESTADO DEL FRENTE — pausa de 10 días desde hoy.** Esta entrada está escrita para alguien que no
+> estuvo en la sesión. Si hace falta más contexto del que hay aquí, es un defecto de esta entrada.
+
+- **Operation:** verificación (todo read-only sobre la base) + commit de material que estaba en disco y fuera de git
+- **Disparador:** la arista `vault-wiki` del mapa (`iPM_GV/IPM_Infra/arquitectura_w4_componentes.json`) estaba `verified-absent` desde el 2026-07-28. Por la regla del mapa, un `current` de hace 9 días es hipótesis hasta reejecutar su `verifiedBy` — cuyo SQL nunca se persistió, sólo su descripción en prosa.
+
+### Qué quedó hecho, y en qué commits
+
+| Commit | Contenido |
+|---|---|
+| `88fb26f` | `ops/verificar_alcance_corpus.py` + `ops/VERIFICACION_ALCANCE_CORPUS.md` — el script y su informe, juntos |
+| `687c211` | El pase Palantir del 2026-04-22 (19 ficheros): `wiki/incoming/` entero, 4 páginas nuevas en `wiki/`, 5 notas en `raw/internal-notes/` |
+| `cb3e458` | `.claude/settings.json`, `.claude/skills/n8n-workflow/`, `n8n/`, `commands-for-agents.md`, `ipm-agent-stack/SKILL.md` |
+
+**Todo pusheado a `origin/main`.** `b2a8204` (el linter de referencias, del 2026-08-05) también estaba sin pushear y salió en el mismo empujón — es el mismo riesgo, ya materializado.
+
+**`687c211` merece leerse:** esos 19 ficheros **ya estaban en `wiki."Document"`**. `ipm_wiki_ingest.py` recorre `wiki/**/*.md`, así que `wiki/incoming/` entra al índice entero. **El corpus de 164 documentos contra el que se midió ADR-W4-04 incluía material que no estaba en ningún commit.**
+
+### Reejecución del `verifiedBy` — CONFIRMA lo que la tarjeta afirmaba
+
+```bash
+python ops/verificar_alcance_corpus.py          # solo lectura; informe en ops/VERIFICACION_ALCANCE_CORPUS.md
+```
+
+**Prerrequisito — la credencial.** El script la busca por orden: `--dsn` → `$IPM_CANONICAL_DB_PASSWORD` → **`iPM_GV/IPM_Infra/env/.env.prod`, clave `IPM_CANONICAL_DB_PASSWORD`**, que es la vía normal y no requiere exportar nada. Sesión `readonly=True`, `statement_timeout='25s'`, TCP a `127.0.0.1:5433` (**jamás `docker exec psql`**), como `postgres` porque `ipm_analytics` da 42501 sobre `wiki.*`.
+
+- **La raíz de los 164 `Path` es `wiki`** — confirmado. Y lo es *por construcción*: `ipm_wiki_ingest.py:103,115` tiene un solo `--wiki-dir` y hace `rglob` sobre él.
+- **Cero documentos del vault** (`Path ILIKE '%prediction%'` → 0 filas) — confirmado.
+- **Índice y disco coinciden hash a hash**, con una sola deriva: `wiki/log.md`, que es append-only y está dentro del corpus indexado, así que cada entrada que se le añade —incluida ésta— lo desincroniza hasta la siguiente ingesta. Esperado; se anota, no se corrige.
+
+### Lo que la verificación destapó y no estaba en el `verifiedBy`
+
+Análisis completo, con las tablas: **`ops/ANALISIS_ALCANCE_E_IDENTIDAD_2026-08-06.md`**.
+
+1. **El alcance declarado del gold set es falso en dos sumandos.** Dice «wiki 164 + raw 15 + Predictions 30 ≈ 209 md». `Predictions` tiene **21** ficheros, no 30, y **cero indexados**. De los 15 `raw/`, sólo **4** llegaron al índice vía `wiki/incoming/`. Ausente del alcance declarado: **32 documentos**, no 30.
+2. **19 grupos de basename colisionan** en el corpus declarado, **9 dentro del índice**. El bench identifica documentos por basename en minúsculas, así que un documento puede contar como acierto de otro.
+3. **Seis de esas colisiones las genera `CLAUDE.md §4.11` por diseño**, al nombrar cada página de `wiki/sources/` igual que su fuente cruda. **Crecen solas: cada `raw/` que se resuma añade una.** El instrumento se degrada a medida que la wiki hace bien su trabajo.
+4. **Cuatro etiquetas firmadas del gold set están comprometidas** (E9, S4, D2, D3). El primario de **D3** no está indexado — lo que el bench encuentra es `wiki/sources/Lagarde-ECB-2026-04.md`, **otro documento**. El de **S4** tampoco está. Medido por `Path` exacto, no inferido del código.
+5. **El 1,00 en inglés de la pata densa queda SIN DETERMINAR.** `ADR-W4-04.md:144-146` lo apoya en E9; de sus tres `related`, uno está limpio, uno casa con otro documento y uno está ausente. Cuál produjo el acierto no se sabe sin reejecutar. **No está refutado: está sin determinar, que es distinto de estar mal y peor que estar bien.**
+6. **La línea base de 0,85 sólo es reproducible en Windows.** Los dos benches usan mecanismos distintos de extracción de basename que sólo coinciden en este sistema operativo. Dependencia de entorno no declarada en ningún sitio.
+
+### TRES DECISIONES SIN FIRMAR — bloquean todo lo demás
+
+1. **¿Cuál de los dos `ipm_wiki_bench.py` es el bench?** Hay dos ficheros con el mismo nombre y **comportamiento distinto**: el de este repo (168 líneas, sólo léxico) y `IPM_Backend_AI/tools/` (310 líneas, con pata densa). **Los números de ADR-W4-04 salieron del de `tools/` — certeza, no inferencia: el de 168 no puede producir esa tabla.** Opciones A/B/C en `ops/ANALISIS_…:§6.1`; **recomendada C** (renombrar el de este repo a `ipm_wiki_bench_lexico.py`), la única que no toca nada firmado.
+2. **¿Qué se hace con `wiki/incoming/`?** Sus 14 ficheros están indexados; 8 colisionan por basename con su página canónica y **los 8 difieren en contenido**. Bloquea también los 5 ambiguos del resolver y el `WikiSlug=NULL` de palantir. Quien la cierre debe aplicar la misma Opción C del corte del 2026-08-05 (entrada de abajo).
+3. **¿`core_slug:` va al frontmatter de los 65?** Pendiente desde el efecto colateral de la reingesta del 2026-08-05.
+
+### TRAMPA CARGADA — `ipm_wiki_to_graph.py:190`
+
+Identifica documentos por `os.path.basename`. **Hoy no colapsa nada** porque su invocación documentada apunta a `wiki/companies/`, una carpeta plana con cero colisiones internas, y porque nadie lo usa como fuente de identidad (ver línea 59 de este log).
+
+> **Se arma el día que alguien apunte `--wiki-dir` a `wiki/incoming/`** — exactamente donde están las 8 colisiones con contenido divergente. Dos documentos colapsarían en un nodo del grafo exportado.
+
+- **Contradictions flagged:** none — la verificación confirma el análisis en todos sus puntos
+- **DB sync needed:** no — nada de esta sesión escribe en la base
+- **Notes:**
+  - **Trabajo especificado y deliberadamente NO ejecutado** (`ops/ANALISIS_…:§7`): corregir el alcance en el gold set, ajustar `ADR-W4-04.md` §5/§6, abrir tres flags en `pending-db-sync.md`, corregir las aristas `vault-wiki` y `mcp_ro` del mapa, recalcular la línea base, y el fix de identidad (cinco sitios en dos repos). **Los cuatro primeros tocan documentos firmados y no hay quien los cierre durante la pausa. Un cambio a medias en un documento firmado es peor que no empezarlo.**
+  - **`mcp-ipm-postgres-ro` no está configurado en ningún cliente** (`.claude.json` con `mcpServers` vacío; los `.mcp.json` del vecino sólo registran `ipm-devops`). El mapa dice que su consumidor «está fuera del sistema dibujado»; medido, `AccessLog=0` no significa «lo llama alguien de fuera del diagrama» sino **«nadie puede llamarlo»**.
+  - **Cinco ficheros quedan sin commitear a propósito, ninguno borrado**, todos revisados: `aas` (7 KB, volcado de `git log` con nombres de commit y ficheros — regenerable, nombre que parece una redirección mal escrita); `link_occurrences.json` (187 KB, salida de `ipm_wiki_lint_referencias.py` — regenerable); `test.txt` y `raw/internal-notes/test.txt` (0 bytes); `raw/internal-notes/test.md` (contiene la palabra «test»). **No se tocó `.gitignore`**: clasificarlos es decisión con dueño, y se deja visible en vez de resuelta. `donald-trump.md` en la raíz está trackeado y vacío (0 bytes) — mismo caso.
+  - `.claude/settings.local.json` queda fuera del commit **a propósito**: es configuración por máquina por convención de Claude Code. Ninguno de los `.claude/*.json` contiene secretos; se revisaron antes de añadir.
+  - **Lección de método, y no es de wiki.** La credencial se pidió cuatro veces y se prometió cuatro veces, pero el mecanismo no podía funcionar: cada invocación del agente arranca un shell nuevo, así que un `export` en otra terminal nunca llega. Se resolvió leyéndola de donde ya vive (`.env.prod`), sin crear otra copia del secreto. **Toda dependencia que cruza sesiones necesita un mecanismo verificable, no un anuncio** — la misma regla que ya se aplicó al gate con `ipm_science`, resuelto con artefacto en disco + sha256.
+
+---
+
 ## 2026-08-05 | fix | Bridge wikiDepth de 7 entidades — companies/ vs institutions/ duplicados
 
 - **Operation:** fix (remediación del defecto medido en MEDICION_WIKI_CORE_2026-08-05.md, §2 y §4)
