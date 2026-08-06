@@ -1,0 +1,121 @@
+{
+  "name": "Wiki Px N8N Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "node-0001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 340]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "field-001",
+              "name": "entity",
+              "value": "KARP-Alex",
+              "type": "string"
+            },
+            {
+              "id": "field-002",
+              "name": "prompt",
+              "value": "This is for an intelligence wiki. Provide structured, dated, source-cited output.\nFlag every claim as [confirmed], [likely], or [unconfirmed].\nPrioritize: official statements > filings > market research > think tanks > media.\n\nResearch target: Alex Karp, CEO and co-founder of Palantir Technologies.\n\nReturn results organized by these exact sections:\n\n## 1. Background and Formation\nEducation (Stanford, Frankfurt philosophy PhD under Habermas), early career, ideological formation. What shaped his political-philosophical worldview?\n\n## 2. Current Role and Power Levers\nFormal authority at Palantir: CEO powers, Founders Voting Trust, board seat, speaking authority. What can he actually do vs. Thiel's structural role?\n\n## 3. Public Positioning — The Manifesto Era (2024–2026)\nKey claims from \"The Technological Republic\" (2025): core thesis, reception, media response.\nRecent speeches, interviews, public statements with dates. Who is he addressing — DC, Silicon Valley, public markets?\n\n## 4. Political Network\nPersonal relationships with Trump administration (Mar-a-Lago access documented?), Thiel, Vance, Sacks, Pentagon officials.\nHas Karp made political donations? Registered party affiliation?\n\n## 5. Market Positioning and Investor Relations\nPLTR stock role: how does Karp personally drive the stock narrative (earnings calls, media, CNBC appearances)?\nCompensation structure — salary, equity, options.\nAny personal PLTR share sales/purchases in the last 12 months?\n\n## 6. Narrative Shift — What Changed in 2025–2026\nWhat is different in Karp's public posture vs 2022–2023? Tone, topics, audiences, willingness to politicize?\n\n## 7. Open Questions\nWhat remains unclear, unconfirmed, or contradicted in public record?\n\nFor all date-stamped events use YYYY-MM-DD format. Cite URL and publication date for each source.",
+              "type": "string"
+            },
+            {
+              "id": "field-003",
+              "name": "recency_filter",
+              "value": "year",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-0002",
+      "name": "Set Inputs",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [460, 340]
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputs = $('Set Inputs').item.json;\n\nconst body = {\n  model: 'sonar-pro',\n  messages: [\n    {\n      role: 'system',\n      content: 'You are a geopolitical and markets intelligence research assistant. Return structured, dated, source-cited output only. For every claim flag as [confirmed], [likely], or [unconfirmed]. Prioritize: official documents > laws/filings > IMF/BIS/World Bank > market research > think tanks > media. Never speculate without labeling it. Return clean markdown with headers matching the requested sections.'\n    },\n    {\n      role: 'user',\n      content: inputs.prompt\n    }\n  ],\n  max_tokens: 6000,\n  temperature: 0.1,\n  return_citations: true,\n  return_related_questions: false,\n  search_recency_filter: inputs.recency_filter || 'year'\n};\n\nreturn [{ json: {\n  entity: inputs.entity,\n  prompt: inputs.prompt,\n  recency_filter: inputs.recency_filter,\n  requestBody: JSON.stringify(body)\n}}];"
+      },
+      "id": "node-0003",
+      "name": "Build Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 340]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.perplexity.ai/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer REPLACE_WITH_YOUR_PERPLEXITY_KEY"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ $json.requestBody }}",
+        "options": {
+          "timeout": 90000
+        }
+      },
+      "id": "node-0004",
+      "name": "Perplexity Sonar API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 340]
+    },
+    {
+      "parameters": {
+        "jsCode": "const fs = require('fs');\nconst path = require('path');\n\nconst buildNode = $('Build Request').item.json;\nconst apiResponse = $('Perplexity Sonar API').item.json;\n\nconst entity = buildNode.entity;\nconst prompt = buildNode.prompt;\nconst content = apiResponse.choices?.[0]?.message?.content || 'ERROR: No content returned';\nconst citations = apiResponse.citations || [];\nconst model = apiResponse.model || 'sonar-pro';\nconst tokens = apiResponse.usage?.total_tokens || 'unknown';\n\nconst today = new Date().toISOString().split('T')[0];\nconst entitySlug = entity.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');\nconst filename = `${entitySlug}-research-${today}.md`;\n\nconst citationBlock = citations.length > 0\n  ? citations.map((c, i) => `${i + 1}. ${c}`).join('\\n')\n  : 'No citations returned by model.';\n\nconst rawNote = [\n  `# ${entity} — Research Note`,\n  `## Internal Research Note — Priority 7 Source`,\n  `## Status: hypothesis pending corroboration by Priority 1-4 sources`,\n  `## Compiled: ${today}`,\n  `## Model: Perplexity ${model} | Tokens: ${tokens}`,\n  ``,\n  `---`,\n  ``,\n  content,\n  ``,\n  `---`,\n  ``,\n  `## Citations (Perplexity)`,\n  ``,\n  citationBlock,\n  ``,\n  `---`,\n  ``,\n  `## Original Prompt`,\n  ``,\n  prompt\n].join('\\n');\n\nconst targetDir = '/wiki/raw/internal-notes';\nconst targetPath = path.join(targetDir, filename);\n\nfs.mkdirSync(targetDir, { recursive: true });\nfs.writeFileSync(targetPath, rawNote, 'utf-8');\nconst bytes = fs.statSync(targetPath).size;\n\nreturn [{ json: {\n  status: 'success',\n  entity,\n  filename,\n  container_path: targetPath,\n  host_path: `C:\\\\Users\\\\ruben\\\\source\\\\repos\\\\iPM-WIKI\\\\raw\\\\internal-notes\\\\${filename}`,\n  bytes,\n  tokens,\n  next_step: `Tell Claude: ingest raw/internal-notes/${filename}`\n}}];"
+      },
+      "id": "node-0005",
+      "name": "Format & Save",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1160, 340]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [[{ "node": "Set Inputs", "type": "main", "index": 0 }]]
+    },
+    "Set Inputs": {
+      "main": [[{ "node": "Build Request", "type": "main", "index": 0 }]]
+    },
+    "Build Request": {
+      "main": [[{ "node": "Perplexity Sonar API", "type": "main", "index": 0 }]]
+    },
+    "Perplexity Sonar API": {
+      "main": [[{ "node": "Format & Save", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "",
+  "meta": {
+    "instanceId": "e95fba63e451542be5cedbb050e14310ce04e02cd34f3e9a8c7f71222f503cb7"
+  },
+  "id": "dHMJeer0u5fTFGNY",
+  "tags": []
+}

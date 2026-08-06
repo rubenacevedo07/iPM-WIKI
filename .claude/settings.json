@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(/.claude/skills/n8n-workflow/**)",
+      "Read(//c/Users/ruben/source/repos/iPM_GV/**)",
+      "Read(//c/Users/ruben/source/repos/iPM_GV/IPM_Backend_AI/**)",
+      "Read(//c/Users/ruben/source/repos/iPM_GV/IPM_Backend_AI/IPM.Backend.Canonical/Features/Companies/**)"
+    ]
+  }
+}

@@ -301,9 +301,9 @@ The hybrid graph is the **structural substrate** that enhances every agent's rea
 
 ### Three edge types coexist
 
-1. **Explicit edges** (`RelationEdge`): human-curated or ingest-derived. Ground truth, 1,294 active edges currently.
+1. **Explicit edges** (`RelationEdge`): human-curated or ingest-derived. Ground truth, **1,470 active edges** (measured 2026-07-29: `SELECT count(*) FROM core."RelationEdge" WHERE "IsCurrent" AND NOT "IsDeleted"`).
 
-2. **Semantic edges** (`SemanticEdge`): computed from embeddings via KNN. Discovers non-obvious neighbors based on textual/contextual similarity.
+2. **Semantic edges** (`SemanticEdge`): computed from embeddings via KNN. Discovers non-obvious neighbors based on textual/contextual similarity. **Live since 2026-07-28: 2,956 current edges over 182 entities** (`graph."v_SimilitudActual"`; the base table accumulates all runs — query the view, not the table).
 
 3. **Hybrid edges**: weighted combination, tagged with source (`explicit_only`, `semantic_only`, `confirmed_both`).
 
@@ -340,7 +340,8 @@ The hybrid graph is the **structural substrate** that enhances every agent's rea
    - Accumulates across runs; never ephemeral
 
 2. **PostgreSQL structured state** — the source of truth for queryable data
-   - 121+ tables, 23+ moat tables
+   - **222 tables in `meridian`** (measured 2026-07-29: `SELECT count(*) FROM information_schema.tables WHERE table_schema NOT IN ('pg_catalog','information_schema')`)
+   - **Moat tables: 12 of the 24 named in this document do not exist yet** — `BrainScorecard`, `BrainLessonCandidate`, `BrainLessonPromotion`, `OracleWeightSnapshot`, `ExperimentLog`, `PredictionResolutionLog`, `GeoMacroFusionLog`, `CentralBankToneLog`, `InterpretationGapLog`, `BacktestResult`, `ExecutiveBrief`, `IPMWiki`. The count "23+ moat tables" was aspirational
    - Append-only for prediction/resolution logs
    - Versioned snapshots for time-series analysis
 
@@ -367,15 +368,25 @@ For memory architecture details, see **references/memory-architecture.md**.
 
 Full reference: **references/mcp-architecture.md**
 
-### 7 MCP servers with narrow permissions
+### 7 MCP servers with narrow permissions — **all 7 are `planned`, none is live**
 
-1. `mcp-ipm-postgres-ro` — read-only structured state
-2. `mcp-ipm-postgres-rw-lite` — restricted writes to moat tables only
-3. `mcp-ipm-memory` — wiki + markdown bridge
-4. `mcp-ipm-marketdata` — market data read + refresh
-5. `mcp-ipm-calendar` — economic calendar
-6. `mcp-ipm-docs` — speeches, transcripts, PDFs
-7. `mcp-ipm-scorecards` — calibration metrics
+Measured 2026-07-29 against the registry itself (`SELECT "Slug","Status" FROM public."McpServer"`
+in `ipm_inventory`), which labels every one of these seven `Status: planned`:
+
+1. `mcp-ipm-postgres-ro` — read-only structured state · **planned**
+2. `mcp-ipm-postgres-rw-lite` — restricted writes to moat tables only · **planned**
+3. `mcp-ipm-memory` — wiki + markdown bridge · **planned**
+4. `mcp-ipm-marketdata` — market data read + refresh · **planned**
+5. `mcp-ipm-calendar` — economic calendar · **planned**
+6. `mcp-ipm-docs` — speeches, transcripts, PDFs · **planned**
+7. `mcp-ipm-scorecards` — calibration metrics · **planned**
+
+**What is actually live (2 servers, neither on the list above):**
+
+- `meridian-mcp-postgres-ro` — registered `live`; 15 tool definitions in `surface."ToolDefinition"`,
+  but `surface."AccessLog"` has **0 rows**: the tools exist and were never exercised end-to-end.
+- `IPM_DEVOPS` — .NET MCP over stdio, ecosystem inventory tools; reads the same
+  `ipm_inventory` database that `ipm_project_inventory` serves over HTTP. Not in the registry list.
 
 ### Security rules (hard)
 
